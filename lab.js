@@ -133,17 +133,22 @@ var peopleWithScores = [
     }
 ]
 
+
 var highestScoringName = ""
 
-for (i=0; i< peopleWithScores.length; i++){
-    if(peopleWithScores[i]['score'] < highestScoringName){
-    highestScoringName=peopleWithScores[i]['score']
-    }
-    }
-    console.log(highestScoringName)
+let largestScore = peopleWithScores[0]["score"]
 
+for (let i = 0; i < peopleWithScores.length; i ++){
 
-assert(highestScoringName === "Garry Mckenzie")
+    if ( peopleWithScores[i].score > largestScore ){
+
+        largestScore = peopleWithScores[i]["score"]
+        highestScoringName = peopleWithScores[i]["firstName"]+ " " + peopleWithScores[i]["lastName"]
+    }
+    
+}
+
+console.log(highestScoringName)
 
 // Question Five
 
@@ -153,6 +158,20 @@ assert(highestScoringName === "Garry Mckenzie")
 var cubeObj = {}
 
 // Your code here
+
+var cubeObj = {
+
+}
+
+for (let i = 1; i <= 20; i ++){
+    cubeObj[i]
+    cubeObj[i] = i*i*i
+
+}
+
+console.log (cubeObj)
+
+
 
 //assert(Object.keys(cubeObj).length === 20)
 //assert(cubeObj[1] === 1)
