@@ -86,19 +86,25 @@ assert(citiesObj["Indonesia"] === "Jakarta")
 var authorScores = {}
 
 // Your code here
+authorScores["Mark Twain"] = 8.9
+authorScores["Nathaniel Hawthorne"] = 5.1
+authorScores["John Steinbeck"] = 2.3
+authorScores["C.S. Lewis"] = 9.9
+authorScores["Jon Krakauer"] = 6.1
 
-//assert(authorScores["Mark Twain"] === 8.9)
-//assert(authorScores["Nathaniel Hawthorne"] === 5.1)
-//assert(authorScores["John Steinbeck"] === 2.3)
-//assert(authorScores["C.S. Lewis"] === 9.9)
-//assert(authorScores["Jon Krakauer"] === 6.1)
+assert(authorScores["Mark Twain"] === 8.9)
+assert(authorScores["Nathaniel Hawthorne"] === 5.1)
+assert(authorScores["John Steinbeck"] === 2.3)
+assert(authorScores["C.S. Lewis"] === 9.9)
+assert(authorScores["Jon Krakauer"] === 6.1)
 
 
 // b. Add an additional author named “Erik Larson” with an assigned score of 9.2.
 
 // Your code here
+authorScores["Erik Larson"] = 9.2
 
-//assert(authorScores["Erik Larson"] === 9.2)
+assert(authorScores["Erik Larson"] === 9.2)
 
 // Question Four
 // You are given an array of objects. Each object in the array describes the score of a person. Find the person with the best score and print his full name.
