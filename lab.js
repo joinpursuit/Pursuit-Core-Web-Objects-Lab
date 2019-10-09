@@ -12,23 +12,32 @@ var applesObj = {
 
 // a. Set eveAppleCount equal to the number of apples that Eve has
 
-let eveAppleCount /* = Your code here */
+let eveAppleCount = applesObj.Eve
 
 // assert(eveAppleCount === 4)
 
+
+
 // b. Change the number of apples that Adam  has to 4
 
-// Your code here
+applesObj.Adam = 4
 
-//assert(applesObj["Adam"] === 4)
+// assert(applesObj["Adam"] === 4)
 
 // c. Set calAndDanAppleCount equal to how many apples Cal and Dan have combined
 
-let calAndDanAppleCount /*= Your code here */
+let calAndDanAppleCount = applesObj.Dan + applesObj.Cal
 
-//assert(calAndDanAppleCount === 8)
+// assert(calAndDanAppleCount === 8)
 
 // d. Set all the values in applesObj to 0
+
+// for (let i = 0; i < applesObj.length; i++) {
+//     applesObj[i] = 0
+//     console.log(applesObj)
+// }
+
+
 
 // Your code here
 
@@ -44,22 +53,21 @@ var citiesObj = {
     Iceland: "Reykjavik"
 }
 
-// a. Set russiaCapital equal to Russia's capital using citiesObj
+// a. Set russiaCapital equal to Russia's capital using citiesOb
 
-let russiaCapital /* = Your code here (Replace "" with your solution)*/
-//assert(russiaCapital === "Moscow")
+let russiaCapital = citiesObj.Russia 
+// assert(russiaCapital === "Moscow")
     
 // b. Add a new key value pair "Jamaica" and its capital "Kingston"
+citiesObj.Jamaica = 'Kingston'
 
-// Your code here
-
-//assert(citiesObj["Jamaica"] === "Kingston")
+// assert(citiesObj["Jamaica"] === "Kingston")
 
 // c. Add a new key value pair "Indonesia" and its capital "Jakarta"
+citiesObj.Indonesia = "Jakarta"
 
-// Your code here
 
-//assert(citiesObj["Indonesia"] === "Jakarta")
+// assert(citiesObj["Indonesia"] === "Jakarta")
 
 // Question 3
 
@@ -75,21 +83,24 @@ let russiaCapital /* = Your code here (Replace "" with your solution)*/
 */
 
 var authorScores = {}
+authorScores["Mark Twain"] = 8.9
+authorScores["Nathaniel Hawthorne"] = 5.1
+authorScores["John Steinbeck"] =  2.3
+authorScores["C.S. Lewis"] = 9.9
+authorScores["Jon Krakauer"] = 6.1
 
-// Your code here
 
-//assert(authorScores["Mark Twain"] === 8.9)
-//assert(authorScores["Nathaniel Hawthorne"] === 5.1)
-//assert(authorScores["John Steinbeck"] === 2.3)
-//assert(authorScores["C.S. Lewis"] === 9.9)
-//assert(authorScores["Jon Krakauer"] === 6.1)
+// assert(authorScores["Mark Twain"] === 8.9)
+// assert(authorScores["Nathaniel Hawthorne"] === 5.1)
+// assert(authorScores["John Steinbeck"] === 2.3)
+// assert(authorScores["C.S. Lewis"] === 9.9)
+// assert(authorScores["Jon Krakauer"] === 6.1)
 
 
 // b. Add an additional author named “Erik Larson” with an assigned score of 9.2.
+authorScores["Erik Larson"] = 9.2
 
-// Your code here
-
-//assert(authorScores["Erik Larson"] === 9.2)
+// assert(authorScores["Erik Larson"] === 9.2)
 
 // Question Four
 // You are given an array of objects. Each object in the array describes the score of a person. Find the person with the best score and print his full name.
@@ -124,9 +135,15 @@ var peopleWithScores = [
 
 var highestScoringName = ""
 
-// Your code here
+for (i=0; i< peopleWithScores.length; i++){
+    if(peopleWithScores[i]['score'] < highestScoringName){
+    highestScoringName=peopleWithScores[i]['score']
+    }
+    }
+    console.log(highestScoringName)
 
-//assert(highestScoringName === "Garry Mckenzie")
+
+assert(highestScoringName === "Garry Mckenzie")
 
 // Question Five
 
