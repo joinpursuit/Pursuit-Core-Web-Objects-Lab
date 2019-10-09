@@ -137,13 +137,16 @@ var peopleWithScores = [
 var highestScoringName = ""
 
 // Your code here
-// for(let i = 0; i < peopleWithScores.length; i++){
-//     console.log(peopleWithScores[i]);
-//      if(peopleWithScores[i]["score"] > peopleWithScores[i+1]["score"]){
-//         highestScoringName += peopleWithScores[i]["firstName"]["lastName"];
-//      }
-// }
-// assert(highestScoringName === "Garry Mckenzie")
+let highestScore = peopleWithScores[0]["score"];        // Assigns first indexed object Calvin's score to be the largest (temporary holder)
+for(let i = 0; i < peopleWithScores.length; i++){       // Iterate through object
+    if(peopleWithScores[i]["score"] > highestScore){    // For each nested/indexed object, check if their score is higher than temporary highestScore
+        highestScore = peopleWithScores[i]["score"];    // if it is higher, assign new highestScore
+        highestScoringName += peopleWithScores[i]["firstName"] + " " + peopleWithScores[i]["lastName"]; // if it is higher, add the first name/last name of that person
+    }
+}
+// console.log(highestScoringName);
+
+assert(highestScoringName === "Garry Mckenzie")
 
 // Question Five
 
@@ -187,12 +190,29 @@ assert(cubeObj[20] === 8000)
 // Find the most common letter in the string below.  Use an object to generate your solution that maps a character to the number of times it appears in the string.  Ignore whitespaces and capitalization.
  var myString = "We're flooding people with information. We need to feed it through a processor. A human must turn information into intelligence or knowledge. We've tended to forget that no computer will ever ask a new question."
 
-var frequencyObj = {}
+var frequencyObj = {
 
-var mostFrequentChar
+}
 
-// Your code here
+var mostFrequentChar = "";
 
-//assert(mostFrequentChar === "e")
+//Your code here
+for(let j = 0; j < myString.length; j++){
+    if(myString[j] !== " " || !myString[j].toUpperCase()){
+        let character = myString[j];        // Assign (keys) as the characters
+        
+        if(!frequencyObj[character]){       // If there is no characters yet,
+            frequencyObj[character] = 0;    // initialize their count (value) as 0 to start in freqObj
+        }
+        frequencyObj[character]++;          // For every character seen through loop, iterate character count (value) in freqObj
+
+        if(mostFrequentChar === "" || frequencyObj[character] > frequencyObj[mostFrequentChar]){    // For every char in loop, if mostFreq is "" OR count of iterated character is greater than the previous stored mostFrequent,
+            mostFrequentChar = character;                                                           // Reassign new mostFrequent
+        }
+    }
+}
+console.log(mostFrequentChar);
+
+// assert(mostFrequentChar === "e")
 
 console.log("Ran with 0 errors")
