@@ -12,21 +12,23 @@ var applesObj = {
 
 // a. Set eveAppleCount equal to the number of apples that Eve has
 
-let eveAppleCount /* = Your code here */
+let eveAppleCount = applesObj.Eve
 
-// assert(eveAppleCount === 4)
+assert(eveAppleCount === 4)
 
 // b. Change the number of apples that Adam  has to 4
 
+applesObj["Adam"] += 1
+
 // Your code here
 
-//assert(applesObj["Adam"] === 4)
+assert(applesObj["Adam"] === 4)
 
 // c. Set calAndDanAppleCount equal to how many apples Cal and Dan have combined
 
-let calAndDanAppleCount /*= Your code here */
+let calAndDanAppleCount = applesObj.Cal + applesObj.Dan
 
-//assert(calAndDanAppleCount === 8)
+assert(calAndDanAppleCount === 8)
 
 // d. Set all the values in applesObj to 0
 
@@ -36,6 +38,11 @@ let calAndDanAppleCount /*= Your code here */
 //   assert(applesObj[key] === 0)
 //}
 
+for (let key in applesObj) {
+    applesObj[key] = 0
+    console.log(applesObj[key]) // turns it into an array 
+}
+
 
 // Question Two
 var citiesObj = {
@@ -44,11 +51,24 @@ var citiesObj = {
     Iceland: "Reykjavik"
 }
 
+
+
 // a. Set russiaCapital equal to Russia's capital using citiesObj
 
-let russiaCapital /* = Your code here (Replace "" with your solution)*/
-//assert(russiaCapital === "Moscow")
+let russiaCapital = citiesObj.Russia 
+console.log(russiaCapital)
+
+/* = Your code here (Replace "" with your solution)*/
+assert(russiaCapital === "Moscow")
     
+
+citiesObj.Jamaica = "Kingston"
+console.log(citiesObj)
+
+
+
+
+
 // b. Add a new key value pair "Jamaica" and its capital "Kingston"
 
 // Your code here
@@ -56,6 +76,9 @@ let russiaCapital /* = Your code here (Replace "" with your solution)*/
 //assert(citiesObj["Jamaica"] === "Kingston")
 
 // c. Add a new key value pair "Indonesia" and its capital "Jakarta"
+
+citiesObj.Indonesia = "Jakarta"
+console.log(citiesObj)
 
 // Your code here
 
