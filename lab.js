@@ -79,8 +79,17 @@ assert(citiesObj["Indonesia"] === "Jakarta")
 | Jon Krakauer | 6.1 |
 */
 
+
+
 var authorScores = {}
 
+authorScores["Mark Twain"] = 8.9
+authorScores["Nathaniel Hawthorne"] = 5.1
+authorScores["John Steinbeck"] = 2.3
+authorScores["C.S. Lewis"] = 9.9
+authorScores["Jon Krakauer"] = 6.1
+
+console.table(authorScores)
 
 
 assert(authorScores["Mark Twain"] === 8.9)
