@@ -133,27 +133,54 @@ var peopleWithScores = [
     }
 ]
 
+
 var highestScoringName = ""
 
 // Your code here
-
-//assert(highestScoringName === "Garry Mckenzie")
+// for(let i = 0; i < peopleWithScores.length; i++){
+//     console.log(peopleWithScores[i]);
+//      if(peopleWithScores[i]["score"] > peopleWithScores[i+1]["score"]){
+//         highestScoringName += peopleWithScores[i]["firstName"]["lastName"];
+//      }
+// }
+// assert(highestScoringName === "Garry Mckenzie")
 
 // Question Five
 
 // Write code below such that cubeObj maps the numbers between 1 and 20 inclusive to their cubes.  A number's cube is that number multiplied by itself twice:
 // 2 ^ 3 = 2 * 2 * 2 = 8
 
-var cubeObj = {}
+var cubeObj = {
+    1 : 1 * 1 * 1, 
+    2 : 2 * 2 * 2,
+    3 : 3 * 3 * 3,
+    4 : 4 * 4 * 4,
+    5 : 5 * 5 * 5,
+    6 : 6 * 6 * 6,
+    7 : 7 * 7 * 7,
+    8 : 8 * 8 * 8,
+    9 :  9 * 9 * 9,
+    10 : 10 * 10 * 10,
+    11 : 11 * 11 * 11,
+    12 : 12 * 12 * 12,
+    13 : 13 * 13 * 13,
+    14 : 14 * 14 * 14,
+    15 : 15 * 15 * 15,
+    16 : 16 * 16 * 16,
+    17 : 17 * 17 * 17,
+    18 : 18 * 18 * 18,
+    19 : 19 * 19 * 19,
+    20 : 20 * 20 * 20
+}
 
 // Your code here
 
-//assert(Object.keys(cubeObj).length === 20)
-//assert(cubeObj[1] === 1)
-//assert(cubeObj[2] === 8)
-//assert(cubeObj[3] === 27)
-//assert(cubeObj[14] === 2744)
-//assert(cubeObj[20] === 8000)
+assert(Object.keys(cubeObj).length === 20)
+assert(cubeObj[1] === 1)
+assert(cubeObj[2] === 8)
+assert(cubeObj[3] === 27)
+assert(cubeObj[14] === 2744)
+assert(cubeObj[20] === 8000)
 
 // Question Six
 
