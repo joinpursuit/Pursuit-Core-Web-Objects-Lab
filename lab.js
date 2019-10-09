@@ -20,21 +20,27 @@ let eveAppleCount = 4
 
 applesObj.Adam === 4;
 
-//assert(applesObj["Adam"] === 4)
+assert(applesObj["Adam"] === 4)
 
 // c. Set calAndDanAppleCount equal to how many apples Cal and Dan have combined
 
-let calAndDanAppleCount /*= Your code here */
+let calAndDanAppleCount = 5 + 3
+//console.log(calAndDanAppleCount);
+
 
 //assert(calAndDanAppleCount === 8)
 
 // d. Set all the values in applesObj to 0
 
-// Your code here
+for( let key in applesObj){
+    (applesObj[key]===0);
+    
+}
 
-//for (let key in applesObj) {
-//   assert(applesObj[key] === 0)
-//}
+
+for (let key in applesObj) {
+   assert(applesObj[key] === 0)
+}
 
 
 // Question Two
