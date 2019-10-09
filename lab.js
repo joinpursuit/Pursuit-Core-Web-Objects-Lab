@@ -1,6 +1,8 @@
 let assert = require('assert');
 
-// Uncomment the "assert" lines for each problem when you have a solution, and run the playground to test.  When you have uncommented out the assert lines, no error messages or print statements means that your code is working correctly.
+// Uncomment the "assert" lines for each problem when you have a solution, and run the playground to test.  When you have uncommented out the assert lines, 
+// no error messages or print statements means that your code is working correctly.
+
 // Question 1
 var applesObj = {
     Adam: 3,
@@ -11,30 +13,33 @@ var applesObj = {
 }
 
 // a. Set eveAppleCount equal to the number of apples that Eve has
+// console.log(applesObj["Eve"]);
+let eveAppleCount = applesObj["Eve"];
 
-let eveAppleCount /* = Your code here */
-
-// assert(eveAppleCount === 4)
+assert(eveAppleCount === 4)
 
 // b. Change the number of apples that Adam  has to 4
+// console.table(applesObj)
+applesObj["Adam"] = 4;
 
-// Your code here
-
-//assert(applesObj["Adam"] === 4)
+assert(applesObj["Adam"] === 4)
 
 // c. Set calAndDanAppleCount equal to how many apples Cal and Dan have combined
 
-let calAndDanAppleCount /*= Your code here */
 
-//assert(calAndDanAppleCount === 8)
+let calAndDanAppleCount = applesObj["Cal"] + applesObj["Dan"];
+// console.log(calAndDanAppleCount);
+assert(calAndDanAppleCount === 8)
 
 // d. Set all the values in applesObj to 0
 
-// Your code here
+for(let key in applesObj){
+    applesObj[key] = 0;
+}
 
-//for (let key in applesObj) {
-//   assert(applesObj[key] === 0)
-//}
+for (let key in applesObj) {
+  assert(applesObj[key] === 0)
+}
 
 
 // Question Two
@@ -46,8 +51,9 @@ var citiesObj = {
 
 // a. Set russiaCapital equal to Russia's capital using citiesObj
 
-let russiaCapital /* = Your code here (Replace "" with your solution)*/
-//assert(russiaCapital === "Moscow")
+let russiaCapital = citiesObj["Russia"]
+
+assert(russiaCapital === "Moscow")
     
 // b. Add a new key value pair "Jamaica" and its capital "Kingston"
 
