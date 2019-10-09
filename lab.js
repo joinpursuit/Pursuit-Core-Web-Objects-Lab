@@ -36,7 +36,7 @@ console.log(calAndDanAppleCount)
 for (let key in applesObj) {
     applesObj[key] = 0
 }
-console.log(applesObj)
+
 
 //for (let key in applesObj) {
 //   assert(applesObj[key] === 0)
