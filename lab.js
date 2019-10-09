@@ -12,28 +12,29 @@ var applesObj = {
 
 // a. Set eveAppleCount equal to the number of apples that Eve has
 
-let eveAppleCount /* = Your code here */
+let eveAppleCount = applesObj["Eve"]
 
-// assert(eveAppleCount === 4)
+ assert(eveAppleCount === 4)
+
 
 // b. Change the number of apples that Adam  has to 4
 
-// Your code here
+applesObj.Adam = 4
 
-//assert(applesObj["Adam"] === 4)
+assert(applesObj["Adam"] === 4)
 
 // c. Set calAndDanAppleCount equal to how many apples Cal and Dan have combined
 
-let calAndDanAppleCount /*= Your code here */
+let calAndDanAppleCount = applesObj["Cal"] + applesObj["Dan"]
 
-//assert(calAndDanAppleCount === 8)
+assert(calAndDanAppleCount === 8)
 
 // d. Set all the values in applesObj to 0
 
-// Your code here
+for (let key in applesObj["key"] = 0) 
 
 //for (let key in applesObj) {
-//   assert(applesObj[key] === 0)
+  assert(applesObj[key] === 0)
 //}
 
 
