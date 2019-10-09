@@ -12,13 +12,13 @@ var applesObj = {
 
 // a. Set eveAppleCount equal to the number of apples that Eve has
 
-let eveAppleCount /* = Your code here */
+let eveAppleCount = 4
 
-// assert(eveAppleCount === 4)
+ assert(eveAppleCount === 4)
 
 // b. Change the number of apples that Adam  has to 4
 
-// Your code here
+applesObj.Adam === 4;
 
 //assert(applesObj["Adam"] === 4)
 
