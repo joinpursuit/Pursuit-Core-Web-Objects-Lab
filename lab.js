@@ -1,4 +1,4 @@
-let assert = require('assert');
+// let assert = require('assert');
 
 // Uncomment the "assert" lines for each problem when you have a solution, and run the playground to test.  When you have uncommented out the assert lines, no error messages or print statements means that your code is working correctly.
 // Question 1
@@ -10,26 +10,35 @@ var applesObj = {
     Eve: 4
 }
 
+
 // a. Set eveAppleCount equal to the number of apples that Eve has
 
-let eveAppleCount /* = Your code here */
+let eveAppleCount = applesObj.Eve
+console.log(eveAppleCount)
+// /* = Your code here */
 
 // assert(eveAppleCount === 4)
-
 // b. Change the number of apples that Adam  has to 4
 
-// Your code here
+
+applesObj["Adam"] = 4
+console.log(applesObj)
 
 //assert(applesObj["Adam"] === 4)
 
 // c. Set calAndDanAppleCount equal to how many apples Cal and Dan have combined
 
-let calAndDanAppleCount /*= Your code here */
+let calAndDanAppleCount = applesObj.Cal + applesObj.Dan
+console.log(calAndDanAppleCount)
+/*= Your code here */
 
 //assert(calAndDanAppleCount === 8)
 
 // d. Set all the values in applesObj to 0
-
+for (let values in applesObj){
+    applesObj[values] = 0
+}
+console.log(Object.values(applesObj))
 // Your code here
 
 //for (let key in applesObj) {
@@ -46,22 +55,32 @@ var citiesObj = {
 
 // a. Set russiaCapital equal to Russia's capital using citiesObj
 
-let russiaCapital /* = Your code here (Replace "" with your solution)*/
+let russiaCapital = citiesObj.Russia 
+console.log(russiaCapital)
+    
+    
+    /* = Your code here (Replace "" with your solution)*/
 //assert(russiaCapital === "Moscow")
     
 // b. Add a new key value pair "Jamaica" and its capital "Kingston"
-
+citiesObj.Jamaica = "Kingston"
+console.log(citiesObj)
 // Your code here
 
 //assert(citiesObj["Jamaica"] === "Kingston")
 
 // c. Add a new key value pair "Indonesia" and its capital "Jakarta"
-
+citiesObj.Indonesia = "Jakarta"
+console.log(citiesObj)
 // Your code here
 
 //assert(citiesObj["Indonesia"] === "Jakarta")
 
 // Question 3
+
+
+
+
 
 // a. Create a object that represents the table below listing an authors name and their comprehensibility score.
 /*
@@ -74,7 +93,23 @@ let russiaCapital /* = Your code here (Replace "" with your solution)*/
 | Jon Krakauer | 6.1 |
 */
 
-var authorScores = {}
+let classical = [{
+    Author: "Mark Twain", Score:8.9,
+},
+{
+    Author: "Nathaniel Hawthorne ", Score: 5.1,
+},
+{
+    Author: "John Steinbeck ", Score: 2.3,
+},
+{
+    Author: "C.S. Lewis", Score: 9.9,
+},
+{
+    Author: "Jon Krakauer ", Score: 6.1,
+},
+]
+// var authorScores = {}
 
 // Your code here
 
@@ -86,6 +121,9 @@ var authorScores = {}
 
 
 // b. Add an additional author named “Erik Larson” with an assigned score of 9.2.
+classical[5] = {Author: "Erik Larson", Score: 9.2}
+
+console.log(classical)
 
 // Your code here
 
@@ -122,8 +160,25 @@ var peopleWithScores = [
     }
 ]
 
-var highestScoringName = ""
+var highestScoringName = peopleWithScores[0];
 
+for (let i = 0; i < peopleWithScores.length; i ++){
+if(highestScoringName > peopleWithScores.length)
+{
+highestScoringName = peopleWithScores[i]
+console.log(highestScoringName)
+}
+}
+
+
+// let largestNumber = arrr[0]
+
+// for(let i = 0; i <= arrr.length; i++){
+//   if(largestNumber < arrr[i+1]) {
+//     largestNumber = arrr[i+1]
+//   }
+// }
+// console.log(largestNumber);
 // Your code here
 
 //assert(highestScoringName === "Garry Mckenzie")
