@@ -141,7 +141,15 @@ var highestScoringName = ""
 
 // Your code here
 
-//assert(highestScoringName === "Garry Mckenzie")
+let highestScore = 0;
+for (let i = 0; i < peopleWithScores.length; i++) {
+    if(peopleWithScores[i]["score"] > highestScore) {
+        highestScore = peopleWithScores[i]["score"];
+        highestScoringName = peopleWithScores[i]["firstName"] + " " + peopleWithScores[i]["lastName"];
+    }
+}
+
+assert(highestScoringName === "Garry Mckenzie")
 
 // Question Five
 
@@ -151,13 +159,16 @@ var highestScoringName = ""
 var cubeObj = {}
 
 // Your code here
+for(let i = 1; i <= 20; i++) {
+    cubeObj[i] = Math.pow(i, 3);
+}
 
-//assert(Object.keys(cubeObj).length === 20)
-//assert(cubeObj[1] === 1)
-//assert(cubeObj[2] === 8)
-//assert(cubeObj[3] === 27)
-//assert(cubeObj[14] === 2744)
-//assert(cubeObj[20] === 8000)
+assert(Object.keys(cubeObj).length === 20)
+assert(cubeObj[1] === 1)
+assert(cubeObj[2] === 8)
+assert(cubeObj[3] === 27)
+assert(cubeObj[14] === 2744)
+assert(cubeObj[20] === 8000)
 
 // Question Six
 
@@ -166,10 +177,27 @@ var cubeObj = {}
 
 var frequencyObj = {}
 
-var mostFrequentChar
+var mostFrequentChar;
+let charAppearance = 0;
 
 // Your code here
+for(let i = 0; i < myString.length; i++) {
+    if(myString[i] !== " ") {
+        if(frequencyObj.hasOwnProperty(myString[i].toLowerCase())) {
+            frequencyObj[myString[i].toLowerCase()] += 1;
+        } else {
+            frequencyObj[myString[i].toLowerCase()] = 1;
+        }
+    }
+}
 
-//assert(mostFrequentChar === "e")
+for(let key in frequencyObj) {
+    if(charAppearance < frequencyObj[key]) {
+        charAppearance = frequencyObj[key];
+        mostFrequentChar = key;
+    }
+}
+
+assert(mostFrequentChar === "e")
 
 console.log("Ran with 0 errors")
