@@ -83,9 +83,28 @@ citiesObj.Inodonesia = "Jakarta"
 | Jon Krakauer | 6.1 |
 */
 
-var authorScores = {}
-
-// Your code here
+var authorScores = [
+    {
+    Name: "Mark Twain",
+    Score: "8.9,"
+    }, 
+    {
+    Name: "Nathaniel Hawthrone",
+    Score: "5.1,"
+    },
+    {
+    Name: "John Steinback",
+    Score: "2.3",
+    },
+    {
+    Name: "C.S Lewis",
+    Score: "9.9,"
+    },
+    {
+    Name: "John Krakauer",
+    Score: "6.1,"
+    }
+]   
 
 //assert(authorScores["Mark Twain"] === 8.9)
 //assert(authorScores["Nathaniel Hawthorne"] === 5.1)
@@ -96,7 +115,7 @@ var authorScores = {}
 
 // b. Add an additional author named “Erik Larson” with an assigned score of 9.2.
 
-// Your code here
+
 
 //assert(authorScores["Erik Larson"] === 9.2)
 

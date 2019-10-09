@@ -35,3 +35,61 @@ console.log(citiesObj)
 // c. Add a new key value pair "Indonesia" and its capital "Jakarta"
 citiesObj.Inodonesia = "Jakarta"
 console.log(citiesObj)
+
+// var authorScores =[ 
+//     {
+//     Name: "Mark Twain",
+//     Score: 8.9,
+//     }, 
+//     {
+//     Name: "Nathaniel Hawthrone",
+//     Score: 5.1,
+//     },
+//     {
+//     Name: "John Steinback",
+//     Score: 2.3,
+//     },
+//     {
+//     Name: "C.S Lewis",
+//     Score: 9.9,
+//     },
+//     {
+//     Name: "John Krakauer",
+//     Score: 6.1,
+//     }
+// ]
+// console.log(authorScores)
+
+// authorScores.name = 
+//      "Erik Larson"
+    // Score: 9.2,
+
+
+
+// console.log(authorScores)
+
+var authorScores = 
+    {
+    // {
+    Name: "Mark Twain",
+    Score: "8.9", 
+    // }, 
+    // {
+    Name: "Nathaniel Hawthrone",
+    Score: "5.1",
+    // },
+    // {
+    Name: "John Steinback",
+    Score: "2.3",
+    // },
+    // {
+    Name: "C.S Lewis",
+    Score: "9.9", 
+    // },
+    // {
+    Name: "John Krakauer",
+    Score: "6.1",
+    // }
+}
+  
+console.log(authorScores)
