@@ -27,7 +27,7 @@ console.log(applesObj["Adam"])
 // c. Set calAndDanAppleCount equal to how many apples Cal and Dan have combined
 
 let calAndDanAppleCount = applesObj["Cal"] + applesObj["Dan"]
-console.log(calAndDanAppleCount)
+
 
 //assert(calAndDanAppleCount === 8)
 
