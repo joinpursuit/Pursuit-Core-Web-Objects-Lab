@@ -12,7 +12,8 @@ var applesObj = {
 
 // a. Set eveAppleCount equal to the number of apples that Eve has
 
-let eveAppleCount /* = Your code here */
+let eveAppleCount = applesObj("Eve")
+console.log = eveAppleCount
 
 // assert(eveAppleCount === 4)
 
