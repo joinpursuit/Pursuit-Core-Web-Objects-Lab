@@ -125,9 +125,12 @@ var peopleWithScores = [
 ]
 
 var highestScoringName = ""
+let highScore = 0
 
 for(let i = 0; i < peopleWithScores.length; i += 1){
-    
+    if (peopleWithScores[i]["score"] > highScore){
+        highScore === peopleWithScores[i]["score"]
+    }
 }
 
 //assert(highestScoringName === "Garry Mckenzie")
