@@ -2,70 +2,70 @@ let assert = require('assert');
 
 // Uncomment the "assert" lines for each problem when you have a solution, and run the playground to test.  When you have uncommented out the assert lines, no error messages or print statements means that your code is working correctly.
 // Question 1
-var applesObj = {
-    Adam: 3,
-    Beth: 5,
-    Cal: 3,
-    Dan: 5,
-    Eve: 4
-}
+// var applesObj = {
+//     Adam: 3,
+//     Beth: 5,
+//     Cal: 3,
+//     Dan: 5,
+//     Eve: 4
+// }
 
 // a. Set eveAppleCount equal to the number of apples that Eve has
 
-let eveAppleCount = applesObj["Eve"]
-console.log(eveAppleCount)
+// let eveAppleCount = applesObj["Eve"]
+// console.log(eveAppleCount)
 
- assert(eveAppleCount === 4)
+//  assert(eveAppleCount === 4)
 
 
 // b. Change the number of apples that Adam  has to 4
 
-applesObj.Adam = 4
-console.log(applesObj["Adam"])
+// applesObj.Adam = 4
+// console.log(applesObj["Adam"])
 
-assert(applesObj["Adam"] === 4)
+// assert(applesObj["Adam"] === 4)
 
 // c. Set calAndDanAppleCount equal to how many apples Cal and Dan have combined
 
-let calAndDanAppleCount = applesObj["Cal"] + applesObj["Dan"]
-console.log(calAndDanAppleCount)
-assert(calAndDanAppleCount === 8)
+// let calAndDanAppleCount = applesObj["Cal"] + applesObj["Dan"]
+// console.log(calAndDanAppleCount)
+// assert(calAndDanAppleCount === 8)
 
 // d. Set all the values in applesObj to 0
 
-for (let key in applesObj["key"] = 0) 
-console.log(applesObj["key"])
+// for (let key in applesObj["key"] = 0) 
+// console.log(applesObj["key"])
 
 //for (let key in applesObj) {
-  assert(applesObj["key"] === 0)
+//   assert(applesObj["key"] === 0)
 //}
 
 
 // Question Two
-var citiesObj = {
-    Afghanistan: "Kabul",
-    Russia: "Moscow",
-    Iceland: "Reykjavik"
-}
+// var citiesObj = {
+//     Afghanistan: "Kabul",
+//     Russia: "Moscow",
+//     Iceland: "Reykjavik"
+// }
 
 // a. Set russiaCapital equal to Russia's capital using citiesObj
 
-let russiaCapital = citiesObj["Russia"]
-console.log(russiaCapital)
-assert(russiaCapital === "Moscow")
+// let russiaCapital = citiesObj["Russia"]
+// console.log(russiaCapital)
+// assert(russiaCapital === "Moscow")
     
 // b. Add a new key value pair "Jamaica" and its capital "Kingston"
 
-citiesObj["Jamaica"] = "Kingston"
-console.log(citiesObj)
-assert(citiesObj["Jamaica"] === "Kingston")
+// citiesObj["Jamaica"] = "Kingston"
+// console.log(citiesObj)
+// assert(citiesObj["Jamaica"] === "Kingston")
 
 // c. Add a new key value pair "Indonesia" and its capital "Jakarta"
 
-citiesObj["Indonesia"] = "Jakarta"
-console.log(citiesObj)
+// citiesObj["Indonesia"] = "Jakarta"
+// console.log(citiesObj)
 
-assert(citiesObj["Indonesia"] === "Jakarta")
+// assert(citiesObj["Indonesia"] === "Jakarta")
 
 // Question 3
 
@@ -80,22 +80,31 @@ assert(citiesObj["Indonesia"] === "Jakarta")
 | Jon Krakauer | 6.1 |
 */
 
-var authorScores = {}
+var authorScores = {
+    "Mark Twain": 8.9, 
+    "Nathaniel Hawthorne": 5.1,
+    "John Steinbeck": 2.3,
+    "C.S. Lewis": 9.9,
+    "Jon Krakauer": 6.1
 
-// Your code here
+    
+}
+console.log(authorScores)
 
-//assert(authorScores["Mark Twain"] === 8.9)
-//assert(authorScores["Nathaniel Hawthorne"] === 5.1)
-//assert(authorScores["John Steinbeck"] === 2.3)
-//assert(authorScores["C.S. Lewis"] === 9.9)
-//assert(authorScores["Jon Krakauer"] === 6.1)
+
+assert(authorScores["Mark Twain"] === 8.9)
+assert(authorScores["Nathaniel Hawthorne"] === 5.1)
+assert(authorScores["John Steinbeck"] === 2.3)
+assert(authorScores["C.S. Lewis"] === 9.9)
+assert(authorScores["Jon Krakauer"] === 6.1)
 
 
 // b. Add an additional author named “Erik Larson” with an assigned score of 9.2.
 
-// Your code here
+authorScores["Erik Larson"] = 9.2
+console.log(authorScores)
 
-//assert(authorScores["Erik Larson"] === 9.2)
+assert(authorScores["Erik Larson"] === 9.2)
 
 // Question Four
 // You are given an array of objects. Each object in the array describes the score of a person. Find the person with the best score and print his full name.
