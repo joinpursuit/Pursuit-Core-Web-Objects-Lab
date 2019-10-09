@@ -50,20 +50,19 @@ var citiesObj = {
 
 // a. Set russiaCapital equal to Russia's capital using citiesObj
 
-let russiaCapital /* = Your code here (Replace "" with your solution)*/
-//assert(russiaCapital === "Moscow")
+// let russiaCapital = citiesObj["Russia"] /* = Your code here (Replace "" with your solution)*/
+// assert(russiaCapital === "Moscow")
     
 // b. Add a new key value pair "Jamaica" and its capital "Kingston"
+// citiesObj.Jamaica = "Kingston"
 
-// Your code here
-
-//assert(citiesObj["Jamaica"] === "Kingston")
+// assert(citiesObj["Jamaica"] === "Kingston")
 
 // c. Add a new key value pair "Indonesia" and its capital "Jakarta"
 
-// Your code here
+// citiesObj.Indonesia = "Jakarta"
 
-//assert(citiesObj["Indonesia"] === "Jakarta")
+// assert(citiesObj["Indonesia"] === "Jakarta")
 
 // Question 3
 
@@ -78,22 +77,33 @@ let russiaCapital /* = Your code here (Replace "" with your solution)*/
 | Jon Krakauer | 6.1 |
 */
 
-var authorScores = {}
+var authorScores = {
+
+    "Mark Twain" : 8.9,
+    "Nathaniel Hawthorne": 5.1, 
+    "John Steinbeck": 2.3, 
+    "C.S. Lewis": 9.9, 
+    "Jon Krakauer" : 6.1,
+
+    // "Author Name" : ["Mark Twain", "Nathaniel Hawthorne", "John Steinbeck", " C.S. Lewis ", " Jon Krakauer ",],
+    // "Score" : [8.9, 5.1, 2.3, 9.9, 6.1]
+}
 
 // Your code here
-
-//assert(authorScores["Mark Twain"] === 8.9)
-//assert(authorScores["Nathaniel Hawthorne"] === 5.1)
-//assert(authorScores["John Steinbeck"] === 2.3)
-//assert(authorScores["C.S. Lewis"] === 9.9)
-//assert(authorScores["Jon Krakauer"] === 6.1)
+// console.table(authorScores)
+// console.log(authorScores)
+// assert(authorScores["Mark Twain"] === 8.9)
+// assert(authorScores["Nathaniel Hawthorne"] === 5.1)
+// assert(authorScores["John Steinbeck"] === 2.3)
+// assert(authorScores["C.S. Lewis"] === 9.9)
+// assert(authorScores["Jon Krakauer"] === 6.1)
 
 
 // b. Add an additional author named “Erik Larson” with an assigned score of 9.2.
 
-// Your code here
+authorScores["Erik Larson" ] = 9.2 
 
-//assert(authorScores["Erik Larson"] === 9.2)
+// assert(authorScores["Erik Larson"] === 9.2)
 
 // Question Four
 // You are given an array of objects. Each object in the array describes the score of a person. Find the person with the best score and print his full name.
@@ -127,10 +137,26 @@ var peopleWithScores = [
 ]
 
 var highestScoringName = ""
+let highScore = 0
 
-// Your code here
+for(let i =0; i<peopleWithScores.length; i++){
+    if(peopleWithScores[i]["score"] > highScore){
+        highScore = peopleWithScores[i]["score"]
+        highestScoringName = peopleWithScores[i]["firstName"] +" " + peopleWithScores[i]["lastName"]
+    }
+ 
+ 
+ 
+    // if(highScore >= peopleWithScores[i]["score"]){
+    //     highestScoringName += peopleWithScores[i]["firstName"+ "lastName"]
+    // } else {
+    //     console.log(highestScoringName + " Score "+ highScore)
+    // }
+    
+// } console.log(highestScoringName)
+// console.log(highScore);
 
-//assert(highestScoringName === "Garry Mckenzie")
+// assert(highestScoringName === "Garry Mckenzie")
 
 // Question Five
 
