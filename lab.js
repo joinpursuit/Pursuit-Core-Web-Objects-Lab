@@ -1,4 +1,4 @@
-let assert = require('assert');
+// let assert = require('assert');
 
 // Uncomment the "assert" lines for each problem when you have a solution, and run the playground to test.  When you have uncommented out the assert lines, no error messages or print statements means that your code is working correctly.
 // Question 1
@@ -13,14 +13,14 @@ var applesObj = {
 // a. Set eveAppleCount equal to the number of apples that Eve has
 
 let eveAppleCount = applesObj["Eve"]
-console.log(eveAppleCount)
+
     
 // assert(eveAppleCount === 4)
 
 // b. Change the number of apples that Adam  has to 4
 
 applesObj["Adam"] = 4
-console.log(applesObj["Adam"])
+
 
 //assert(applesObj["Adam"] === 4)
 
@@ -52,18 +52,21 @@ var citiesObj = {
 
 // a. Set russiaCapital equal to Russia's capital using citiesObj
 
-let russiaCapital /* = Your code here (Replace "" with your solution)*/
+let russiaCapital = citiesObj["Russia"];
+
+
 //assert(russiaCapital === "Moscow")
     
 // b. Add a new key value pair "Jamaica" and its capital "Kingston"
 
-// Your code here
+citiesObj["Jamaica"] = "Kingston"
+
 
 //assert(citiesObj["Jamaica"] === "Kingston")
 
 // c. Add a new key value pair "Indonesia" and its capital "Jakarta"
+citiesObj.Inodonesia = "Jakarta"
 
-// Your code here
 
 //assert(citiesObj["Indonesia"] === "Jakarta")
 

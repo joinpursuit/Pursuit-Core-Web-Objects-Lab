@@ -26,8 +26,12 @@ var citiesObj = {
     Russia: "Moscow",
     Iceland: "Reykjavik"
 }
-let russiaCapital = citiesObj["Russia"];
-console.log(russiaCapital)
+// let russiaCapital = citiesObj["Russia"];
+// console.log(russiaCapital)
 
 citiesObj["Jamaica"] = "Kingston"
+console.log(citiesObj)
+
+// c. Add a new key value pair "Indonesia" and its capital "Jakarta"
+citiesObj.Inodonesia = "Jakarta"
 console.log(citiesObj)
