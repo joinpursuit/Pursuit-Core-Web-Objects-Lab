@@ -79,20 +79,22 @@ var citiesObj = {
 */
 
 var authorScores = {}
-
-// Your code here
-
-//assert(authorScores["Mark Twain"] === 8.9)
-//assert(authorScores["Nathaniel Hawthorne"] === 5.1)
-//assert(authorScores["John Steinbeck"] === 2.3)
-//assert(authorScores["C.S. Lewis"] === 9.9)
-//assert(authorScores["Jon Krakauer"] === 6.1)
+authorScores["Mark Twain"] = 8.9;
+authorScores["Nathaniel Hawthorne"] = 5.1;
+authorScores["John Steinback"] = 2.3;
+authorScores["C.S. Lewis"] = 9.9;
+authorScores["Jon Krakauer"] = 6.1;
+console.table(authorScores)
+// assert(authorScores["Mark Twain"] === 8.9)
+// assert(authorScores["Nathaniel Hawthorne"] === 5.1)
+// assert(authorScores["John Steinbeck"] === 2.3)
+// assert(authorScores["C.S. Lewis"] === 9.9)
+// assert(authorScores["Jon Krakauer"] === 6.1)
 
 
 // b. Add an additional author named “Erik Larson” with an assigned score of 9.2.
 
-// Your code here
-
+authorScores["Erik Larson"] = 9.2
 //assert(authorScores["Erik Larson"] === 9.2)
 
 // Question Four
