@@ -136,14 +136,14 @@ var peopleWithScores = [
     }
 ]
 
-var highestScoringName = ""
-let highScore = 0
+// var highestScoringName = ""
+// let highScore = 0
 
-for(let i =0; i<peopleWithScores.length; i++){
-    if(peopleWithScores[i]["score"] > highScore){
-        highScore = peopleWithScores[i]["score"]
-        highestScoringName = peopleWithScores[i]["firstName"] +" " + peopleWithScores[i]["lastName"]
-    }
+// for(let i =0; i<peopleWithScores.length; i++){
+//     if(peopleWithScores[i]["score"] > highScore){
+//         highScore = peopleWithScores[i]["score"]
+//         highestScoringName = peopleWithScores[i]["firstName"] +" " + peopleWithScores[i]["lastName"]
+//     }
  
  
  
@@ -163,7 +163,12 @@ for(let i =0; i<peopleWithScores.length; i++){
 // Write code below such that cubeObj maps the numbers between 1 and 20 inclusive to their cubes.  A number's cube is that number multiplied by itself twice:
 // 2 ^ 3 = 2 * 2 * 2 = 8
 
-var cubeObj = {}
+var cubeObj = {
+    // "1": Math.pow(cubeObj["1"],3),
+    // "2": Math.pow(cubeObj["2"],3),
+    // "3": Math.pow(cubeObj["2"],3),
+}
+console.log(Math.pow(2,3))
 
 // Your code here
 
