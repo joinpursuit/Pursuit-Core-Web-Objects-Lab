@@ -90,7 +90,7 @@ var authorScores = {
 }
 
 // Your code here
-// console.table(authorScores)
+console.table(authorScores)
 // console.log(authorScores)
 // assert(authorScores["Mark Twain"] === 8.9)
 // assert(authorScores["Nathaniel Hawthorne"] === 5.1)
@@ -163,32 +163,51 @@ var peopleWithScores = [
 // Write code below such that cubeObj maps the numbers between 1 and 20 inclusive to their cubes.  A number's cube is that number multiplied by itself twice:
 // 2 ^ 3 = 2 * 2 * 2 = 8
 
-var cubeObj = {
-    // "1": Math.pow(cubeObj["1"],3),
-    // "2": Math.pow(cubeObj["2"],3),
-    // "3": Math.pow(cubeObj["2"],3),
-}
-console.log(Math.pow(2,3))
+// var cubeObj = {
+//     1: Math.pow(1,3), //Math.pow(cubeObj["1"],3),
+//     2: Math.pow(2,3),
+//     3: Math.pow(3,3),
+//     4: Math.pow(4,3),
+//     5: Math.pow(5,3),
+//     6: Math.pow(6,3),
+//     7: Math.pow(7,3),
+//     8: Math.pow(8,3),
+//     9: Math.pow(9,3),
+//     10: Math.pow(10,3),
+//     11: Math.pow(11,3),
+//     12: Math.pow(12,3),
+//     13: Math.pow(13,3),
+//     14: Math.pow(14,3),
+//     15: Math.pow(15,3),
+//     16: Math.pow(16,3),
+//     17: Math.pow(17,3),
+//     18: Math.pow(18,3),
+//     19: Math.pow(19,3),
+//     20: Math.pow(20,3),
+// }
 
+// console.table(cubeObj)
 // Your code here
 
-//assert(Object.keys(cubeObj).length === 20)
-//assert(cubeObj[1] === 1)
-//assert(cubeObj[2] === 8)
-//assert(cubeObj[3] === 27)
-//assert(cubeObj[14] === 2744)
-//assert(cubeObj[20] === 8000)
+// assert(Object.keys(cubeObj).length === 20)
+// assert(cubeObj[1] === 1)
+// assert(cubeObj[2] === 8)
+// assert(cubeObj[3] === 27)
+// assert(cubeObj[14] === 2744)
+// assert(cubeObj[20] === 8000)
 
 // Question Six
 
 // Find the most common letter in the string below.  Use an object to generate your solution that maps a character to the number of times it appears in the string.  Ignore whitespaces and capitalization.
- var myString = "We're flooding people with information. We need to feed it through a processor. A human must turn information into intelligence or knowledge. We've tended to forget that no computer will ever ask a new question."
+ var myString = "We're"// flooding people with information. We need to feed it through a processor. A human must turn information into intelligence or knowledge. We've tended to forget that no computer will ever ask a new question."
 
-var frequencyObj = {}
-
-var mostFrequentChar
-
-// Your code here
+ var frequencyObj = {"letter":myString.toLowerCase().split("")};
+ //  console.log(myString.toLowerCase().split(""));
+ console.table(frequencyObj)
+ 
+ var mostFrequentChar
+ 
+ // Your code here
 
 //assert(mostFrequentChar === "e")
 
