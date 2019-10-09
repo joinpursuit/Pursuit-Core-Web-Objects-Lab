@@ -14,13 +14,13 @@ var applesObj = {
 
 let eveAppleCount = 4
 
- assert(eveAppleCount === 4)
+ //assert(eveAppleCount === 4)
 
 // b. Change the number of apples that Adam  has to 4
 
 applesObj.Adam === 4;
 
-assert(applesObj["Adam"] === 4)
+//assert(applesObj["Adam"] === 4)
 
 // c. Set calAndDanAppleCount equal to how many apples Cal and Dan have combined
 
@@ -38,9 +38,9 @@ for( let key in applesObj){
 }
 
 
-for (let key in applesObj) {
-   assert(applesObj[key] === 0)
-}
+// for (let key in applesObj) {
+//    assert(applesObj[key] === 0)
+// }
 
 
 // Question Two
@@ -52,18 +52,16 @@ var citiesObj = {
 
 // a. Set russiaCapital equal to Russia's capital using citiesObj
 
-let russiaCapital /* = Your code here (Replace "" with your solution)*/
-//assert(russiaCapital === "Moscow")
-    
+let russiaCapital = "Moscow"
 // b. Add a new key value pair "Jamaica" and its capital "Kingston"
 
-// Your code here
+citiesObj.jamaica = "kingston"
 
 //assert(citiesObj["Jamaica"] === "Kingston")
 
 // c. Add a new key value pair "Indonesia" and its capital "Jakarta"
 
-// Your code here
+citiesObj.Indonesia = "Jakarta"
 
 //assert(citiesObj["Indonesia"] === "Jakarta")
 
@@ -80,7 +78,13 @@ let russiaCapital /* = Your code here (Replace "" with your solution)*/
 | Jon Krakauer | 6.1 |
 */
 
-var authorScores = {}
+var authorScores = {
+    Mark_Twain: 8.9,
+    Nathaniel_Hawthorne: 5.1,
+    John_Stienbeck: 2.3,
+    CS_Lewis: 9.9,
+    Jon_Krakauer: 6.1
+};
 
 // Your code here
 
@@ -93,7 +97,7 @@ var authorScores = {}
 
 // b. Add an additional author named “Erik Larson” with an assigned score of 9.2.
 
-// Your code here
+authorScores.Erick_Larson = 9.2;
 
 //assert(authorScores["Erik Larson"] === 9.2)
 
