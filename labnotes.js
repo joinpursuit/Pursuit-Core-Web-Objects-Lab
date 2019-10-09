@@ -19,3 +19,15 @@ for (let key in applesObj) {
     applesObj[key] = 0
 }
 console.log(applesObj)
+
+
+var citiesObj = {
+    Afghanistan: "Kabul",
+    Russia: "Moscow",
+    Iceland: "Reykjavik"
+}
+let russiaCapital = citiesObj["Russia"];
+console.log(russiaCapital)
+
+citiesObj["Jamaica"] = "Kingston"
+console.log(citiesObj)
