@@ -30,4 +30,7 @@ let russiaCapital = citiesObj["Russia"];
 console.log(russiaCapital)
 
 citiesObj["Jamaica"] = "Kingston"
+
+console.log(citiesObj)
+citiesObj["Indonesia"] = "Jakarta"
 console.log(citiesObj)

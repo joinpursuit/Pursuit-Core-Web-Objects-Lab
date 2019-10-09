@@ -52,18 +52,21 @@ var citiesObj = {
 
 // a. Set russiaCapital equal to Russia's capital using citiesObj
 
-let russiaCapital /* = Your code here (Replace "" with your solution)*/
-//assert(russiaCapital === "Moscow")
+let russiaCapital = citiesObj["Russia"];
+console.log(russiaCapital)
     
 // b. Add a new key value pair "Jamaica" and its capital "Kingston"
 
-// Your code here
+citiesObj["Jamaica"] = "Kingston"
+
+console.log(citiesObj)
 
 //assert(citiesObj["Jamaica"] === "Kingston")
 
 // c. Add a new key value pair "Indonesia" and its capital "Jakarta"
 
-// Your code here
+citiesObj["Indonesia"] = "Jakarta"
+console.log(citiesObj)
 
 //assert(citiesObj["Indonesia"] === "Jakarta")
 
