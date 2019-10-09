@@ -126,7 +126,9 @@ var peopleWithScores = [
 
 var highestScoringName = ""
 
-// Your code here
+for(let i = 0; i < peopleWithScores.length; i += 1){
+    
+}
 
 //assert(highestScoringName === "Garry Mckenzie")
 
