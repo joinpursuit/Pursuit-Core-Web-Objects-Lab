@@ -169,7 +169,7 @@ var cubeObj = {}
 //assert(cubeObj[3] === 27)
 //assert(cubeObj[14] === 2744)
 //assert(cubeObj[20] === 8000)
-
+ 
 // Question Six
 
 // Find the most common letter in the string below.  Use an object to generate your solution that maps a character to the number of times it appears in the string.  Ignore whitespaces and capitalization.
