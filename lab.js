@@ -1,109 +1,109 @@
 let assert = require('assert');
 
-// Uncomment the "assert" lines for each problem when you have a solution, and run the playground to test.  When you have uncommented out the assert lines, no error messages or print statements means that your code is working correctly.
-// Question 1
-var applesObj = {
-    Adam: 3,
-    Beth: 5,
-    Cal: 3,
-    Dan: 5,
-    Eve: 4
-}
+// // Uncomment the "assert" lines for each problem when you have a solution, and run the playground to test.  When you have uncommented out the assert lines, no error messages or print statements means that your code is working correctly.
+// // Question 1
+// var applesObj = {
+//     Adam: 3,
+//     Beth: 5,
+//     Cal: 3,
+//     Dan: 5,
+//     Eve: 4
+// }
 
-// a. Set eveAppleCount equal to the number of apples that Eve has
+// // a. Set eveAppleCount equal to the number of apples that Eve has
 
-let eveAppleCount = applesObj["Eve"]  /* = Your code here */
+// let eveAppleCount = applesObj["Eve"]  /* = Your code here */
 
-assert(eveAppleCount === 4)
-
-
-// b. Change the number of apples that Adam  has to 4
-
-// Your code here
-applesObj["Adam"] = 4
-assert(applesObj["Adam"] === 4)
-
-// c. Set calAndDanAppleCount equal to how many apples Cal and Dan have combined
-
-let calAndDanAppleCount = applesObj["Cal"] +applesObj["Dan"] /*= Your code here */
-
-assert(calAndDanAppleCount === 8)
-
-// d. Set all the values in applesObj to 0
-
-for(let key in applesObj) {
-    if(applesObj[key] > 0) {
-        applesObj[key] = 0;
-    }
-}
-
-for (let key in applesObj) {
-    assert(applesObj[key] === 0)
-}
+// assert(eveAppleCount === 4)
 
 
-// Question Two
-var citiesObj = {
-    Afghanistan: "Kabul",
-    Russia: "Moscow",
-    Iceland: "Reykjavik"
-}
+// // b. Change the number of apples that Adam  has to 4
 
-// a. Set russiaCapital equal to Russia's capital using citiesObj
+// // Your code here
+// applesObj["Adam"] = 4
+// assert(applesObj["Adam"] === 4)
 
-let russiaCapital = citiesObj["Russia"];
-assert(russiaCapital === "Moscow")
+// // c. Set calAndDanAppleCount equal to how many apples Cal and Dan have combined
+
+// let calAndDanAppleCount = applesObj["Cal"] +applesObj["Dan"] /*= Your code here */
+
+// assert(calAndDanAppleCount === 8)
+
+// // d. Set all the values in applesObj to 0
+
+// for(let key in applesObj) {
+//     if(applesObj[key] > 0) {
+//         applesObj[key] = 0;
+//     }
+// }
+
+// for (let key in applesObj) {
+//     assert(applesObj[key] === 0)
+// }
+
+
+// // Question Two
+// var citiesObj = {
+//     Afghanistan: "Kabul",
+//     Russia: "Moscow",
+//     Iceland: "Reykjavik"
+// }
+
+// // a. Set russiaCapital equal to Russia's capital using citiesObj
+
+// let russiaCapital = citiesObj["Russia"];
+// assert(russiaCapital === "Moscow")
     
-// b. Add a new key value pair "Jamaica" and its capital "Kingston"
+// // b. Add a new key value pair "Jamaica" and its capital "Kingston"
 
-citiesObj.Jamaica = "Kingston"
+// citiesObj.Jamaica = "Kingston"
 
-assert(citiesObj["Jamaica"] === "Kingston")
+// assert(citiesObj["Jamaica"] === "Kingston")
 
-// c. Add a new key value pair "Indonesia" and its capital "Jakarta"
+// // c. Add a new key value pair "Indonesia" and its capital "Jakarta"
 
-citiesObj.Indonesia = "Jakarta"
+// citiesObj.Indonesia = "Jakarta"
 
-assert(citiesObj["Indonesia"] === "Jakarta")
+// assert(citiesObj["Indonesia"] === "Jakarta")
 
-// Question 3
+// // Question 3
 
-// a. Create a object that represents the table below listing an authors name and their comprehensibility score.
-/*
-| Author Name |    Score |
-| :--: | :--: |
-| Mark Twain |    8.9 |
-| Nathaniel Hawthorne    | 5.1 |
-| John Steinbeck    | 2.3 |
-| C.S. Lewis | 9.9 |
-| Jon Krakauer | 6.1 |
-*/
-
-
-
-var authorScores = {}
-
-authorScores["Mark Twain"] = 8.9
-authorScores["Nathaniel Hawthorne"] = 5.1
-authorScores["John Steinbeck"] = 2.3
-authorScores["C.S. Lewis"] = 9.9
-authorScores["Jon Krakauer"] = 6.1
-
-console.table(authorScores)
-
-
-assert(authorScores["Mark Twain"] === 8.9)
-assert(authorScores["Nathaniel Hawthorne"] === 5.1)
-assert(authorScores["John Steinbeck"] === 2.3)
-assert(authorScores["C.S. Lewis"] === 9.9)
-assert(authorScores["Jon Krakauer"] === 6.1)
-
-
-// b. Add an additional author named “Erik Larson” with an assigned score of 9.2.
+// // a. Create a object that represents the table below listing an authors name and their comprehensibility score.
+// /*
+// | Author Name |    Score |
+// | :--: | :--: |
+// | Mark Twain |    8.9 |
+// | Nathaniel Hawthorne    | 5.1 |
+// | John Steinbeck    | 2.3 |
+// | C.S. Lewis | 9.9 |
+// | Jon Krakauer | 6.1 |
+// */
 
 
 
-//assert(authorScores["Erik Larson"] === 9.2)
+// var authorScores = {}
+
+// authorScores["Mark Twain"] = 8.9
+// authorScores["Nathaniel Hawthorne"] = 5.1
+// authorScores["John Steinbeck"] = 2.3
+// authorScores["C.S. Lewis"] = 9.9
+// authorScores["Jon Krakauer"] = 6.1
+
+// console.table(authorScores)
+
+
+// assert(authorScores["Mark Twain"] === 8.9)
+// assert(authorScores["Nathaniel Hawthorne"] === 5.1)
+// assert(authorScores["John Steinbeck"] === 2.3)
+// assert(authorScores["C.S. Lewis"] === 9.9)
+// assert(authorScores["Jon Krakauer"] === 6.1)
+
+
+// // b. Add an additional author named “Erik Larson” with an assigned score of 9.2.
+
+// authorScores["Erik Larson"] = 9.2
+
+// assert(authorScores["Erik Larson"] === 9.2)
 
 // Question Four
 // You are given an array of objects. Each object in the array describes the score of a person. Find the person with the best score and print his full name.
@@ -137,10 +137,22 @@ var peopleWithScores = [
 ]
 
 var highestScoringName = ""
+console.log(peopleWithScores[0]["score"])
+
+let i = {
+    score: 0,
+}
+
+
+for (i; i < peopleWithScores.length; i++) {
+    if (peopleWithScores.length[i]["score"] > peopleWithScores.lenth[0]["score"]) {
+        highestScoringName = peopleWithScores.length[i]["score"]
+    }
+console.log(highestScoringName[i]["firstName"])
 
 // Your code here
 
-//assert(highestScoringName === "Garry Mckenzie")
+// assert(highestScoringName === "Garry Mckenzie")
 
 // Question Five
 
@@ -171,4 +183,4 @@ var mostFrequentChar
 
 //assert(mostFrequentChar === "e")
 
-console.log("Ran with 0 errors")
+// console.log("Ran with 0 errors")
