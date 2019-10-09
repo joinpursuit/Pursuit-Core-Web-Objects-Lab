@@ -48,20 +48,20 @@ var citiesObj = {
 
 // a. Set russiaCapital equal to Russia's capital using citiesObj
 
-let russiaCapital /* = Your code here (Replace "" with your solution)*/
-//assert(russiaCapital === "Moscow")
+let russiaCapital = citiesObj["Russia"]
+assert(russiaCapital === "Moscow")
     
 // b. Add a new key value pair "Jamaica" and its capital "Kingston"
 
-// Your code here
+citiesObj["Jamaica"] = "Kingston"
 
-//assert(citiesObj["Jamaica"] === "Kingston")
+assert(citiesObj["Jamaica"] === "Kingston")
 
 // c. Add a new key value pair "Indonesia" and its capital "Jakarta"
 
-// Your code here
+citiesObj["Indonesia"] = "Jakarta"
 
-//assert(citiesObj["Indonesia"] === "Jakarta")
+assert(citiesObj["Indonesia"] === "Jakarta")
 
 // Question 3
 
@@ -78,20 +78,20 @@ let russiaCapital /* = Your code here (Replace "" with your solution)*/
 
 var authorScores = {}
 
-// Your code here
+authorScores = {"Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1, "John Steinbeck": 2.3, "C.S. Lewis": 9.9, "Jon Krakauer": 6.1  }
 
-//assert(authorScores["Mark Twain"] === 8.9)
-//assert(authorScores["Nathaniel Hawthorne"] === 5.1)
-//assert(authorScores["John Steinbeck"] === 2.3)
-//assert(authorScores["C.S. Lewis"] === 9.9)
-//assert(authorScores["Jon Krakauer"] === 6.1)
+assert(authorScores["Mark Twain"] === 8.9)
+assert(authorScores["Nathaniel Hawthorne"] === 5.1)
+assert(authorScores["John Steinbeck"] === 2.3)
+assert(authorScores["C.S. Lewis"] === 9.9)
+assert(authorScores["Jon Krakauer"] === 6.1)
 
 
 // b. Add an additional author named “Erik Larson” with an assigned score of 9.2.
 
-// Your code here
+authorScores["Erik Larson"]= 9.2
 
-//assert(authorScores["Erik Larson"] === 9.2)
+assert(authorScores["Erik Larson"] === 9.2)
 
 // Question Four
 // You are given an array of objects. Each object in the array describes the score of a person. Find the person with the best score and print his full name.
