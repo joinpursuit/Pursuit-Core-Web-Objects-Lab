@@ -130,21 +130,20 @@ var peopleWithScores = [
     }
 ]
 
-var highestScoringName = ""
-let highestScore = peopleWithScores[0]["score"]
-for (let i = 0; i < peopleWithScores.length; i++) {    
-    if(peopleWithScores[i]["score"] > highestScore){
-        highestScore = peopleWithScores[i]["score"]
-    }
-}
-for (let i = 0; i < peopleWithScores.length; i++){
-    if(peopleWithScores[i]["score"] === highestScore){
-        highestScoringName = peopleWithScores[i]["firstName"] + " " + peopleWithScores[i]["lastName"]
-    }
-}
-console.log(highestScoringName.toString)
+// var highestScoringName = ""
+// let highestScore = peopleWithScores[0]["score"]
+// for (let i = 0; i < peopleWithScores.length; i++) {    
+//     if(peopleWithScores[i]["score"] > highestScore){
+//         highestScore = peopleWithScores[i]["score"]
+//     }
+// }
+// for (let i = 0; i < peopleWithScores.length; i++){
+//     if(peopleWithScores[i]["score"] === highestScore){
+//         highestScoringName = peopleWithScores[i]["firstName"] + " " + peopleWithScores[i]["lastName"]
+//     }
+// }
 
-assert(highestScoringName === "Garry Mckenzie")
+// assert(highestScoringName === "Garry Mckenzie")
 
 // Question Five
 
@@ -153,14 +152,18 @@ assert(highestScoringName === "Garry Mckenzie")
 
 var cubeObj = {}
 
-// Your code here
+for(let key in cubeObj){
+    if(cubeObj.length <= 20){
+        cubeObj[key] = [key] * [key] * [key]
+    }
+}
 
-//assert(Object.keys(cubeObj).length === 20)
-//assert(cubeObj[1] === 1)
-//assert(cubeObj[2] === 8)
-//assert(cubeObj[3] === 27)
-//assert(cubeObj[14] === 2744)
-//assert(cubeObj[20] === 8000)
+assert(Object.keys(cubeObj).length === 20)
+assert(cubeObj[1] === 1)
+assert(cubeObj[2] === 8)
+assert(cubeObj[3] === 27)
+assert(cubeObj[14] === 2744)
+assert(cubeObj[20] === 8000)
 
 // Question Six
 
