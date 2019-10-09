@@ -1,6 +1,9 @@
 let assert = require('assert');
 
-// Uncomment the "assert" lines for each problem when you have a solution, and run the playground to test.  When you have uncommented out the assert lines, no error messages or print statements means that your code is working correctly.
+// Uncomment the "assert" lines for each problem when you have a solution, 
+//and run the playground to test.  When you have uncommented out the assert 
+//lines, no error messages or print statements means that your code is working 
+//correctly.
 // Question 1
 var applesObj = {
     Adam: 3,
@@ -12,9 +15,10 @@ var applesObj = {
 
 // a. Set eveAppleCount equal to the number of apples that Eve has
 
-let eveAppleCount /* = Your code here */
+let eveAppleCount= applesObj["Eve"]/* = Your code here */
 
-// assert(eveAppleCount === 4)
+assert(eveAppleCount === 4)
+console.log("eveAppleCount" === "Eve")
 
 // b. Change the number of apples that Adam  has to 4
 
