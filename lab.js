@@ -97,7 +97,7 @@ var authorScores = {
 
 authorScores["Erik Larson"] = 9.2
 
-assert(authorScores["Erik Larson"] === 9.2)
+//assert(authorScores["Erik Larson"] === 9.2)
 
 // Question Four
 // You are given an array of objects. Each object in the array describes the score of a person. Find the person with the best score and print his full name.
@@ -131,10 +131,20 @@ var peopleWithScores = [
 ]
 
 var highestScoringName = ""
+let highestScore = peopleWithScores[0]["score"]
+for (let i = 0; i < peopleWithScores.length; i++) {    
+    if(peopleWithScores[i]["score"] > highestScore){
+        highestScore = peopleWithScores[i]["score"]
+    }
+}
+for (let i = 0; i < peopleWithScores.length; i++){
+    if(peopleWithScores[i]["score"] === highestScore){
+        highestScoringName = peopleWithScores[i]["firstName"] + " " + peopleWithScores[i]["lastName"]
+    }
+}
+console.log(highestScoringName.toString)
 
-// Your code here
-
-//assert(highestScoringName === "Garry Mckenzie")
+assert(highestScoringName === "Garry Mckenzie")
 
 // Question Five
 
