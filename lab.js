@@ -83,9 +83,15 @@ console.log(citiesObj)
 | Jon Krakauer | 6.1 |
 */
 
-var authorScores = {}
+var authorScores = {
+    "Mark Twain" : 8.9,
+    "Nathaniel Hawthorne" : 5.1,
+    "John Steinbeck" : 2.3,
+    "C.S. Lewis" : 9.9,
+    "Jon Krakauer" : 6.1
+};
 
-// Your code here
+console.table(authorScores);
 
 //assert(authorScores["Mark Twain"] === 8.9)
 //assert(authorScores["Nathaniel Hawthorne"] === 5.1)
@@ -96,7 +102,8 @@ var authorScores = {}
 
 // b. Add an additional author named “Erik Larson” with an assigned score of 9.2.
 
-// Your code here
+authorScores["Erik Larson"] = 9.2;
+console.table(authorScores);
 
 //assert(authorScores["Erik Larson"] === 9.2)
 

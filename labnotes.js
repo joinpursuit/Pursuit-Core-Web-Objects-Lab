@@ -34,3 +34,17 @@ citiesObj["Jamaica"] = "Kingston"
 console.log(citiesObj)
 citiesObj["Indonesia"] = "Jakarta"
 console.log(citiesObj)
+
+var authorScores = {
+    "Mark Twain" : 8.9,
+    "Nathaniel Hawthorne" : 5.1,
+    "John Steinbeck" : 2.3,
+    "C.S. Lewis" : 9.9,
+    "Jon Krakauer" : 6.1
+};
+
+console.table(authorScores);
+
+authorScores["Erik Larson"] = 9.2;
+
+console.table(authorScores);
