@@ -192,9 +192,13 @@ var mostFrequentChar
 var frequencyObj = {}
 var mostFrequentChar = ''
 
-for(let j = 0; j < myString.length; j++){
-   if(myString[j] !== " " || !myString[j].toLowerCase()){
-       let character = myString[j];        
+
+var frequencyObj = {}
+var mostFrequentChar = ''
+
+for(let i = 0; i < myString.length; i++){
+   if(myString[i] !== " " || !myString[i].toLowerCase()){
+       let character = myString[i];        
 
        if(!frequencyObj[character]){       
            frequencyObj[character] = 0;    
