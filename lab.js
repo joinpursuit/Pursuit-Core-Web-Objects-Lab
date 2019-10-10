@@ -200,7 +200,7 @@ for (i = 0; i < myString.length; i++){
         frequencyObj[myString[i]] += 1
         
     } else {
-        frequencyObj[myString[i]] = 1
+        frequencyObj[myString[i]] 
 
 
     }
@@ -216,3 +216,20 @@ console.log(frequencyObj)
 //assert(mostFrequentChar === "e")
 
 console.log("Ran with 0 errors")
+
+
+ console.log(mostFrequentChar);
+
+
+ for(let j = 0; j < myString.length; j++){
+    if(myString[j] !== " " || !myString[j].toUpperCase()){
+        let character = myString[j];        // Assign (keys) as the characters
+        if(!frequencyObj[character]){       // If there is no characters yet,
+            frequencyObj[character] = 0;    // initialize their count (value) as 0 to start in freqObj
+        }
+        frequencyObj[character]++;          // For every character seen through loop, iterate character count (value) in freqObj
+        if(mostFrequentChar === "" || frequencyObj[character] > frequencyObj[mostFrequentChar]){    // For every char in loop, if mostFreq is "" OR count of iterated character is greater than the previous stored mostFrequent,
+            mostFrequentChar = character;                                                           // Reassign new mostFrequent
+        }
+    }
+ }
