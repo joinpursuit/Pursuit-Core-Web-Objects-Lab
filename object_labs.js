@@ -12,30 +12,39 @@ var applesObj = {
 
 // a. Set eveAppleCount equal to the number of apples that Eve has
 
-let eveAppleCount = applesObj("Eve")
-console.log = eveAppleCount
+let eveAppleCount = applesObj["Eve"]
+console.log(eveAppleCount)
 
-// assert(eveAppleCount === 4)
+assert(eveAppleCount === 4)
 
 // b. Change the number of apples that Adam  has to 4
 
-// Your code here
+applesObj['Adam'] = 4
 
-//assert(applesObj["Adam"] === 4)
+assert(applesObj["Adam"] === 4)
 
 // c. Set calAndDanAppleCount equal to how many apples Cal and Dan have combined
 
-let calAndDanAppleCount /*= Your code here */
+let calAndDanAppleCount = 0
 
-//assert(calAndDanAppleCount === 8)
+calAndDanAppleCount = applesObj['Cal'] + applesObj['Dan']
+
+console.log(calAndDanAppleCount)
+
+
+
+assert(calAndDanAppleCount === 8)
 
 // d. Set all the values in applesObj to 0
 
-// Your code here
+for(let key in applesObj){
+    applesObj[key] = 0;
+    }
+    
 
-//for (let key in applesObj) {
-//   assert(applesObj[key] === 0)
-//}
+for (let key in applesObj) {
+  assert(applesObj[key] === 0)
+}
 
 
 // Question Two
@@ -47,20 +56,25 @@ var citiesObj = {
 
 // a. Set russiaCapital equal to Russia's capital using citiesObj
 
-let russiaCapital /* = Your code here (Replace "" with your solution)*/
-//assert(russiaCapital === "Moscow")
+let russiaCapital = citiesObj['Russia']
+console.log(russiaCapital) 
+/* = Your code here (Replace "" with your solution)*/
+
+
+
+assert(russiaCapital === "Moscow")
     
 // b. Add a new key value pair "Jamaica" and its capital "Kingston"
 
-// Your code here
+citiesObj['Jamaica'] = 'Kingston'
 
-//assert(citiesObj["Jamaica"] === "Kingston")
+assert(citiesObj["Jamaica"] === "Kingston")
 
 // c. Add a new key value pair "Indonesia" and its capital "Jakarta"
 
-// Your code here
+citiesObj['Indonesia'] = 'Jakarta'
 
-//assert(citiesObj["Indonesia"] === "Jakarta")
+assert(citiesObj["Indonesia"] === "Jakarta")
 
 // Question 3
 
@@ -75,7 +89,13 @@ let russiaCapital /* = Your code here (Replace "" with your solution)*/
 | Jon Krakauer | 6.1 |
 */
 
-var authorScores = {}
+var authorScores = {
+    "Mark Twain": 8.9,
+    "Nathaniel Hawthorne": 5.1,
+    "John Steinbeck" : 2.3,
+    "C.S. Lewis" : 9.9,
+    "Jon Krakauer" : 6.1
+}
 
 // Your code here
 
@@ -88,9 +108,9 @@ var authorScores = {}
 
 // b. Add an additional author named “Erik Larson” with an assigned score of 9.2.
 
-// Your code here
+authorScores["Erik Larson"]= 9.2
 
-//assert(authorScores["Erik Larson"] === 9.2)
+assert(authorScores["Erik Larson"] === 9.2)
 
 // Question Four
 // You are given an array of objects. Each object in the array describes the score of a person. Find the person with the best score and print his full name.
@@ -123,7 +143,21 @@ var peopleWithScores = [
     }
 ]
 
-var highestScoringName = ""
+
+let highScore = 0
+
+var highestScoringName = highScore
+
+
+for(let i = 0; i < peopleWithScores.length; i++){
+    if( peopleWithScores[i]['score'] > highScore){
+        highScore = peopleWithScores[i]['score']
+    }
+}console.log(highScore)
+
+
+
+
 
 // Your code here
 
