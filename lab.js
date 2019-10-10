@@ -207,22 +207,26 @@ let assert = require('assert');
 //  console.table(frequencyObj)
 //  console.log(frequencyObj["letter"][0])
 //  console.log(myString.length)
- var mostFrequentChar
-//   let name = [];
- let count = 0
- for(let i =0; i < myString.length; i++){
 
-    if((frequencyObj[myString[i]])){
+var mostFrequentChar = " ";
+
+
+for(let i =0; i < myString.length; i++){
+    if ((frequencyObj[myString[i]])){
         frequencyObj[myString[i]] += 1;
     } else {
         frequencyObj[myString[i]] = 1;
     }
-    //  console.log();
-   
- }
-
+        let letter = myString[i]
+        if (mostFrequentChar === " " || frequencyObj[myString[i]] > frequencyObj[mostFrequentChar]){
+        mostFrequentChar = letter;    
+        // console.log(letter)
+    }
+}
+console.table(frequencyObj);
+console.log(mostFrequentChar)
 //  for(let key in frequencyObj){
-//     if(frequencyObj[key] === Object.keys(frequencyObj)[i]){
+    //     if(frequencyObj[key] === Object.keys(frequencyObj)[i]){
 //         frequencyObj[myString[i]] ++;
     
 // }
@@ -237,7 +241,6 @@ let assert = require('assert');
 // console.log(frequencyObj);
 // console.log(name)
 // console.table(name)
-console.table(frequencyObj)
 // console.log(Object.keys(frequencyObj["W"]))
 // frequencyObj = myString.
 // console.log(frequencyObj[myString])
@@ -274,10 +277,8 @@ console.table(frequencyObj)
 //  }
 //  console.log(mostFrequentChar + " = Most Freq")
 
-//assert(mostFrequentChar === "e")
-// console.table(frequencyObj)
+assert(mostFrequentChar === "e")
 
-// console.log(frequencyObj[key][i]+" key[i]")
 console.log("Ran with 0 errors")
 
 
