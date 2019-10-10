@@ -189,47 +189,44 @@ assert(cubeObj[20] === 8000)
 var myString = "We're flooding people with information. We need to feed it through a processor. A human must turn information into intelligence or knowledge. We've tended to forget that no computer will ever ask a new question."
 
 var frequencyObj = {}
-let sumLetter =1
+let charCount = 0
 
 var mostFrequentChar
 
-for (i = 0; i < myString.length; i++){
-
-    if(myString[i].includes(frequencyObj)){
-
-        frequencyObj[myString[i]] += 1
-        
-    } else {
-        frequencyObj[myString[i]] 
 
 
+// object{
+//     e: 0
+
+
+for (let i =0; i < myString.length; i++){
+if (myString[i] !== "" && myString[i] !== myString[i].toUpperCase() ){
+    if( !frequencyObj[myString[i]]){
+        frequencyObj[myString[i]] = 1
+}
+    if (frequencyObj[myString[i]]){
+
+    frequencyObj[myString[i]] +=1
+
+        }
     }
-
-    
-
-    
 
 }
 
-console.log(frequencyObj)
 
-//assert(mostFrequentChar === "e")
-
-console.log("Ran with 0 errors")
-
-
- console.log(mostFrequentChar);
-
-
- for(let j = 0; j < myString.length; j++){
-    if(myString[j] !== " " || !myString[j].toUpperCase()){
-        let character = myString[j];        // Assign (keys) as the characters
-        if(!frequencyObj[character]){       // If there is no characters yet,
-            frequencyObj[character] = 0;    // initialize their count (value) as 0 to start in freqObj
-        }
-        frequencyObj[character]++;          // For every character seen through loop, iterate character count (value) in freqObj
-        if(mostFrequentChar === "" || frequencyObj[character] > frequencyObj[mostFrequentChar]){    // For every char in loop, if mostFreq is "" OR count of iterated character is greater than the previous stored mostFrequent,
-            mostFrequentChar = character;                                                           // Reassign new mostFrequent
-        }
+for(let key in frequencyObj ){
+    
+    if( frequencyObj[key] > charCount){
+        charCount = frequencyObj[key]
+        mostFrequentChar = key
     }
- }
+
+}
+
+
+console.log (frequencyObj)
+console.log(charCount)
+console.log(mostFrequentChar)
+
+
+ console.log("Ran with 0 errors")
