@@ -151,6 +151,11 @@ console.log(highestScoringName)
 
 var cubeObj = {}
 
+// let cubeObj = {
+    for (i = 0; i <= 20; i++){
+        cubeObj[i] = i*i*i 
+    }
+    console.log(cubeObj)
 
 
 //assert(Object.keys(cubeObj).length === 20)
