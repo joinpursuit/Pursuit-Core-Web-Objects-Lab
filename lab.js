@@ -161,10 +161,21 @@ assert(cubeObj[20] === 8000)
 
 var frequencyObj = {}
 
-var mostFrequentChar
+var mostFrequentChar = " "
 
-// Your code here
 
-//assert(mostFrequentChar === "e")
+for ( let i = 0; i < myString.length; i++){
+    var keys = myString[i].toLowerCase();
+    if (!frequencyObj[keys]){
+        frequencyObj[keys] = 0;
+    }
+    frequencyObj[keys]++;
+    if (mostFrequentChar ==" " || frequencyObj[keys] > frequencyObj[mostFrequentChar]){
+        mostFrequentChar = keys
+    }   
+ }
+
+
+assert(mostFrequentChar === "e")
 
 console.log("Ran with 0 errors")
