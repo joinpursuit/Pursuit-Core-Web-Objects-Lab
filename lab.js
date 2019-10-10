@@ -132,9 +132,17 @@ var peopleWithScores = [
     }
 ]
 
-var highestScoringName = ""
+var highestScoringName = peopleWithScores[0]["score"]
 
-// Your code here
+for(let i = 0; i < peopleWithScores.length; i++){
+  console.log(peopleWithScores[i].score)
+  if(peopleWithScores[i].score > highestScoringName){
+    highestScoringName = peopleWithScores[i].firstName + peopleWithScores[i].lastName
+    
+  }
+  
+}
+console.log(highestScoringName);
 
 //assert(highestScoringName === "Garry Mckenzie")
 
