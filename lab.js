@@ -1,6 +1,6 @@
 let assert = require('assert');
 
-// // Uncomment the "assert" lines for each problem when you have a solution, and run the playground to test.  When you have uncommented out the assert lines, no error messages or print statements means that your code is working correctly.
+// Uncomment the "assert" lines for each problem when you have a solution, and run the playground to test.  When you have uncommented out the assert lines, no error messages or print statements means that your code is working correctly.
 // // Question 1
 // var applesObj = {
 //     Adam: 3,
@@ -136,30 +136,37 @@ var peopleWithScores = [
     }
 ]
 
-var highestScoringName = ""
-console.log(peopleWithScores[0]["score"])
+// for (let key in peopleWithScores) {
+    //     peopleWithScores.push(["scores"])
+    // }
+    
+    
+    
+    // console.log(peopleWithScores)
+    // peopleWithScores.keys(["score"])
+    
+    var highestScoringName = ""
+    
+    let highestScore2 = peopleWithScores[0]["score"]
 
-let i = {
-    score: 0,
+    for (let i = 0; i < peopleWithScores.length; i++) {
+        if (highestScore2 < peopleWithScores[i]["score"]) {
+            highestScore2 = peopleWithScores[i]["score"]
+            highestScoringName += peopleWithScores[i]["firstName"] + " " + peopleWithScores[i]["lastName"]
+    } 
 }
-
-
-for (i; i < peopleWithScores.length; i++) {
-    if (peopleWithScores.length[i]["score"] > peopleWithScores.lenth[0]["score"]) {
-        highestScoringName = peopleWithScores.length[i]["score"]
-    }
-console.log(highestScoringName[i]["firstName"])
+console.log(highestScoringName)
 
 // Your code here
 
-// assert(highestScoringName === "Garry Mckenzie")
+assert(highestScoringName === "Garry Mckenzie")
 
 // Question Five
 
 // Write code below such that cubeObj maps the numbers between 1 and 20 inclusive to their cubes.  A number's cube is that number multiplied by itself twice:
 // 2 ^ 3 = 2 * 2 * 2 = 8
 
-var cubeObj = {}
+// var cubeObj = {}
 
 // Your code here
 
@@ -173,14 +180,14 @@ var cubeObj = {}
 // Question Six
 
 // Find the most common letter in the string below.  Use an object to generate your solution that maps a character to the number of times it appears in the string.  Ignore whitespaces and capitalization.
- var myString = "We're flooding people with information. We need to feed it through a processor. A human must turn information into intelligence or knowledge. We've tended to forget that no computer will ever ask a new question."
+//  var myString = "We're flooding people with information. We need to feed it through a processor. A human must turn information into intelligence or knowledge. We've tended to forget that no computer will ever ask a new question."
 
-var frequencyObj = {}
+// var frequencyObj = {}
 
-var mostFrequentChar
+// var mostFrequentChar
 
 // Your code here
 
-//assert(mostFrequentChar === "e")
+// assert(mostFrequentChar === "e")
 
 // console.log("Ran with 0 errors")
