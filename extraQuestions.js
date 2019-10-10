@@ -44,3 +44,28 @@
 //     numOfProperties += 1;
 // }
 // console.log(numOfProperties);
+
+// Question 5
+// Loop through the following object and log all of the directors.
+
+let films = [
+ {
+   name: 'Psycho',
+   director: 'Alfred Hitchcock',
+   released: 1960
+ }, {
+   name: 'Citizen Kane',
+   director: 'Orson Welles',
+   released: 1941
+ }, {
+   name: 'The Usual Suspects',
+   director: 'Bryan Singer',
+   released: 1995
+ }
+]
+
+//logs 'Alfred Hitchcock', 'Orson Welles', 'Bryan Singer'
+
+for(let key in films){
+    console.log(films[key]['director'])
+}
