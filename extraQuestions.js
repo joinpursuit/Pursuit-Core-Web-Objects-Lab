@@ -24,5 +24,7 @@
 // It would log false, because the memory points to different points.
 
 let spanishNumbers = {1: "uno", 2: "dos", 3: "tres", 4: "quatro", 5: "cinco"}
-let arrSpanNum = Object.keys(spanishNumbers);
-console.log(arrSpanNum);
+let arrSpanNumKey = Object.keys(spanishNumbers);
+console.log(arrSpanNumKey);
+let arrSpanNumVal = Object.values(spanishNumbers);
+console.log(arrSpanNumVal);
