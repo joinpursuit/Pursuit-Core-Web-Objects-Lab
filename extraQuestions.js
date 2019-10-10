@@ -34,13 +34,13 @@
 
 
 //PROBLEM 4
-let obj = {
-    1: 1,
-    2: 2,
-    3: 3
-};
-let numOfProperties = 0;
-for(let key in obj) {
-    numOfProperties += 1;
-}
-console.log(numOfProperties);
+// let obj = {
+//     1: 1,
+//     2: 2,
+//     3: 3
+// };
+// let numOfProperties = 0;
+// for(let key in obj) {
+//     numOfProperties += 1;
+// }
+// console.log(numOfProperties);
