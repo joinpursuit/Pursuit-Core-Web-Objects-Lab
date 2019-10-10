@@ -17,7 +17,6 @@ let eveAppleCount = applesObj.Eve
 // assert(eveAppleCount === 4)
 
 
-
 // b. Change the number of apples that Adam  has to 4
 
 applesObj.Adam = 4
@@ -32,10 +31,9 @@ let calAndDanAppleCount = applesObj.Dan + applesObj.Cal
 
 // d. Set all the values in applesObj to 0
 
-// for (let i = 0; i < applesObj.length; i++) {
-//     applesObj[i] = 0
-//     console.log(applesObj)
-// }
+for (let key in applesObj){
+    applesObj[key] = 0
+}
 
 
 
