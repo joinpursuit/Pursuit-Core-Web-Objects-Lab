@@ -1,27 +1,26 @@
-# Object Exercises
+// # Object Exercises
 
-## Question 1
+// ## Question 1
 
-Given the cat object below:
+// Given the cat object below:
 
-```js
  let cat = {
    genus: 'Felis',
    species: 'Catus'
 }
-```
 
-a. Log the species of `cat`.
 
-b. Add a new key 'color' and give it a value.
+// a. Log the species of `cat`.
 
-c. Write code that logs whether or not `cat` has the property 'texture'.
+// b. Add a new key 'color' and give it a value.
 
-## Question 2
+// c. Write code that logs whether or not `cat` has the property 'texture'.
 
-What will the code below log?  Explain why.
+// ## Question 2
 
-```js
+// What will the code below log?  Explain why.
+
+
 let p1 = {
   name: 'Joe'
 }
@@ -31,30 +30,30 @@ let p2 = {
 }
 
 console.log(p1 === p2)
-```
 
-## Question 3
 
-Given the object variable `spanishNumbers` below:
+// ## Question 3
 
-```js
+// Given the object variable `spanishNumbers` below:
+
+
 let spanishNumbers = {1: "uno", 2: "dos", 3: "tres", 4: "quatro", :5: "cinco"}
-```
-
-a. Write a code block that takes an object variable and stores the *keys* in an array.  Then log the array.
-
-b. Write a code block that takes an object variable and stores the *values* in an array.  Then log the array.
 
 
-## Question 4
+// a. Write a code block that takes an object variable and stores the *keys* in an array.  Then log the array.
 
-Write a code block that logs the number of properties an object has.
+// b. Write a code block that takes an object variable and stores the *values* in an array.  Then log the array.
 
-## Question 5
 
-Loop through the following object and log all of the directors.
+// ## Question 4
 
-``` js
+// Write a code block that logs the number of properties an object has.
+
+// ## Question 5
+
+// Loop through the following object and log all of the directors.
+
+
 let films = [
  {
    name: 'Psycho',
@@ -72,14 +71,14 @@ let films = [
 ]
 
 //logs 'Alfred Hitchcock', 'Orson Welles', 'Bryan Singer'
-```
 
 
-## Question 6
 
-You are given an array of objects. Each object in the array contains exactly 2 keys `“firstName”` and `“lastName”`
+// ## Question 6
 
-```js
+// You are given an array of objects. Each object in the array contains exactly 2 keys `“firstName”` and `“lastName”`
+
+
 let people = [
     {
         "firstName": "Calvin",
@@ -102,23 +101,23 @@ let people = [
         "lastName": "Bowen"
     }
 ]
-```
-a. Create an array of strings called `firstNames` that contains only the values for `“firstName”` from each object.
 
-b. Create an array of strings called `fullNames` that contains the values for `“firstName”` and `“lastName”` from the object separated by a space.
+// a. Create an array of strings called `firstNames` that contains only the values for `“firstName”` from each object.
+
+// b. Create an array of strings called `fullNames` that contains the values for `“firstName”` and `“lastName”` from the object separated by a space.
 
 
-## Question 7
+// ## Question 7
 
-You are given the object `deposits`, which maps a persons name to an array of deposits that have been made to their account.
+// You are given the object `deposits`, which maps a persons name to an array of deposits that have been made to their account.
 
-a) Write code to to print the name and total amount deposited of the person who received the most money.
+// a) Write code to to print the name and total amount deposited of the person who received the most money.
 
-b) Create an array called `stolenCents`, iterate over deposits for each person and steal their cents! ... like Office Space or Superman 3. Calculate the decimal part of each value, add it to the `stolenCents` array and round down the value in the original object.
+// b) Create an array called `stolenCents`, iterate over deposits for each person and steal their cents! ... like Office Space or Superman 3. Calculate the decimal part of each value, add it to the `stolenCents` array and round down the value in the original object.
 
-c) How much money did you steal?
+// c) How much money did you steal?
 
-```js
+
 let deposits = {
  "Williams" : [300.65, 270.45, 24.70, 52.00, 99.99],
  "Cooper" : [200.56, 55.00, 600.78, 305.15, 410.76, 35.00],
@@ -126,33 +125,33 @@ let deposits = {
  "Clark" : [555.23, 45.67, 99.95, 80.76, 56.99, 46.50, 265.70],
  "Johnson" : [12.56, 300.00, 640.50, 255.60, 26.88]
 }
-```
 
-## Question 8
 
-* Create an object to hold information on your favorite recipe. It should have the following properties: `name`, `servings`, and `ingredients` (an array).
-* Create a loop that logs the recipe information, so it looks like:
+// ## Question 8
 
-```javascript
+// * Create an object to hold information on your favorite recipe. It should have the following properties: `name`, `servings`, and `ingredients` (an array).
+// * Create a loop that logs the recipe information, so it looks like:
+
+
 name: Mole
 servings: 2
 ingredients: cinnamon, cumin, cocoa
-```
 
 
-## Question 9
-* Create an array of films, where each film has the following properties: title, director, and a boolean indicating if you started watching it.
-* Create a code block that iterates over the array and logs whether the film was watched or not. Examples:
 
-`You already watched "Wonder Woman" directed by Patty Jenkins`
-`You still need to watch "Wonder Woman" by director Patty Jenkins. `
+// ## Question 9
+// * Create an array of films, where each film has the following properties: title, director, and a boolean indicating if you started watching it.
+// * Create a code block that iterates over the array and logs whether the film was watched or not. Examples:
+
+// `You already watched "Wonder Woman" directed by Patty Jenkins`
+// `You still need to watch "Wonder Woman" by director Patty Jenkins. `
 
 
-## Question 10
+// ## Question 10
 
-Given the following exert from the Declaration of Independence, find the most frequent word that is longer than 5 characters.
+// Given the following exert from the Declaration of Independence, find the most frequent word that is longer than 5 characters.
 
-```js
+
 const declarationOfIndependence = `
 When in the Course of human events, it becomes necessary for one people to dissolve the
 political bands which have connected them with another, and to assume among the powers of the
@@ -177,12 +176,10 @@ been the patient sufferance of these Colonies; and such is now the necessity whi
 them to alter their former Systems of Government. The history of the present King of Great
 Britain is a history of repeated injuries and usurpations, all having in direct object the
 establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a
-candid world.
-`
-```
+candid world. `
 
-## Question 11
+// ## Question 11
 
-Print the second most common letter in the string below:
+// Print the second most common letter in the string below:
 
 var myString = "We're flooding people with information. We need to feed it through a processor. A human must turn information into intelligence or knowledge. We've tended to forget that no computer will ever ask a new question."
