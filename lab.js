@@ -135,25 +135,13 @@ let largestScore = peopleWithScores[0]["score"]
 for (let i = 0; i < peopleWithScores.length; i++) {
     if (peopleWithScores[i].score > largestScore) {
       largestScore = peopleWithScores[i]['score']
-      highestScoringName =peopleWithScores[i]['firstName'] + " " + peopleWithScores[i]['lastName']
+      highestScoringName = peopleWithScores[i]['firstName'] + " " + peopleWithScores[i]['lastName']
     }
 } 
 console.log(highestScoringName)
 
 //assert(highestScoringName === "Garry Mckenzie")
 
-// let array2 = [11, 52, 10, 7, 50, 46, 79, 78, 13, 26, 83, 92, 89, 81, 1, 41, 4, 23, 57, 41, 80, 83, 41, 69]
-// let smallestNum = Infinity
-// let secondSmallestNum = smallestNum
-// for (let i = 0; i < array2.length; i++) {
-//   if (array2[i] < smallestNum) {
-//     secondSmallestNum = smallestNum
-//     smallestNum = array2[i]
-//   } else if (secondSmallestNum > smallestNum && secondSmallestNum > array2[i]) {
-//     secondSmallestNum = array2[i]
-//   }
-//  } console.log(smallestNum)
-//   console.log(secondSmallestNum)
 
 
 // Question Five
@@ -163,7 +151,7 @@ console.log(highestScoringName)
 
 var cubeObj = {}
 
-// Your code here
+
 
 //assert(Object.keys(cubeObj).length === 20)
 //assert(cubeObj[1] === 1)
