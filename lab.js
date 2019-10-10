@@ -158,9 +158,11 @@ let assert = require('assert');
 // // 2 ^ 3 = 2 * 2 * 2 = 8
 
 var cubeObj = {}
-
+for (let i = 1; i <= 20; i++){
+    cubeObj[i] = Math.pow([i],3)
+}
    
-
+console.log(cubeObj)
 
 
 // let i = 0
