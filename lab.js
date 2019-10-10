@@ -150,18 +150,18 @@ var peopleWithScores = [
 // Write code below such that cubeObj maps the numbers between 1 and 20 inclusive to their cubes.  A number's cube is that number multiplied by itself twice:
 // 2 ^ 3 = 2 * 2 * 2 = 8
 
-var cubeObj = {}
+// var cubeObj = {}
 
-for (let i = 1; i <= 20; i++) {
-    cubeObj[i] = Math.pow([i],3);
-}
+// for (let i = 1; i <= 20; i++) {
+//     cubeObj[i] = Math.pow([i],3);
+// }
 
-assert(Object.keys(cubeObj).length === 20)
-assert(cubeObj[1] === 1)
-assert(cubeObj[2] === 8)
-assert(cubeObj[3] === 27)
-assert(cubeObj[14] === 2744)
-assert(cubeObj[20] === 8000)
+// assert(Object.keys(cubeObj).length === 20)
+// assert(cubeObj[1] === 1)
+// assert(cubeObj[2] === 8)
+// assert(cubeObj[3] === 27)
+// assert(cubeObj[14] === 2744)
+// assert(cubeObj[20] === 8000)
 
 // Question Six
 
@@ -169,11 +169,20 @@ assert(cubeObj[20] === 8000)
  var myString = "We're flooding people with information. We need to feed it through a processor. A human must turn information into intelligence or knowledge. We've tended to forget that no computer will ever ask a new question."
 
 var frequencyObj = {}
+var mostFrequentChar = ""
+let counter = frequencyObj[i];
 
-var mostFrequentChar
+for(let i = 0; i < myString.length; i++){
+    if(frequencyObj[myString[i]]) {
+        frequencyObj[myString[i]]++;
+    } else {
+        frequencyObj[myString[i]] = 1; 
+    } 
+    
+ 
 
-// Your code here
+} 
 
-//assert(mostFrequentChar === "e")
+// assert(mostFrequentChar === "e")
 
 console.log("Ran with 0 errors")
