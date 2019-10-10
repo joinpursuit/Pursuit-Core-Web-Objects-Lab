@@ -109,44 +109,44 @@ let assert = require('assert');
 // // Question Four
 // // You are given an array of objects. Each object in the array describes the score of a person. Find the person with the best score and print his full name.
 
-var peopleWithScores = [
-    {
-        firstName: "Calvin",
-        lastName: "Newton",
-        score: 13
-    },
-    {
-        firstName: "Garry",
-        lastName: "Mckenzie",
-        score: 23
-    },
-    {
-        firstName: "Leah",
-        lastName: "Rivera",
-        score: 10
-    },
-    {
-        firstName: "Sonja",
-        lastName: "Moreno",
-        score: 3
-    },
-    {
-        firstName: "Noel",
-        lastName: "Bowen",
-        score: 10
-    }
-]
+// var peopleWithScores = [
+//     {
+//         firstName: "Calvin",
+//         lastName: "Newton",
+//         score: 13
+//     },
+//     {
+//         firstName: "Garry",
+//         lastName: "Mckenzie",
+//         score: 23
+//     },
+//     {
+//         firstName: "Leah",
+//         lastName: "Rivera",
+//         score: 10
+//     },
+//     {
+//         firstName: "Sonja",
+//         lastName: "Moreno",
+//         score: 3
+//     },
+//     {
+//         firstName: "Noel",
+//         lastName: "Bowen",
+//         score: 10
+//     }
+// ]
 
-var highestScoringName = peopleWithScores[0]["firstName"]+ " " + peopleWithScores[0]["lastName"]
+// var highestScoringName = peopleWithScores[0]["firstName"]+ " " + peopleWithScores[0]["lastName"]
 
-let highNum = peopleWithScores[0]["score"]
-for (let i = 0; i < peopleWithScores.length; i++){
-    if (peopleWithScores[i]["score"] > highNum) {
-        highNum = peopleWithScores[i]["score"]
-        highestScoringName = peopleWithScores[i]["firstName"]+ " " + peopleWithScores[i]["lastName"]
-    }
-}
-    console.log(highestScoringName)
+// let highNum = peopleWithScores[0]["score"]
+// for (let i = 0; i < peopleWithScores.length; i++){
+//     if (peopleWithScores[i]["score"] > highNum) {
+//         highNum = peopleWithScores[i]["score"]
+//         highestScoringName = peopleWithScores[i]["firstName"]+ " " + peopleWithScores[i]["lastName"]
+//     }
+// }
+//     console.log(highestScoringName)
 
 // // Your code here
 
@@ -157,9 +157,17 @@ for (let i = 0; i < peopleWithScores.length; i++){
 // // Write code below such that cubeObj maps the numbers between 1 and 20 inclusive to their cubes.  A number's cube is that number multiplied by itself twice:
 // // 2 ^ 3 = 2 * 2 * 2 = 8
 
-// var cubeObj = {}
+var cubeObj = {}
 
-// // Your code here
+   
+
+
+
+// let i = 0
+// for (i = 1; i <= 20; i++){
+     
+//      console.log(i*i*i)
+// }
 
 // //assert(Object.keys(cubeObj).length === 20)
 // //assert(cubeObj[1] === 1)
