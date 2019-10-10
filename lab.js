@@ -152,10 +152,8 @@ var peopleWithScores = [
 
 var cubeObj = {}
 
-for(let key in cubeObj){
-    if(cubeObj.length <= 20){
-        cubeObj[key] = [key] * [key] * [key]
-    }
+for (let i = 1; i <= 20; i++) {
+    cubeObj[i] = Math.pow([i],3);
 }
 
 assert(Object.keys(cubeObj).length === 20)
