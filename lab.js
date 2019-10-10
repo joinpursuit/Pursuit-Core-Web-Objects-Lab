@@ -62,16 +62,10 @@ console.log(russiaCapital)
 assert(russiaCapital === "Moscow")
     
 
-citiesObj.Jamaica = "Kingston"
-console.log(citiesObj)
-
-
-
-
-
 // b. Add a new key value pair "Jamaica" and its capital "Kingston"
 
-// Your code here
+citiesObj.Jamaica = "Kingston"
+console.log(citiesObj)
 
 //assert(citiesObj["Jamaica"] === "Kingston")
 
@@ -84,9 +78,16 @@ console.log(citiesObj)
 
 //assert(citiesObj["Indonesia"] === "Jakarta")
 
+
+
 // Question 3
 
 // a. Create a object that represents the table below listing an authors name and their comprehensibility score.
+
+
+
+
+
 /*
 | Author Name |    Score |
 | :--: | :--: |
@@ -97,9 +98,17 @@ console.log(citiesObj)
 | Jon Krakauer | 6.1 |
 */
 
-var authorScores = {}
 
-// Your code here
+ let AuthorsObject = {
+    Author: { name: "Mark Twain", Score: "8.9"},
+    Author2: {name: "Nathanial Hawthorne", Score: "5.1"},
+    Author3: {name: "John Steinbeck", Score: "2.3"},
+    Author4: {name: "C.S. Lewis", Score: "9.9"},
+    Author5: {name: "Jon Krakauer", Score: "6.1"},
+
+};
+{    console.table(AuthorsObject)
+}
 
 //assert(authorScores["Mark Twain"] === 8.9)
 //assert(authorScores["Nathaniel Hawthorne"] === 5.1)
@@ -110,12 +119,18 @@ var authorScores = {}
 
 // b. Add an additional author named “Erik Larson” with an assigned score of 9.2.
 
-// Your code here
+// AuthorsObject.Author6 = {};
+// AuthorsObject.Author6.name = "Eric Larson" 
+// AuthorsObject.Author6.Score = "9.2"
+// { console.table(AuthorsObject)
+// }
 
 //assert(authorScores["Erik Larson"] === 9.2)
 
 // Question Four
 // You are given an array of objects. Each object in the array describes the score of a person. Find the person with the best score and print his full name.
+
+// peopleWithScores[score]
 
 var peopleWithScores = [
     {
@@ -143,11 +158,19 @@ var peopleWithScores = [
         lastName: "Bowen",
         score: 16
     }
-]
 
-var highestScoringName = ""
+   ]
+   for (let key in peopleWithScores){
+    console.log (peopleWithScores[key]["score"])
+  }
+  
+  let highScore = 0;
+for(let i = 0; i < peopleWithScores.length; i += 1) {
+    if 
+    sum += peopleWithScores[i]["score"]
+}
+console.log(Math.floor(sum / peopleWithScores.length))
 
-// Your code here
 
 //assert(highestScoringName === "Garry Mckenzie")
 
@@ -169,15 +192,15 @@ var cubeObj = {}
 
 // Question Six
 
-// Find the most common letter in the string below.  Use an object to generate your solution that maps a character to the number of times it appears in the string.  Ignore whitespaces and capitalization.
- var myString = "We're flooding people with information. We need to feed it through a processor. A human must turn information into intelligence or knowledge. We've tended to forget that no computer will ever ask a new question."
+// // Find the most common letter in the string below.  Use an object to generate your solution that maps a character to the number of times it appears in the string.  Ignore whitespaces and capitalization.
+//  var myString = "We're flooding people with information. We need to feed it through a processor. A human must turn information into intelligence or knowledge. We've tended to forget that no computer will ever ask a new question."
 
-var frequencyObj = {}
+// var frequencyObj = {}
 
-var mostFrequentChar
+// var mostFrequentChar
 
 // Your code here
 
 //assert(mostFrequentChar === "e")
 
-console.log("Ran with 0 errors")
+// console.log("Ran with 0 errors")
