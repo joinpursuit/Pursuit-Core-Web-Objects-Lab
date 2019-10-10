@@ -141,9 +141,16 @@ var peopleWithScores = [
     }
 ]
 
-var highestScoringName = ""
+var highestScoringName = " "
+let highScore = peopleWithScores[0]["score"]
+for(let i = 0; i < peopleWithScores.length; i++) {
+    if(peopleWithScores[i]['score'] > highScore) {
 
-// Your code here
+        highScore = peopleWithScores[i]["score"] 
+        highestScoringName = peopleWithScores[i]["firstName"] + " " + peopleWithScores[i]["lastName"]
+} 
+} 
+console.log(highestScoringName)
 
 //assert(highestScoringName === "Garry Mckenzie")
 
@@ -152,9 +159,13 @@ var highestScoringName = ""
 // Write code below such that cubeObj maps the numbers between 1 and 20 inclusive to their cubes.  A number's cube is that number multiplied by itself twice:
 // 2 ^ 3 = 2 * 2 * 2 = 8
 
-var cubeObj = {}
+// var cubeObj = 0
 
-// Your code here
+// for(let i = 0; i <= 20; i++){
+//     let c = i * i * i
+
+//     console.log(cubeObj.)
+// }
 
 //assert(Object.keys(cubeObj).length === 20)
 //assert(cubeObj[1] === 1)
