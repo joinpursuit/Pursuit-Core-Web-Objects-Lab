@@ -212,20 +212,20 @@ let assert = require('assert');
  let count = 0
  for(let i =0; i < myString.length; i++){
 
-    if((frequencyObj[i] === myString[i])){
-        // frequencyObj[myString[i]] ++;
+    if((frequencyObj[myString[i]])){
+        frequencyObj[myString[i]] += 1;
     } else {
         frequencyObj[myString[i]] = 1;
     }
     //  console.log();
-    for(let key in frequencyObj){
-        if(frequencyObj[key] === Object.keys(frequencyObj)[i]){
-            frequencyObj[myString[i]] ++;
-        
-    }
+   
  }
 
-}
+//  for(let key in frequencyObj){
+//     if(frequencyObj[key] === Object.keys(frequencyObj)[i]){
+//         frequencyObj[myString[i]] ++;
+    
+// }
 
 
  // Your code here
