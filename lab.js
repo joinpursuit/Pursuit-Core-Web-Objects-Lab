@@ -24,7 +24,7 @@ var applesObj = {
 
 // c. Set calAndDanAppleCount equal to how many apples Cal and Dan have combined
 
-// let calAndDanAppleCount = 8
+//  let calAndDanAppleCount = applesObj["Cal"] + applesObj["Dan"]
 
 // assert(calAndDanAppleCount === 8)
 
