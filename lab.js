@@ -144,14 +144,15 @@ assert(highestScoringName === "Garry Mckenzie")
 
 var cubeObj = {}
 
-// Your code here
-
-//assert(Object.keys(cubeObj).length === 20)
-//assert(cubeObj[1] === 1)
-//assert(cubeObj[2] === 8)
-//assert(cubeObj[3] === 27)
-//assert(cubeObj[14] === 2744)
-//assert(cubeObj[20] === 8000)
+for (let i = 1; i <= 20; i++){
+    cubeObj[i] = i**3
+}
+assert(Object.keys(cubeObj).length === 20)
+assert(cubeObj[1] === 1)
+assert(cubeObj[2] === 8)
+assert(cubeObj[3] === 27)
+assert(cubeObj[14] === 2744)
+assert(cubeObj[20] === 8000)
 
 // Question Six
 
