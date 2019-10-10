@@ -171,10 +171,12 @@ var cubeObj = {}
  var myString = "We're flooding people with information. We need to feed it through a processor. A human must turn information into intelligence or knowledge. We've tended to forget that no computer will ever ask a new question."
 
 var frequencyObj = {}
-
+let commonLetter = []
 var mostFrequentChar
 
-// Your code here
+for(let i = 0; i < myString.length; i++){
+    if()
+}
 
 //assert(mostFrequentChar === "e")
 
