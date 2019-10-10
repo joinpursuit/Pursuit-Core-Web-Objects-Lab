@@ -6,30 +6,39 @@
 
  let cat = {
    genus: 'Felis',
-   species: 'Catus'
+   species: 'Catus',
+   texture: 'hairy'
 }
 
 
 // a. Log the species of `cat`.
-
+console.log(cat.species);
+console.log(cat["species"]);
 // b. Add a new key 'color' and give it a value.
+cat["color"] = 'red';
+console.log(cat);
+// console.log(cat["color"] = 'red');
 
 // c. Write code that logs whether or not `cat` has the property 'texture'.
-
+if (cat.hasOwnProperty(["texture"])){
+    console.log("object cat has " + "texture property");
+} else {
+    console.log("object cat does not have " + "texture property");
+}
 // ## Question 2
 
 // What will the code below log?  Explain why.
-
-
 let p1 = {
   name: 'Joe'
 }
+let person1 = p1;
 
 let p2 = {
   name: 'Joe'
 }
 
-console.log(p1 === p2)
+console.log(p1 === person1);
+console.log(p1 === p2);
 
 
 // ## Question 3
@@ -37,17 +46,36 @@ console.log(p1 === p2)
 // Given the object variable `spanishNumbers` below:
 
 
-let spanishNumbers = {1: "uno", 2: "dos", 3: "tres", 4: "quatro", :5: "cinco"}
+let spanishNumbers = {1: "uno", 2: "dos", 3: "tres", 4: "quatro", 5: "cinco"}
 
 
 // a. Write a code block that takes an object variable and stores the *keys* in an array.  Then log the array.
-
+let spanishNumbersKeys = Object.keys(spanishNumbers);
+console.log(spanishNumbersKeys);
 // b. Write a code block that takes an object variable and stores the *values* in an array.  Then log the array.
-
+let spanishNumbersValues = Object.values(spanishNumbers);
+console.log(spanishNumbersValues);
 
 // ## Question 4
 
 // Write a code block that logs the number of properties an object has.
+function logProperties (object){
+    let numberOfProperties = 0;
+    for (let key in object){
+        numberOfProperties += 1;
+    }
+    console.log(numberOfProperties);
+}
+logProperties(spanishNumbers);
+
+// let logProperties2 =  function(object){
+//     let numberOfProperties2 = 0;
+//     for (let key in object){
+//         numberOfProperties2 += 1;
+//     }
+//     console.log(numberOfProperties2);
+// }
+// logProperties2(spanishNumbers);
 
 // ## Question 5
 
@@ -71,7 +99,9 @@ let films = [
 ]
 
 //logs 'Alfred Hitchcock', 'Orson Welles', 'Bryan Singer'
-
+for (let i = 0; i < films.length; i++){
+    console.log(films[i]["director"]);
+}
 
 
 // ## Question 6
@@ -103,6 +133,11 @@ let people = [
 ]
 
 // a. Create an array of strings called `firstNames` that contains only the values for `“firstName”` from each object.
+let arrFirstName = [];
+for (let j = 0; j < people.length; j++){
+    arrFirstName.push(people[j]["firstName"]);
+}
+console.log(arrFirstName)
 
 // b. Create an array of strings called `fullNames` that contains the values for `“firstName”` and `“lastName”` from the object separated by a space.
 
@@ -133,9 +168,9 @@ let deposits = {
 // * Create a loop that logs the recipe information, so it looks like:
 
 
-name: Mole
-servings: 2
-ingredients: cinnamon, cumin, cocoa
+// name: Mole
+// servings: 2
+// ingredients: cinnamon, cumin, cocoa
 
 
 

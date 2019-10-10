@@ -198,7 +198,7 @@ var mostFrequentChar = "";
 
 //Your code here
 for(let j = 0; j < myString.length; j++){
-    if(myString[j] !== " " || !myString[j].toUpperCase()){
+    if(myString[j] !== " " || myString[j] !== myString[j].toUpperCase()){
         let character = myString[j];        // Assign (keys) as the characters
         
         if(!frequencyObj[character]){       // If there is no characters yet,
@@ -211,6 +211,7 @@ for(let j = 0; j < myString.length; j++){
         }
     }
 }
+console.log(frequencyObj);
 console.log(mostFrequentChar);
 
 // assert(mostFrequentChar === "e")
