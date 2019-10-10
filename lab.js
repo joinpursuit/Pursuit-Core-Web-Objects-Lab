@@ -157,7 +157,7 @@ console.log(highestScoringName)
 
 var cubeObj = {}
 
-// Your code here
+// Your code heres
 
 var cubeObj = {
 
@@ -188,6 +188,25 @@ console.log (cubeObj)
 var frequencyObj = {}
 
 var mostFrequentChar
+
+var frequencyObj = {}
+var mostFrequentChar = ''
+
+for(let j = 0; j < myString.length; j++){
+   if(myString[j] !== " " || !myString[j].toLowerCase()){
+       let character = myString[j];        
+
+       if(!frequencyObj[character]){       
+           frequencyObj[character] = 0;    
+       }
+       frequencyObj[character]++;          
+
+       if(mostFrequentChar === "" || frequencyObj[character] > frequencyObj[mostFrequentChar]){    
+           mostFrequentChar = character;                                                         
+       }
+   }
+}
+console.log(mostFrequentChar);
 
 // Your code here
 
