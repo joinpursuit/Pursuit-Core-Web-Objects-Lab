@@ -30,66 +30,21 @@ var citiesObj = {
 // console.log(russiaCapital)
 
 citiesObj["Jamaica"] = "Kingston"
+
+console.log(citiesObj)
+citiesObj["Indonesia"] = "Jakarta"
 console.log(citiesObj)
 
-// c. Add a new key value pair "Indonesia" and its capital "Jakarta"
-citiesObj.Inodonesia = "Jakarta"
-console.log(citiesObj)
+var authorScores = {
+    "Mark Twain" : 8.9,
+    "Nathaniel Hawthorne" : 5.1,
+    "John Steinbeck" : 2.3,
+    "C.S. Lewis" : 9.9,
+    "Jon Krakauer" : 6.1
+};
 
-// var authorScores =[ 
-//     {
-//     Name: "Mark Twain",
-//     Score: 8.9,
-//     }, 
-//     {
-//     Name: "Nathaniel Hawthrone",
-//     Score: 5.1,
-//     },
-//     {
-//     Name: "John Steinback",
-//     Score: 2.3,
-//     },
-//     {
-//     Name: "C.S Lewis",
-//     Score: 9.9,
-//     },
-//     {
-//     Name: "John Krakauer",
-//     Score: 6.1,
-//     }
-// ]
-// console.log(authorScores)
+console.table(authorScores);
 
-// authorScores.name = 
-//      "Erik Larson"
-    // Score: 9.2,
+authorScores["Erik Larson"] = 9.2;
 
-
-
-// console.log(authorScores)
-
-var authorScores = 
-    {
-    // {
-    Name: "Mark Twain",
-    Score: "8.9", 
-    // }, 
-    // {
-    Name: "Nathaniel Hawthrone",
-    Score: "5.1",
-    // },
-    // {
-    Name: "John Steinback",
-    Score: "2.3",
-    // },
-    // {
-    Name: "C.S Lewis",
-    Score: "9.9", 
-    // },
-    // {
-    Name: "John Krakauer",
-    Score: "6.1",
-    // }
-}
-  
-console.log(authorScores)
+console.table(authorScores);
