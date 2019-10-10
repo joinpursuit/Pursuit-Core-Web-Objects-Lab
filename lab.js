@@ -129,11 +129,13 @@ let highScore = 0
 
 for(let i = 0; i < peopleWithScores.length; i += 1){
     if (peopleWithScores[i]["score"] > highScore){
-        highScore === peopleWithScores[i]["score"]
+        highScore = peopleWithScores[i]["score"]
+        highestScoringName = peopleWithScores[i]["firstName"] + " " + peopleWithScores[i]["lastName"]
     }
 }
 
-//assert(highestScoringName === "Garry Mckenzie")
+
+assert(highestScoringName === "Garry Mckenzie")
 
 // Question Five
 
