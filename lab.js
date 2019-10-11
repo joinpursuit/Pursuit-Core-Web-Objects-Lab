@@ -159,13 +159,12 @@ console.log(highestScoringName)
 // Write code below such that cubeObj maps the numbers between 1 and 20 inclusive to their cubes.  A number's cube is that number multiplied by itself twice:
 // 2 ^ 3 = 2 * 2 * 2 = 8
 
-// var cubeObj = 0
+var cubeObj = 0
 
-// for(let i = 0; i <= 20; i++){
-//     let c = i * i * i
-
-//     console.log(cubeObj.)
-// }
+for (let i = 0; i <= 20; i += 1) {
+    cubeObj = Math.pow(i, 3)
+    console.log(i + " ^ " + 3 + " = " + i + " * " + i + " * " + i + " = " + "" + cubeObj)
+  }
 
 //assert(Object.keys(cubeObj).length === 20)
 //assert(cubeObj[1] === 1)
