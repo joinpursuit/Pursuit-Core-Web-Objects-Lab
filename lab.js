@@ -214,6 +214,6 @@ for(let j = 0; j < myString.length; j++){
 console.log(frequencyObj);
 console.log(mostFrequentChar);
 
-// assert(mostFrequentChar === "e")
+assert(mostFrequentChar === "e")
 
 console.log("Ran with 0 errors")

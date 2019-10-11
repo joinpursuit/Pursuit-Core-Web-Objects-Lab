@@ -140,7 +140,11 @@ for (let j = 0; j < people.length; j++){
 console.log(arrFirstName)
 
 // b. Create an array of strings called `fullNames` that contains the values for `“firstName”` and `“lastName”` from the object separated by a space.
-
+let arrFullName = [];
+for(let k = 0; k < people.length; k++){
+    arrFullName.push(people[k]["firstName"] + " " + people[k]["lastName"]);
+}
+console.log(arrFullName);
 
 // ## Question 7
 
@@ -160,6 +164,62 @@ let deposits = {
  "Clark" : [555.23, 45.67, 99.95, 80.76, 56.99, 46.50, 265.70],
  "Johnson" : [12.56, 300.00, 640.50, 255.60, 26.88]
 }
+
+// a
+function mostDeposits(objDeposits){
+    let sumDep = 0;
+    let greatestDep = 0;
+    let greatestDepName = '';
+    for(let key in objDeposits){
+        for(let x = 0; x < objDeposits[key].length; x++){
+            sumDep += objDeposits[key][x];
+        }
+        // console.log(sumDep);         // test if we get the sum Deposits of each key with direct above for loop
+        if (sumDep > greatestDep){
+            greatestDep = sumDep;
+            greatestDepName = key;
+        }
+    }
+        console.log(greatestDepName);
+}
+mostDeposits(deposits);         // takes in argument - the Object (deposits)
+
+// CODE BLOCK that solves problem. We add to function instead
+// let sumDep = 0;
+// let greatestDep = 0;
+// let greatestDepName = '';
+// for(let key in deposits){
+//     for(let x = 0; x < deposits[key].length; x++){
+//         sumDep += deposits[key][x];
+//     }
+//     console.log(sumDep);
+//     if (sumDep > greatestDep){
+//         greatestDep = sumDep;
+//         greatestDepName = key;
+//     }
+// }
+// // console.log(greatestDep);
+// console.log(greatestDepName);
+
+//b
+let personCents = 0;
+let stolenCents = [];
+for (let key in deposits){
+    for(let x = 0; x < deposits[key].length; x++){
+        if (deposits[key][x] % 1 !== 0){
+            personCents += deposits[key][x] % 1
+        }
+    }
+    stolenCents.push(Math.floor(personCents));
+}
+console.log(stolenCents);
+
+//c
+let totalCentsStolen = 0;
+for(let index = 0; index < stolenCents.length; index++){
+    totalCentsStolen += stolenCents[index];
+}
+console.log(totalCentsStolen);
 
 
 // ## Question 8
