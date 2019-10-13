@@ -219,19 +219,27 @@ let totalCentsStolen = 0;
 for(let index = 0; index < stolenCents.length; index++){
     totalCentsStolen += stolenCents[index];
 }
-console.log(totalCentsStolen);
+console.log("About $" + totalCentsStolen + " in cents stolen");
 
 
 // ## Question 8
 
-// * Create an object to hold information on your favorite recipe. It should have the following properties: `name`, `servings`, and `ingredients` (an array).
+// * Create an object to hold information on your favorite recipe. It should have the following properties:
+//  `name`, `servings`, and `ingredients` (an array).
 // * Create a loop that logs the recipe information, so it looks like:
-
 
 // name: Mole
 // servings: 2
 // ingredients: cinnamon, cumin, cocoa
 
+let favoriteRecipe = [
+    { name: "Mole" },
+    { servings: 2 },
+    { ingredients: ['cinnamon','cumin', 'cocoa' ] }
+]
+for (let i = 0; i < favoriteRecipe.length; i++){
+    console.log(favoriteRecipe[i]);
+}
 
 
 // ## Question 9
@@ -241,6 +249,31 @@ console.log(totalCentsStolen);
 // `You already watched "Wonder Woman" directed by Patty Jenkins`
 // `You still need to watch "Wonder Woman" by director Patty Jenkins. `
 
+let films2 = [
+    { 
+        title: "Wonder Woman",
+        director: "Patty Jenkins",
+        watchedOrNot: true
+    },
+    { 
+        title: "Gemini Man",
+        director: "Ang Lee",
+        watchedOrNot: false
+    },
+    {  
+        title: "Joker",
+        director: "Todd Phillips",
+        watchedOrNot: false
+    }
+];
+
+for (let i = 0; i < films2.length; i++){
+    if (films2[i]["watchedOrNot"] === true){
+        console.log(`You already watched ${films2[i]["title"]} directed by ${films2[i]["director"]}`);
+    } else {
+        console.log(`You still need to watch ${films2[i]["title"]} by director ${films2[i]["director"]}`);
+    }
+}
 
 // ## Question 10
 
