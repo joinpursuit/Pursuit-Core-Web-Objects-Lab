@@ -1,147 +1,158 @@
-let assert = require('assert');
+// let assert = require('assert');
 
-// Uncomment the "assert" lines for each problem when you have a solution, and run the playground to test.  When you have uncommented out the assert lines, no error messages or print statements means that your code is working correctly.
-// Question 1
-var applesObj = {
-    Adam: 3,
-    Beth: 5,
-    Cal: 3,
-    Dan: 5,
-    Eve: 4
-}
+// // Uncomment the "assert" lines for each problem when you have a solution, and run the playground to test.  When you have uncommented out the assert lines, no error messages or print statements means that your code is working correctly.
+// // Question 1
+// var applesObj = {
+//     Adam: 3,
+//     Beth: 5,
+//     Cal: 3,
+//     Dan: 5,
+//     Eve: 4
+// }
 
-// a. Set eveAppleCount equal to the number of apples that Eve has
+// // a. Set eveAppleCount equal to the number of apples that Eve has
 
-let eveAppleCount = applesObj.Eve // im not asigning a value , im creating a new variable
+//  let eveAppleCount = applesObj.Eve // im not asigning a value , im creating a new variable
+//  assert(eveAppleCount === 4)
 
-assert(eveAppleCount === 4)
+// // // b. Change the number of apples that Adam  has to 4
 
-// b. Change the number of apples that Adam  has to 4
+// applesObj["Adam"] = 4
 
-applesObj["Adam"] = 4
+// assert(applesObj["Adam"] === 4)
 
-assert(applesObj["Adam"] === 4)
+// // // c. Set calAndDanAppleCount equal to how many apples Cal and Dan have combined
+// let calAndDanSum = 0
+// calAndDanSum = applesObj['Cal'] + applesObj['Dan']
+// console.log(calAndDanSum)
 
-// c. Set calAndDanAppleCount equal to how many apples Cal and Dan have combined
-let calAndDanSum = 0
-calAndDanSum = applesObj['Cal'] + applesObj['Dan']
-//console.log(calAndDanSum)
+// let calAndDanAppleCount = calAndDanSum
+// console.log(calAndDanSum)
 
-let calAndDanAppleCount = calAndDanSum
-console.log(calAndDanSum)
+// assert(calAndDanAppleCount === 8)
 
-assert(calAndDanAppleCount === 8)
+// // // d. Set all the values in applesObj to 0
 
-// d. Set all the values in applesObj to 0
-
-for (let )
-
-
-
-//for (let key in applesObj) {
-//   assert(applesObj[key] === 0)
-//}
+// for (let key in applesObj) { //this loop allows me to key in
+//     applesObj[key]= 0
+//  }
+//  console.log(applesObj)
 
 
-// Question Two
-var citiesObj = {
-    Afghanistan: "Kabul",
-    Russia: "Moscow",
-    Iceland: "Reykjavik"
-}
+// //for (let key in applesObj) {
+// //   assert(applesObj[key] === 0)
+// //}
 
-// a. Set russiaCapital equal to Russia's capital using citiesObj
 
-let russiaCapital /* = Your code here (Replace "" with your solution)*/
-//assert(russiaCapital === "Moscow")
+// // Question Two
+// var citiesObj = {
+//     Afghanistan: "Kabul",
+//     Russia: "Moscow",
+//     Iceland: "Reykjavik"
+// }
+
+// // a. Set russiaCapital equal to Russia's capital using citiesObj
+
+
+// let russiaCapital = citiesObj.Russia // like with apples changed created a new variable
+// assert(russiaCapital === "Moscow")// 
     
-// b. Add a new key value pair "Jamaica" and its capital "Kingston"
+// // b. Add a new key value pair "Jamaica" and its capital "Kingston"
+// citiesObj['Jamaica'] = "kingston"
 
-// Your code here
+// assert(citiesObj["Jamaica"] === "Kingston")
 
-//assert(citiesObj["Jamaica"] === "Kingston")
+// // c. Add a new key value pair "Indonesia" and its capital "Jakarta"
+// citiesObj["Indonesia"] = 'Jakarta'
 
-// c. Add a new key value pair "Indonesia" and its capital "Jakarta"
+// assert(citiesObj["Indonesia"] === "Jakarta")
 
-// Your code here
+// // Question 3
 
-//assert(citiesObj["Indonesia"] === "Jakarta")
+// // a. Create a object that represents the table below listing an authors name and their comprehensibility score.
+// /*
+// | Author Name |    Score |
+// | :--: | :--: |
+// | Mark Twain |    8.9 |
+// | Nathaniel Hawthorne    | 5.1 |
+// | John Steinbeck    | 2.3 |
+// | C.S. Lewis | 9.9 |
+// | Jon Krakauer | 6.1 |
+// */
 
-// Question 3
+// var authorScores = {
+//     "Mark Twain" : 8.9,
+//     "Nathaniel Hawthorne" : 5.1,
+//     "John Steinbeck": 2.3,
+//     'C.S. Lewis' : 9.9,
+//     "Jon Krakauer" : 6.1
+// }
 
-// a. Create a object that represents the table below listing an authors name and their comprehensibility score.
-/*
-| Author Name |    Score |
-| :--: | :--: |
-| Mark Twain |    8.9 |
-| Nathaniel Hawthorne    | 5.1 |
-| John Steinbeck    | 2.3 |
-| C.S. Lewis | 9.9 |
-| Jon Krakauer | 6.1 |
-*/
-
-var authorScores = {}
-
-// Your code here
-
-//assert(authorScores["Mark Twain"] === 8.9)
-//assert(authorScores["Nathaniel Hawthorne"] === 5.1)
-//assert(authorScores["John Steinbeck"] === 2.3)
-//assert(authorScores["C.S. Lewis"] === 9.9)
-//assert(authorScores["Jon Krakauer"] === 6.1)
+// //assert(authorScores["Mark Twain"] === 8.9)
+// //assert(authorScores["Nathaniel Hawthorne"] === 5.1)
+// //assert(authorScores["John Steinbeck"] === 2.3)
+// //assert(authorScores["C.S. Lewis"] === 9.9)
+// //assert(authorScores["Jon Krakauer"] === 6.1)
 
 
-// b. Add an additional author named “Erik Larson” with an assigned score of 9.2.
+// // b. Add an additional author named “Erik Larson” with an assigned score of 9.2.
+// authorScores['Erik Larson'] = 9.2
 
-// Your code here
+// assert(authorScores["Erik Larson"] === 9.2)
 
-//assert(authorScores["Erik Larson"] === 9.2)
+// // Question Four
+// // You are given an array of objects. Each object in the array describes the score of a person. Find the person with the best score and print his full name.
 
-// Question Four
-// You are given an array of objects. Each object in the array describes the score of a person. Find the person with the best score and print his full name.
+// var peopleWithScores = [
+//     {
+//         firstName: "Calvin",
+//         lastName: "Newton",
+//         score: 13
+//     },
+//     {
+//         firstName: "Garry",
+//         lastName: "Mckenzie",
+//         score: 23
+//     },
+//     {
+//         firstName: "Leah",
+//         lastName: "Rivera",
+//         score: 10
+//     },
+//     {
+//         firstName: "Sonja",
+//         lastName: "Moreno",
+//         score: 3
+//     },
+//     {
+//         firstName: "Noel",
+//         lastName: "Bowen",
+//         score: 16
+//     }
+// ]
 
-var peopleWithScores = [
-    {
-        firstName: "Calvin",
-        lastName: "Newton",
-        score: 13
-    },
-    {
-        firstName: "Garry",
-        lastName: "Mckenzie",
-        score: 23
-    },
-    {
-        firstName: "Leah",
-        lastName: "Rivera",
-        score: 10
-    },
-    {
-        firstName: "Sonja",
-        lastName: "Moreno",
-        score: 3
-    },
-    {
-        firstName: "Noel",
-        lastName: "Bowen",
-        score: 16
-    }
-]
+// var highestScoringName = ""
+// for (i = 0; i < peopleWithScores.length; i+=1) {
+//     highestScoringName += peopleWithScores[i]['name']
+//     console.log(highestScoringName)
+    
+//     console.log(Math.floor(sum / films.length))
+//     //also can be logged console.log(films[i] ['name'])
 
-var highestScoringName = ""
 
-// Your code here
+// //assert(highestScoringName === "Garry Mckenzie")
 
-//assert(highestScoringName === "Garry Mckenzie")
+// // Question Five
 
-// Question Five
-
-// Write code below such that cubeObj maps the numbers between 1 and 20 inclusive to their cubes.  A number's cube is that number multiplied by itself twice:
-// 2 ^ 3 = 2 * 2 * 2 = 8
+// // Write code below such that cubeObj maps the numbers between 1 and 20 inclusive to their cubes.  
+// //A number's cube is that number multiplied by itself twice:
+// // 2 ^ 3 = 2 * 2 * 2 = 8
 
 var cubeObj = {}
-
-// Your code here
+for (i = 0; i <= 20; i += 1) {
+    cubeObj += cubeObj[i]*[i]*[i]
+}
+console.log(cubeObj)
 
 //assert(Object.keys(cubeObj).length === 20)
 //assert(cubeObj[1] === 1)
