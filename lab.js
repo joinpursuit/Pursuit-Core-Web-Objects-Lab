@@ -33,8 +33,7 @@ for (let key in applesObj) {
 }
 // console.log(applesObj)
 for (let key in applesObj) {
-    // assert(applesObj[key] === 0)
-    // }
+    /
 
 
     // Question Two
@@ -46,18 +45,18 @@ for (let key in applesObj) {
 
     // a. Set russiaCapital equal to Russia's capital using citiesObj
     let russiaCapital = citiesObj["Russia"]
-    // assert(russiaCapital === "Moscow")
+    assert(russiaCapital === "Moscow")
 
     // // b. Add a new key value pair "Jamaica" and its capital "Kingston"
     citiesObj["Jamaica"] = "Kingston";
     console.log(citiesObj)
-    // assert(citiesObj["Jamaica"] === "Kingston")
+    assert(citiesObj["Jamaica"] === "Kingston")
 
     // // c. Add a new key value pair "Indonesia" and its capital "Jakarta"
     // // Your code here
     citiesObj["Indonesia"] = "Jakarta";
     console.log(citiesObj)
-    // assert(citiesObj["Indonesia"] === "Jakarta")
+    assert(citiesObj["Indonesia"] === "Jakarta")
 
     // Question 3
 
@@ -165,9 +164,9 @@ for (let key in applesObj) {
             frequencyObj[myString[i]] += 1
         }
     }
-    // console.log(frequencyObj)
+    console.log(frequencyObj)
     // var mostFrequentChar
 
-    // assert(mostFrequentChar === "e")
+    assert(mostFrequentChar === "e")
 
-    // console.log("Ran with 0 errors")
+    console.log("Ran with 0 errors")
