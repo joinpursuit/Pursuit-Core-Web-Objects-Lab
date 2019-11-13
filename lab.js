@@ -11,31 +11,28 @@ var applesObj = {
 }
 
 // a. Set eveAppleCount equal to the number of apples that Eve has
-
-let eveAppleCount /* = Your code here */
-
+let eveAppleCount = applesObj.Eve
 // assert(eveAppleCount === 4)
 
 // b. Change the number of apples that Adam  has to 4
 
-// Your code here
-
-//assert(applesObj["Adam"] === 4)
-
+applesObj.Adam = 4
+console.log(applesObj.Adam)
+assert(applesObj["Adam"] === 4)
 // c. Set calAndDanAppleCount equal to how many apples Cal and Dan have combined
+//let calAndDanAppleCount /*= Your code here */
 
-let calAndDanAppleCount /*= Your code here */
-
-//assert(calAndDanAppleCount === 8)
+let calAndDanAppleCount = applesObj.Cal + applesObj.Dan
+console.log(calAndDanAppleCount)
+assert(calAndDanAppleCount === 8)
 
 // d. Set all the values in applesObj to 0
 
-// Your code here
-
-//for (let key in applesObj) {
-//   assert(applesObj[key] === 0)
-//}
-
+// for (let key in applesObj) {
+//     (applesObj[key] = 0)
+// }
+// // console.log(applesObj)
+// assert(applesObj[key] === 0)
 
 // Question Two
 var citiesObj = {
@@ -45,21 +42,19 @@ var citiesObj = {
 }
 
 // a. Set russiaCapital equal to Russia's capital using citiesObj
+let russiaCapital = citiesObj["Russia"]
+assert(russiaCapital === "Moscow")
 
-let russiaCapital /* = Your code here (Replace "" with your solution)*/
-//assert(russiaCapital === "Moscow")
-    
 // b. Add a new key value pair "Jamaica" and its capital "Kingston"
-
-// Your code here
-
-//assert(citiesObj["Jamaica"] === "Kingston")
+citiesObj["Jamaica"] = "Kingston";
+console.log(citiesObj)
+assert(citiesObj["Jamaica"] === "Kingston")
 
 // c. Add a new key value pair "Indonesia" and its capital "Jakarta"
-
 // Your code here
-
-//assert(citiesObj["Indonesia"] === "Jakarta")
+citiesObj["Indonesia"] = "Jakarta";
+console.log(citiesObj)
+assert(citiesObj["Indonesia"] === "Jakarta")
 
 // Question 3
 
@@ -74,28 +69,40 @@ let russiaCapital /* = Your code here (Replace "" with your solution)*/
 | Jon Krakauer | 6.1 |
 */
 
-var authorScores = {}
-
-// Your code here
-
-//assert(authorScores["Mark Twain"] === 8.9)
-//assert(authorScores["Nathaniel Hawthorne"] === 5.1)
-//assert(authorScores["John Steinbeck"] === 2.3)
-//assert(authorScores["C.S. Lewis"] === 9.9)
-//assert(authorScores["Jon Krakauer"] === 6.1)
+var authorScores = {
+    "Mark Twain": {
+        score: 8.9
+    },
+    "Nathaniel Hawthorne": {
+        score: 5.1
+    },
+    "John Steinbeck": {
+        score: 2.3
+    },
+    "C.S Lewis": {
+        score: 9.9
+    },
+    "Jon Krakauer": {
+        score: 6.1
+    }
+}
+console.log(authorScores);
+assert(authorScores["Mark Twain"] === 8.9)
+assert(authorScores["Nathaniel Hawthorne"] === 5.1)
+assert(authorScores["John Steinbeck"] === 2.3)
+assert(authorScores["C.S. Lewis"] === 9.9)
+assert(authorScores["Jon Krakauer"] === 6.1)
 
 
 // b. Add an additional author named “Erik Larson” with an assigned score of 9.2.
-
 // Your code here
-
-//assert(authorScores["Erik Larson"] === 9.2)
+authorScores["Erik Larson"] = "score:9.2"
+assert(authorScores["Erik Larson"] === 9.2)
 
 // Question Four
 // You are given an array of objects. Each object in the array describes the score of a person. Find the person with the best score and print his full name.
 
-var peopleWithScores = [
-    {
+var peopleWithScores = [{
         firstName: "Calvin",
         lastName: "Newton",
         score: 13
@@ -130,11 +137,17 @@ var highestScoringName = ""
 
 // Question Five
 
-// Write code below such that cubeObj maps the numbers between 1 and 20 inclusive to their cubes.  A number's cube is that number multiplied by itself twice:
+// Write code below such that cubeObj maps the numbers 
+//between 1 and 20 inclusive to their cubes.
+//A number 's cube is that number multiplied by itself twice:
 // 2 ^ 3 = 2 * 2 * 2 = 8
 
 var cubeObj = {}
-
+let mul = 0;
+for (let i = 1; i < 20; i++) {
+    mul += i ** 3
+}
+console.log()
 // Your code here
 
 //assert(Object.keys(cubeObj).length === 20)
@@ -146,8 +159,10 @@ var cubeObj = {}
 
 // Question Six
 
-// Find the most common letter in the string below.  Use an object to generate your solution that maps a character to the number of times it appears in the string.  Ignore whitespaces and capitalization.
- var myString = "We're flooding people with information. We need to feed it through a processor. A human must turn information into intelligence or knowledge. We've tended to forget that no computer will ever ask a new question."
+// Find the most common letter in the string below.  
+//Use an object to generate your solution that maps a character to
+//the number of times it appears in the string.Ignore whitespaces and capitalization.
+var myString = "We're flooding people with information. We need to feed it through a processor. A human must turn information into intelligence or knowledge. We've tended to forget that no computer will ever ask a new question."
 
 var frequencyObj = {}
 
