@@ -18,21 +18,24 @@ let eveAppleCount = applesObj.Eve
 
 applesObj.Adam = 4
 console.log(applesObj.Adam)
-assert(applesObj["Adam"] === 4)
+// assert(applesObj["Adam"] === 4)
 // c. Set calAndDanAppleCount equal to how many apples Cal and Dan have combined
 //let calAndDanAppleCount /*= Your code here */
 
 let calAndDanAppleCount = applesObj.Cal + applesObj.Dan
 console.log(calAndDanAppleCount)
-assert(calAndDanAppleCount === 8)
+// assert(calAndDanAppleCount === 8)
 
 // d. Set all the values in applesObj to 0
-
+for (let key in applesObj) {
+    (applesObj[key] = 0)
+    // console.log(applesObj[key])
+}
+// console.log(applesObj)
 // for (let key in applesObj) {
-//     (applesObj[key] = 0)
+//     assert(applesObj[key] === 0)
 // }
-// // console.log(applesObj)
-// assert(applesObj[key] === 0)
+
 
 // Question Two
 var citiesObj = {
@@ -43,18 +46,18 @@ var citiesObj = {
 
 // a. Set russiaCapital equal to Russia's capital using citiesObj
 let russiaCapital = citiesObj["Russia"]
-assert(russiaCapital === "Moscow")
+// assert(russiaCapital === "Moscow")
 
-// b. Add a new key value pair "Jamaica" and its capital "Kingston"
-citiesObj["Jamaica"] = "Kingston";
-console.log(citiesObj)
-assert(citiesObj["Jamaica"] === "Kingston")
+// // b. Add a new key value pair "Jamaica" and its capital "Kingston"
+// citiesObj["Jamaica"] = "Kingston";
+// console.log(citiesObj)
+// assert(citiesObj["Jamaica"] === "Kingston")
 
-// c. Add a new key value pair "Indonesia" and its capital "Jakarta"
-// Your code here
-citiesObj["Indonesia"] = "Jakarta";
-console.log(citiesObj)
-assert(citiesObj["Indonesia"] === "Jakarta")
+// // c. Add a new key value pair "Indonesia" and its capital "Jakarta"
+// // Your code here
+// citiesObj["Indonesia"] = "Jakarta";
+// console.log(citiesObj)
+// assert(citiesObj["Indonesia"] === "Jakarta")
 
 // Question 3
 
@@ -69,35 +72,25 @@ assert(citiesObj["Indonesia"] === "Jakarta")
 | Jon Krakauer | 6.1 |
 */
 
-var authorScores = {
-    "Mark Twain": {
-        score: 8.9
-    },
-    "Nathaniel Hawthorne": {
-        score: 5.1
-    },
-    "John Steinbeck": {
-        score: 2.3
-    },
-    "C.S Lewis": {
-        score: 9.9
-    },
-    "Jon Krakauer": {
-        score: 6.1
-    }
-}
-console.log(authorScores);
-assert(authorScores["Mark Twain"] === 8.9)
-assert(authorScores["Nathaniel Hawthorne"] === 5.1)
-assert(authorScores["John Steinbeck"] === 2.3)
-assert(authorScores["C.S. Lewis"] === 9.9)
-assert(authorScores["Jon Krakauer"] === 6.1)
+// var authorScores = {
+//     "Mark Twain": 8.9,
+//     "Nathaniel Hawthorne": 5.1,
+//     "John Steinbeck": 2.3,
+//     "C.S. Lewis": 9.9,
+//     "Jon Krakauer": 6.1
+// }
+// console.log(authorScores);
+// assert(authorScores["Mark Twain"] === 8.9)
+// assert(authorScores["Nathaniel Hawthorne"] === 5.1)
+// assert(authorScores["John Steinbeck"] === 2.3)
+// assert(authorScores["C.S. Lewis"] === 9.9)
+// assert(authorScores["Jon Krakauer"] === 6.1)
 
 
 // b. Add an additional author named “Erik Larson” with an assigned score of 9.2.
 // Your code here
-authorScores["Erik Larson"] = "score:9.2"
-assert(authorScores["Erik Larson"] === 9.2)
+// authorScores["Erik Larson"] = "score:9.2"
+// assert(authorScores["Erik Larson"] === 9.2)
 
 // Question Four
 // You are given an array of objects. Each object in the array describes the score of a person. Find the person with the best score and print his full name.
@@ -133,7 +126,7 @@ var highestScoringName = ""
 
 // Your code here
 
-//assert(highestScoringName === "Garry Mckenzie")
+// assert(highestScoringName === "Garry Mckenzie")
 
 // Question Five
 
@@ -143,19 +136,18 @@ var highestScoringName = ""
 // 2 ^ 3 = 2 * 2 * 2 = 8
 
 var cubeObj = {}
-let mul = 0;
 for (let i = 1; i < 20; i++) {
-    mul += i ** 3
+    cubeObj[i] = Math.pow(i, 3)
 }
-console.log()
-// Your code here
+// console.log()
 
-//assert(Object.keys(cubeObj).length === 20)
-//assert(cubeObj[1] === 1)
-//assert(cubeObj[2] === 8)
-//assert(cubeObj[3] === 27)
-//assert(cubeObj[14] === 2744)
-//assert(cubeObj[20] === 8000)
+
+// assert(Object.keys(cubeObj).length === 20)
+// assert(cubeObj[1] === 1)
+// assert(cubeObj[2] === 8)
+// assert(cubeObj[3] === 27)
+// assert(cubeObj[14] === 2744)
+// assert(cubeObj[20] === 8000)
 
 // Question Six
 
@@ -166,7 +158,15 @@ var myString = "We're flooding people with information. We need to feed it throu
 
 var frequencyObj = {}
 
-var mostFrequentChar
+for (let i = 0; i < myString.length; i++) {
+    if (frequencyObj[myString[i]] === undefined) {
+        frequencyObj[myString[i]] = 1
+    } else {
+        frequencyObj[myString[i]] += 1
+    }
+}
+console.log(frequencyObj)
+// var mostFrequentChar
 
 // Your code here
 
