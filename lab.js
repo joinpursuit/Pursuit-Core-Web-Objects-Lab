@@ -135,7 +135,6 @@ var peopleWithScores = [
 
 
 var highestScoringName = ""
-
 // Your code here
 let highestScore = peopleWithScores[0]["score"];        // Assigns first indexed object Calvin's score to be the largest (temporary holder)
 for(let i = 0; i < peopleWithScores.length; i++){       // Iterate through object
@@ -213,6 +212,6 @@ for(let j = 0; j < myString.length; j++){
 }
 console.log(mostFrequentChar);
 
-// assert(mostFrequentChar === "e")
+assert(mostFrequentChar === "e")
 
 console.log("Ran with 0 errors")
