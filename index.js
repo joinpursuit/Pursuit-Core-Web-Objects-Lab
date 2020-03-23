@@ -54,9 +54,9 @@ assert(russiaCapital === "Moscow")
     
 // b. Add a new key value pair "Jamaica" and its capital "Kingston"
 
-// Your code here
+citiesObj.Jamaica = "Kingston"
 
-//assert(citiesObj["Jamaica"] === "Kingston")
+assert(citiesObj["Jamaica"] === "Kingston")
 
 // c. Add a new key value pair "Indonesia" and its capital "Jakarta"
 
