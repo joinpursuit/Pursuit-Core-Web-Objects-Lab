@@ -30,11 +30,13 @@ assert(calAndDanAppleCount === 8)
 
 // d. Set all the values in applesObj to 0
 
-// Your code here
+for (let key in applesObj) {
+    (applesObj[key] = 0)
+}
 
-//for (let key in applesObj) {
-//   assert(applesObj[key] === 0)
-//}
+for (let key in applesObj) {
+  assert(applesObj[key] === 0)
+}
 
 
 // Question Two
