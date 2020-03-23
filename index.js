@@ -24,9 +24,9 @@ assert(applesObj["Adam"] === 4)
 
 // c. Set calAndDanAppleCount equal to how many apples Cal and Dan have combined
 
-let calAndDanAppleCount /*= Your code here */
+let calAndDanAppleCount = applesObj.Cal + applesObj.Dan
 
-//assert(calAndDanAppleCount === 8)
+assert(calAndDanAppleCount === 8)
 
 // d. Set all the values in applesObj to 0
 
