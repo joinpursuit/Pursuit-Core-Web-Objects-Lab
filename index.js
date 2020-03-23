@@ -14,13 +14,13 @@ var applesObj = {
 
 let eveAppleCount = applesObj.Eve
 
- assert(eveAppleCount === 4)
+assert(eveAppleCount === 4)
 
 // b. Change the number of apples that Adam  has to 4
 
-// Your code here
+applesObj.Adam = 4
 
-//assert(applesObj["Adam"] === 4)
+assert(applesObj["Adam"] === 4)
 
 // c. Set calAndDanAppleCount equal to how many apples Cal and Dan have combined
 
