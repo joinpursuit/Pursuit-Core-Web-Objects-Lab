@@ -77,15 +77,19 @@ assert(citiesObj["Indonesia"] === "Jakarta")
 | Jon Krakauer | 6.1 |
 */
 
-var authorScores = {}
+var authorScores = {
+    "Mark Twain": 8.9,
+    "Nathaniel Hawthorne": 5.1,
+    "John Steinbeck": 2.3,
+    "C.S. Lewis": 9.9,
+    "Jon Krakauer": 6.1
+}
 
-// Your code here
-
-//assert(authorScores["Mark Twain"] === 8.9)
-//assert(authorScores["Nathaniel Hawthorne"] === 5.1)
-//assert(authorScores["John Steinbeck"] === 2.3)
-//assert(authorScores["C.S. Lewis"] === 9.9)
-//assert(authorScores["Jon Krakauer"] === 6.1)
+assert(authorScores["Mark Twain"] === 8.9)
+assert(authorScores["Nathaniel Hawthorne"] === 5.1)
+assert(authorScores["John Steinbeck"] === 2.3)
+assert(authorScores["C.S. Lewis"] === 9.9)
+assert(authorScores["Jon Krakauer"] === 6.1)
 
 
 // b. Add an additional author named “Erik Larson” with an assigned score of 9.2.
