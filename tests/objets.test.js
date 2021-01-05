@@ -23,7 +23,7 @@ const {
   propertyCount,
 } = require("../problems/objects");
 
-describe("eveAppleCount", () => {
+describe.only("eveAppleCount", () => {
   test("returns the number of apples that eve has", () => {
     expect(
       eveAppleCount({

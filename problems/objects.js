@@ -6,7 +6,9 @@
  * @returns {number} The number of apples Eve has.
  */
 
-const eveAppleCount = () => {};
+const eveAppleCount = (object) => {
+  return object.Eve
+};
 
 /**
  * Takes in an object with peoples names as the keys and
