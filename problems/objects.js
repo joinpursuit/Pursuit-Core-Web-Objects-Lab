@@ -24,7 +24,13 @@ const eveAppleCount = (appleCountByName) => {
  * bracket notation? Try them both.
  */
 
-const appleCount = () => {};
+const appleCount = (appleCountByName, name) => {
+  if(!name){
+    return 0
+  } else {
+    return appleCountByName.name
+  }
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -38,7 +44,10 @@ const appleCount = () => {};
  * @returns {Object} The updated object.
  */
 
-const eveAppleSet = () => {};
+const eveAppleSet = (appleCountByName, appleCount) => {
+  appleCountByName.Eve = appleCount
+  return appleCountByName
+};
 
 /**
  * Takes in an object with peoples names as the keys and
