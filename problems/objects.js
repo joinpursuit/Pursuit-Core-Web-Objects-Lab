@@ -25,11 +25,7 @@ const eveAppleCount = (appleCountByName) => {
  */
 
 const appleCount = (appleCountByName, name) => {
-  if(!name){
-    return 0
-  } else {
-    return appleCountByName.name
-  }
+  
 };
 
 /**
@@ -61,7 +57,9 @@ const eveAppleSet = (appleCountByName, appleCount) => {
  *
  */
 
-const appleSet = () => {};
+const appleSet = (appleCountByName, name, newAppleCount) => {
+  
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -72,7 +70,9 @@ const appleSet = () => {};
  *
  */
 
-const adamAndEveApples = () => {};
+const adamAndEveApples = (appleCountByName) => {
+  return appleCountByName.Adam + appleCountByName.Eve
+};
 
 /**
  * Takes in an object with peoples names as the keys and
