@@ -26,7 +26,7 @@ const eveAppleCount = (appleCountByName) => {
 
 const appleCount = (appleCountByName, name) => {
     if(appleCountByName[name]){
-      return (appleCountByName[name])
+      return appleCountByName[name]
     }else{
       return 0
     }
