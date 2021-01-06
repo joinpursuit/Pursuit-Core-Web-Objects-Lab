@@ -198,8 +198,21 @@ const authorScores = (authors) => {
  * @returns {string} The full name of person with best score.
  */
 
-const bestScore = () => {};
+const bestScore = (submissions) => {
+  let bestScore = "";
+  let highestScore = -Infinity;
+  for (let i = 0; i < submissions.length; i++) {
+    
+    if (submissions[i].score > highestScore) {
+      highestScore = submissions[i].score; 
+    }
+  }
+  
+  return bestScoresubmissions[i].firstName + " " + submissions[i].lastName
+};
 
+
+// console.log(bestScore([{ firstName: "Kelvin", lastName: "Newt", score: 10}, { firstName: "Calvin", lastName: "Newton", score: 12}, { firstName: "Kalvin", lastName: "Pewton", score: 13}]))
 /**
  * Returns an object where the keys are numbers 1 through 20,
  * and their respective values is key cubed (num * num * num).
