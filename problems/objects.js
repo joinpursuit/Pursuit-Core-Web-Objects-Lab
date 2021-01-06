@@ -118,7 +118,9 @@ const appleSetToZero = (appleCountByName) => {
  * @returns {string} Capital of Russia
  */
 
-const russiaCapital = () => {};
+const russiaCapital = (capitalByCountry) => {
+  return capitalByCountry.Russia
+};
 
 /**
  * Takes in an object of countries and their capitals.
@@ -130,7 +132,9 @@ const russiaCapital = () => {};
  * @returns {string} Capital of country
  */
 
-const getCapital = () => {};
+const getCapital = (capitalByCountry, country) => {
+  return capitalByCountry[country]
+};
 
 /**
  * Takes in an object of countries and their capitals
@@ -141,7 +145,10 @@ const getCapital = () => {};
  * @returns {Object} countriesAndCapitals now with Jamaica
  */
 
-const addsJamaica = () => {};
+const addsJamaica = (capitalByCountry) => {
+  capitalByCountry["Jamaica"] = "Kingston"
+  return capitalByCountry
+};
 
 /**
  * Takes in an object of countries and their capitals
@@ -155,7 +162,10 @@ const addsJamaica = () => {};
  * @returns {Object} countriesAndCapitals
  */
 
-const addsCountry = () => {};
+const addsCountry = (capitalByCountry, country, capital) => {
+  capitalByCountry[country] = capital
+  return capitalByCountry
+};
 
 /**
  * Takes an array of arrays. First element of inner array is authorName, second element
@@ -166,7 +176,13 @@ const addsCountry = () => {};
  * @returns {Object} {"Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1}
  */
 
-const authorScores = () => {};
+const authorScores = (authors) => {
+  let object = {}
+  for(let authorArray of authors) {
+    object[authorArray[0]] = authorArray[1]
+  }
+  return object
+};
 
 /**
  * You are given an array of objects.
@@ -176,7 +192,15 @@ const authorScores = () => {};
  * @returns {string} The full name of person with best score.
  */
 
-const bestScore = () => {};
+const bestScore = (submissions) => {
+ let bestSubmissionScore = {score: -1} 
+ for (const key of submissions) {
+   if (key.score >bestSubmissionScore.score) {
+     bestSubmissionScore = key
+   }
+ }
+ return bestSubmissionScore.firstName + " " + bestSubmissionScore.lastName
+};
 
 /**
  * Returns an object where the keys are numbers 1 through 20,
