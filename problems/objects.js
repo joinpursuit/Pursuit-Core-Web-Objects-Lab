@@ -62,7 +62,7 @@ const eveAppleSet = (appleCountByName, appleCount) => {
  */
 
 const appleSet = (appleCountByName, name, newAppleCount) => {
-  name = newAppleCount
+  appleCountByName[name] = newAppleCount
   return appleCountByName
 };
 
@@ -206,7 +206,12 @@ const bestScore = (submissions) => {
  * @returns {Object} {1: 1, 2: 8, 3: 27...}
  */
 
-const cubeObj = () => {};
+const cubeObj = () => {
+  for(let key in obj){
+    obj[key] = Math.pow(key, 3)
+  }
+  return obj
+};
 
 /**
  * Takes in a string and returns an object with
