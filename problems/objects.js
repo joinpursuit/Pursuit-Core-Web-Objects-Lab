@@ -47,7 +47,7 @@ const appleCount = (appleCountByName, name) => {
  * @returns {Object} The updated object.
  */
 
-const eveAppleSet = (appleCountByName,appleCount) => { 
+const eveAppleSet = (appleCountByName, appleCount) => {
   appleCountByName["Eve"] = appleCount
   return appleCountByName;
 
@@ -65,7 +65,7 @@ const eveAppleSet = (appleCountByName,appleCount) => {
  *
  */
 
-const appleSet = (appleCountByName,name,newAppleCount) => { 
+const appleSet = (appleCountByName, name, newAppleCount) => {
   appleCountByName[name] = newAppleCount
   return appleCountByName;
 };
@@ -79,7 +79,11 @@ const appleSet = (appleCountByName,name,newAppleCount) => {
  *
  */
 
-const adamAndEveApples = () => { };
+const adamAndEveApples = (appleCountByName) => {
+  // Object.values(appleCountByName)
+  let sum = appleCountByName.Adam + appleCountByName.Eve
+  return sum
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -90,7 +94,15 @@ const adamAndEveApples = () => { };
  *
  */
 
-const appleSum = () => { };
+const appleSum = (appleCountByName) => {
+  let sum = 0
+  for (let key in appleCountByName) {
+    sum += appleCountByName[key]
+  }
+  return sum
+};
+
+// note for Kenia, no need to use Object.value to get the values. You can "access" the value using the above.
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -101,7 +113,15 @@ const appleSum = () => { };
  *
  */
 
-const appleSetToZero = () => { };
+const appleSetToZero = (appleCountByName) => {
+  // let appleCountByName[name] = 0
+  // return appleCountByName
+
+  for (let key in appleCountByName) {
+    appleCountByName[key] = 0
+  }
+  return appleCountByName
+};
 
 /**
  * Takes in an object of countries and their capitals.
