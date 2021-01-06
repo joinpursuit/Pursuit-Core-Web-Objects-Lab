@@ -25,7 +25,11 @@ const eveAppleCount = (appleCountByName) => {
  */
 
 const appleCount = (appleCountByName, name) => {
-  
+  if(appleCountByName.hasOwnProperty(name)){
+    return appleCountByName.name
+  } else {
+    return 0
+  }
 };
 
 /**
@@ -83,7 +87,9 @@ const adamAndEveApples = (appleCountByName) => {
  *
  */
 
-const appleSum = () => {};
+const appleSum = (appleCountByName) => {
+  
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -94,7 +100,12 @@ const appleSum = () => {};
  *
  */
 
-const appleSetToZero = () => {};
+const appleSetToZero = (appleCountByName) => {
+  for(let key in appleCountByName){
+    appleCountByName[key] = 0
+  }
+  return appleCountByName
+};
 
 /**
  * Takes in an object of countries and their capitals.
