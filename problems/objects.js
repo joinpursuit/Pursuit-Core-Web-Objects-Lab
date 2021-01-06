@@ -17,9 +17,9 @@ const eveAppleCount = () => {};
  * @param {Object} appleCountByName
  * @param {string} name - name of person
  * @returns {number} The number of apples name has.
- *
+ *`
  * Is there a difference between using string notation vs
- * bracket notation? Try them both.
+ * bracket notation? Try them both.`
  */
 
 const appleCount = () => {};
