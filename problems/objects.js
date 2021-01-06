@@ -213,14 +213,23 @@ const bestScore = (submissions) => {
 
 
 // console.log(bestScore([{ firstName: "Kelvin", lastName: "Newt", score: 10}, { firstName: "Calvin", lastName: "Newton", score: 12}, { firstName: "Kalvin", lastName: "Pewton", score: 13}]))
+
+
 /**
  * Returns an object where the keys are numbers 1 through 20,
  * and their respective values is key cubed (num * num * num).
  * @returns {Object} {1: 1, 2: 8, 3: 27...}
  */
 
-const cubeObj = () => {};
+const cubeObj = () => {
+  let newObj = {};
+  for (let i = 1; i <= 20; i++) {
+    newObj[i] = Math.pow(i, 3);
+  }
+  return newObj
+};
 
+console.log(cubeObj())
 /**
  * Takes in a string and returns an object with
  * the number of a's and the number of e's contained in the string
