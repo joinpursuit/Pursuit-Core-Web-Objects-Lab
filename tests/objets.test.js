@@ -373,7 +373,7 @@ describe("authorScores", () => {
   });
 });
 
-describe("bestScore", () => {
+describe.only("bestScore", () => {
   test("returns the full name of the person with the best score", () => {
     const peopleWithScores = [
       {
