@@ -329,7 +329,7 @@ describe("addsJamaica", () => {
   });
 });
 
-describe("addsCountry", () => {
+describe.only("addsCountry", () => {
   test("adds Jamaica to given object", () => {
     const citiesObj = {
       Afghanistan: "Kabul",
