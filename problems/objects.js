@@ -287,7 +287,13 @@ const updateList = () => {};
   * @param {Object} obj
   * @returns {number} Number of properties.
   */
- const propertyCount = () => {};
+ const propertyCount = (obj) => {
+  let sum = 0
+  for(let key in obj){
+    sum++
+  }
+  return sum
+ };
 
 module.exports = {
   eveAppleCount,
