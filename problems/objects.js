@@ -6,7 +6,9 @@
  * @returns {number} The number of apples Eve has.
  */
 
-const eveAppleCount = () => {};
+const eveAppleCount = (appleCountByName) => {
+    return(appleCountByName["Eve"]);
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -22,7 +24,13 @@ const eveAppleCount = () => {};
  * bracket notation? Try them both.
  */
 
-const appleCount = () => {};
+const appleCount = (appleCountByName, name) => {
+    if(appleCountByName[name]){
+      return (appleCountByName[name])
+    }else{
+      return 0
+    }
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -36,7 +44,10 @@ const appleCount = () => {};
  * @returns {Object} The updated object.
  */
 
-const eveAppleSet = () => {};
+const eveAppleSet = (appleCountByName, appleCount) => {
+    appleCountByName["Eve"] = appleCount
+      return appleCountByName
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -50,7 +61,10 @@ const eveAppleSet = () => {};
  *
  */
 
-const appleSet = () => {};
+const appleSet = (appleCountByName, name, newAppleCount) => {
+    appleCountByName[name] = newAppleCount
+    return appleCountByName 
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -61,7 +75,9 @@ const appleSet = () => {};
  *
  */
 
-const adamAndEveApples = () => {};
+const adamAndEveApples = (appleCountByName) => {
+    return (appleCountByName["Adam"] + appleCountByName["Eve"])
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -72,7 +88,13 @@ const adamAndEveApples = () => {};
  *
  */
 
-const appleSum = () => {};
+const appleSum = (appleCountByName) => {
+  let sum = 0
+  for(const name in appleCountByName){
+    sum = sum + appleCountByName[name]
+     }
+     return sum
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -83,7 +105,12 @@ const appleSum = () => {};
  *
  */
 
-const appleSetToZero = () => {};
+const appleSetToZero = (appleCountByName) => {
+  for(const name in appleCountByName){
+    appleCountByName[name] = 0
+  }
+  return appleCountByName
+};
 
 /**
  * Takes in an object of countries and their capitals.
@@ -93,7 +120,9 @@ const appleSetToZero = () => {};
  * @returns {string} Capital of Russia
  */
 
-const russiaCapital = () => {};
+const russiaCapital = (capitalByCountry) => {
+  return (capitalByCountry["Russia"])
+};
 
 /**
  * Takes in an object of countries and their capitals.
@@ -105,7 +134,9 @@ const russiaCapital = () => {};
  * @returns {string} Capital of country
  */
 
-const getCapital = () => {};
+const getCapital = (capitalByCountry, country) => {
+  return (capitalByCountry[country])
+};
 
 /**
  * Takes in an object of countries and their capitals
@@ -116,7 +147,11 @@ const getCapital = () => {};
  * @returns {Object} countriesAndCapitals now with Jamaica
  */
 
-const addsJamaica = () => {};
+const addsJamaica = (capitalByCountry) => {
+  capitalByCountry["Jamaica"] = "Kingston"
+    return capitalByCountry
+
+};
 
 /**
  * Takes in an object of countries and their capitals
@@ -130,7 +165,10 @@ const addsJamaica = () => {};
  * @returns {Object} countriesAndCapitals
  */
 
-const addsCountry = () => {};
+const addsCountry = (capitalByCountry, country, capital) => {
+  capitalByCountry[country] = capital
+   return capitalByCountry
+};
 
 /**
  * Takes an array of arrays. First element of inner array is authorName, second element
@@ -141,7 +179,14 @@ const addsCountry = () => {};
  * @returns {Object} {"Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1}
  */
 
-const authorScores = () => {};
+const authorScores = (authors) => {}
+//  let obj = []
+ // [   [  author name , score ] , [ author name2, score2] ]
+//for(i = 0; i < authors.length; i ++){
+
+//}
+
+//};
 
 /**
  * You are given an array of objects.
