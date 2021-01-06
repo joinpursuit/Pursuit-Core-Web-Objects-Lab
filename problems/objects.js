@@ -6,8 +6,8 @@
  * @returns {number} The number of apples Eve has.
  */
 
-const eveAppleCount = (object) => {
-  return object.Eve
+const eveAppleCount = (appleCountByName) => {
+  return appleCountByName.Eve
 };
 
 /**
@@ -24,7 +24,13 @@ const eveAppleCount = (object) => {
  * bracket notation? Try them both.
  */
 
-const appleCount = () => {};
+const appleCount = (appleCountByName, name) => {
+  if (appleCountByName[name]) {
+    return appleCountByName[name]
+  } else {
+    return 0
+  }
+};
 
 /**
  * Takes in an object with peoples names as the keys and
