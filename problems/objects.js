@@ -226,21 +226,14 @@ const cubeObj = () => {
  */
 
 const countAandE = (str) => {
-  let newObj = {};
-  let newArr = str.split("")
-  let el = newArr[i].toLowerCase
-  for(let i = 0; i <= newArr.length; i++) {
-  
-if(el === "a" && el === "e") {
-  newObj["a"] +=1
-  newObj["e"] +=1
-} else{
-  newObj["a"] = 1
-  newObj["e"] = 1
+let counter = {'a': 0, 'e': 0}
+for (let i = 0; i <str.length; i+=1){
+  if (str[i].toLowerCase() === 'a'){
+counter[str[i].LowerCase()] += 1
+}else if (str[i].LowerCase() === 'e'){
+  counter[str[i].toLocaleLowerCase()] +=1
 }
-    } 
-  
-  return newObj
+return counter
 };
 
 /**
@@ -272,19 +265,10 @@ const countOccurance = (str) => {
  */
 
 const countOccuranceNoSpaces = (str) => {
-  let occurence = {};
-  let newArr = str.split(" ")
-  let newStr = newArr.join("")
-  for (let i = 0; i < newStr.length; i++) {
-    const el = newStr[i].toLowerCase();
-   if (occurence[el] !== undefined) {
-      occurence[el] += 1;
-    } else {
-      occurence[el] = 1;
-    }
-  }
-    return occurence;
-  }
+  let obj = countOccurance(str)
+  delete obj[" "]
+  return obj
+}
 
 
 
@@ -295,25 +279,19 @@ const countOccuranceNoSpaces = (str) => {
  */
 
 const mostCommonElement = (array) => {
-let mostCommon = {}
-let newArr = []
-let count = 0
-let max
-for(let i = 0; i < array.length; i++) {
-  let el = array[i]
-if(newArr[el] !== undefined) {
-  newArr[el] ++;
-} else {
-  newArr[el] = 1
+let count = {}
+for (let element of array){
+  count [element] = (count[element] || 0) +1
 }
-}
-for(j = 0; j < newArr.length; j++) {
-  if(newArr[el] > count) {
-    count = newArr[el]
-    mostCommon = el
+let topValue = array[0];
+let maxCount = 0;
+for(let element of array){
+  if (count[element] > maxCount){
+    topValue = element
+  maxCount = count[element]
   }
 }
-return mostCommon
+return topValue
 };
 
 
@@ -336,13 +314,13 @@ return mostCommon
  */
 
 const updateList = (pairs, arr) => {
-  let newArr = [];
-  if(pairs["keys"] === arr[i]) {
-    newArr.push(pairs["keys"])
-  } else {
-    newArr.push(object.keys(pairs))
-  }
-  return newArr
+  for (let i = 0; i < arr.length; i +=1){
+    value = arr[i]
+    if(pairs[value]){
+      arr[i] = pairs[val]
+    }
+    }
+  return arr
 };
 
 /**
@@ -366,11 +344,7 @@ const deleteKey = (object, key) => {
  * @returns {number} Number of properties.
  */
 const propertyCount = (obj) => {
-  let count = 0
-  for(const key in obj) {
-    count++
-  }
- return count
+  return Object.values(obj).length
 };
 
 module.exports = {
