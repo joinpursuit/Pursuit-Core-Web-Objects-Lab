@@ -349,7 +349,7 @@ const deleteKey = (object, key) => {
  * @returns {number} Number of properties.
  */
 const propertyCount = (obj) => {
-  return obj.length
+  return Object.values(obj).length
 };
 
 module.exports = {
