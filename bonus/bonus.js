@@ -5,7 +5,9 @@
  * @returns {string} - species
  */
 
-const catSpecies = () => {};
+const catSpecies = (catObj) => {
+  return catObj.species;
+};
 
 /**
  * Takes in a cat object and a color. Add the key
@@ -15,7 +17,10 @@ const catSpecies = () => {};
  * @returns {Object} catObj
  */
 
-const giveCatColor = () => {};
+const giveCatColor = (catObj, color) => {
+  catObj["color"] = color;
+  return catObj;
+};
 
 /**
  * Takes in a cat object and returns its 'texture', if it has that property.
@@ -25,7 +30,13 @@ const giveCatColor = () => {};
  * @throws {Error} 'Does not have texture property'
  */
 
-const catTexture = () => {};
+const catTexture = (catObj) => {
+  // if (catObj["texture]") {
+  //   throw 'Does not have texture property'
+  // } else {
+  //   return catObj["texture]"
+  // }
+};
 
 /**
  * Takes in an object and returns all its keys as an array.
@@ -33,7 +44,13 @@ const catTexture = () => {};
  * @param {Object}
  * @returns {string[]} All the keys from the object
  */
-const objKeys = () => {};
+const objKeys = (object) => {
+  let arrOfKeys = [];
+  for (const key of object) {
+    arrOfKeys.push(key);
+  }
+  return arrOfKeys;
+};
 
 /**
  * Takes in an object and returns all its keys as an array.
@@ -42,7 +59,10 @@ const objKeys = () => {};
  * @returns {string[]} All the keys from the object
  */
 
-const objKeys2 = () => {};
+const objKeys2 = (Object) => {
+  let arrOfKeys = Object.keys(Object);
+  return arrOfKeys;
+};
 
 /**
  * Takes in an object and returns all the values as an array.
@@ -50,7 +70,13 @@ const objKeys2 = () => {};
  * @param {Object}
  * @returns {*[]} All the values from the object
  */
-const objValues = () => {};
+const objValues = (object) => {
+  let objectValues = [];
+  for (const values in object) {
+    objectValues.push(values);
+  }
+  return objectValues;
+};
 
 /**
  * Takes in an object and returns all the values as an array.
@@ -59,7 +85,10 @@ const objValues = () => {};
  * @returns {*[]} All the values from the object
  */
 
-const objValues2 = () => {};
+const objValues2 = (Object) => {
+  let arrOfValues = Object.values(Object);
+  return arrOfValues;
+};
 
 /**
  * Takes in an array of film objects and
@@ -69,7 +98,9 @@ const objValues2 = () => {};
  * @returns {string[]} Only the directors
  */
 
-const findDirectors = () => {};
+const findDirectors = (films, director) => {
+  return films[director];
+};
 
 /**
  * Takes in an array of people objects with with properties
@@ -82,7 +113,9 @@ const findDirectors = () => {};
  * @returns {string[]} The full names of all people.
  */
 
-const fullNames = () => {};
+const fullNames = (people, firstName, lastName) => {
+  return people[firstName] + " " + people[lastName];
+};
 
 /**
  * Takes in an object which maps a persons name to an array
@@ -103,7 +136,7 @@ const fullNames = () => {};
  *     Johnson: [126, 300, 640, 255, 268],
  *  };
  */
-const largestEarner = () => {};
+const largestEarner = (depositsByPerson) => {};
 
 /**
  * Takes in an object and returns and array where
@@ -114,7 +147,14 @@ const largestEarner = () => {};
  * @returns {string[]}
  */
 
-const pairs = () => {};
+const pairs = (groups) => {
+
+//   let arrPairs = [];
+//   for(let i = 0; i < groups.length; i++){
+//     arrPairs.push()  //(groups[key i].join("&")(groups[value i])) 
+//   }
+// return arrPairs;
+};
 
 /**
  * Takes in an array of films, where each film has the following
@@ -164,7 +204,7 @@ const mostFreqWordGreaterThanLength = () => {};
 
 const secondMostFrequentLetter = () => {};
 
-// Consider the following question: 
+// Consider the following question:
 // What will the code below log?  Explain why.
 // const p1 = {
 //   name: 'Joe'
@@ -175,6 +215,7 @@ const secondMostFrequentLetter = () => {};
 // }
 
 // console.log(p1 === p2)
+//ANSWER: returns false because they point to 2 different addresses
 
 module.exports = {
   catSpecies,
