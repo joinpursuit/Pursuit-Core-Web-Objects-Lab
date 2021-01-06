@@ -180,12 +180,12 @@ const addsCountry = (capitalByCountry, country, capital) => {
 
 const authorScores = (authors) => {
   let obj = {}
-  for(let i = 0; i < authors[0].length; i++){
-    authors[0][0] = Object.key
-    authors[0][1] = Object.values
-    obj.push(authors[0], authors[1])
+  for(let i = 0; i < authors.length; i++){
+    let el = authors[i]
+    obj[el[0]] = el[1]
   }
   return obj
+
 };
 
 /**
@@ -197,7 +197,12 @@ const authorScores = (authors) => {
  */
 
 const bestScore = (submissions) => {
+  // for(let i = 0; i < submissions.length; i++){
+  //   if(submissions[i].peopleWithScores.score > ){
 
+  //   }
+  //   return 
+  // }
 };
 
 /**
