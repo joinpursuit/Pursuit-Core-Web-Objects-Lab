@@ -106,7 +106,12 @@ const appleSum = (appleCountByName) => {
  *
  */
 
-const appleSetToZero = () => {};
+const appleSetToZero = (appleCountByName) => {
+  for (let key in appleCountByName) {
+    appleCountByName[key] = 0;
+  }
+  return appleCountByName;
+};
 
 /**
  * Takes in an object of countries and their capitals.
