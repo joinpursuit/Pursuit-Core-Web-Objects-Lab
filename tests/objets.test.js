@@ -86,7 +86,7 @@ describe("appleCount", () => {
   });
 });
 
-describe("eveAppleSet", () => {
+describe.only("eveAppleSet", () => {
   test("updates Eve's apple count", () => {
     expect(
       eveAppleSet(
