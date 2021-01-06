@@ -173,9 +173,7 @@ const addsJamaica = (obj) => {
 
 const addsCountry = (obj, country, capital) => {
   obj[country] = capital
-
   return obj;
-
 };
 
 /**
@@ -187,11 +185,10 @@ const addsCountry = (obj, country, capital) => {
  * @returns {Object} {"Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1}
  */
 
-const authorScores = (object) => {
-  const obj = object.fromEntries(arr);
+const authorScores = (arr) => {
+  const obj = Object.fromEntries(arr);
   return obj;
 
-}
 };
 
 /**
@@ -201,11 +198,17 @@ const authorScores = (object) => {
  * @param {Object[]} submissions - array of objects [ { firstName: "Calvin", lastName: "Newton", score: 13} ...]
  * @returns {string} The full name of person with best score.
  */
-
-const bestScore = (obj) => {
-
+const bestScore = (arr) => {
+  let bestScore = -1000000;
+  let element = {}
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].score > bestScore) {
+      element = arr[i];
+      bestScore = element.score;
+    }
+  }
+  return element.firstName + " " + element.lastName;
 };
-
 
 /**
  * Returns an object where the keys are numbers 1 through 20,
@@ -213,8 +216,14 @@ const bestScore = (obj) => {
  * @returns {Object} {1: 1, 2: 8, 3: 27...}
  */
 
-const cubeObj = () => { };
+const cubeObj = () => {
+  let obj = {}
 
+  for (let i = 1; i <= 20; i++) {
+    obj[i] = i * i * i;
+  }
+  return obj;
+};
 /**
  * Takes in a string and returns an object with
  * the number of a's and the number of e's contained in the string
@@ -239,9 +248,7 @@ const countOccurance = (str) => {
       obj[el]++
     } else {
       obj[el] = 1
-
     }
-
   }
   return obj;
 }
