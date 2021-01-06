@@ -6,7 +6,9 @@
  * @returns {number} The number of apples Eve has.
  */
 
-const eveAppleCount = () => {};
+const eveAppleCount = (appleCountByName) => {
+  return appleCountByName.Eve
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -22,7 +24,9 @@ const eveAppleCount = () => {};
  * bracket notation? Try them both.
  */
 
-const appleCount = () => {};
+const appleCount = (appleCountByName, name) => {
+  return appleCountByName[name]
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -36,7 +40,10 @@ const appleCount = () => {};
  * @returns {Object} The updated object.
  */
 
-const eveAppleSet = () => {};
+const eveAppleSet = (appleCountByName, appleCount) => {
+  appleCountByName["Eve"] = appleCount
+    return appleCountByName
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -50,7 +57,10 @@ const eveAppleSet = () => {};
  *
  */
 
-const appleSet = () => {};
+const appleSet = (appleCountByName, name, newAppleCount) => {
+    appleCountByName[name] = newAppleCount
+    return appleCountByName
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -61,7 +71,9 @@ const appleSet = () => {};
  *
  */
 
-const adamAndEveApples = () => {};
+const adamAndEveApples = (appleCountByName) => {
+    return appleCountByName["Eve"] + appleCountByName["Adam"]
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -72,7 +84,13 @@ const adamAndEveApples = () => {};
  *
  */
 
-const appleSum = () => {};
+const appleSum = (appleCountByName) => {
+  let sum = 0
+    for(let key in appleCountByName) {
+      sum += appleCountByName[key]
+    }
+    return sum
+  }
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -83,7 +101,12 @@ const appleSum = () => {};
  *
  */
 
-const appleSetToZero = () => {};
+const appleSetToZero = (appleCountByName) => {
+    for(key in appleCountByName) {
+      appleCountByName[key] = 0
+    }
+    return appleCountByName
+};
 
 /**
  * Takes in an object of countries and their capitals.
@@ -93,7 +116,9 @@ const appleSetToZero = () => {};
  * @returns {string} Capital of Russia
  */
 
-const russiaCapital = () => {};
+const russiaCapital = (capitalByCountry) => {
+    return capitalByCountry["Russia"]
+};
 
 /**
  * Takes in an object of countries and their capitals.
@@ -105,7 +130,9 @@ const russiaCapital = () => {};
  * @returns {string} Capital of country
  */
 
-const getCapital = () => {};
+const getCapital = (capitalByCountry, country) => {
+    return capitalByCountry[country]
+};
 
 /**
  * Takes in an object of countries and their capitals
@@ -116,7 +143,10 @@ const getCapital = () => {};
  * @returns {Object} countriesAndCapitals now with Jamaica
  */
 
-const addsJamaica = () => {};
+const addsJamaica = (capitalByCountry) => {
+  capitalByCountry["Jamaica"] = "Kingston"
+  return capitalByCountry
+}
 
 /**
  * Takes in an object of countries and their capitals
@@ -130,7 +160,10 @@ const addsJamaica = () => {};
  * @returns {Object} countriesAndCapitals
  */
 
-const addsCountry = () => {};
+const addsCountry = (capitalByCountry, country, capital) => {
+  capitalByCountry[country] = capital
+  return capitalByCountry
+};
 
 /**
  * Takes an array of arrays. First element of inner array is authorName, second element
