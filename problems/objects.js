@@ -264,9 +264,10 @@ const countOccurance = (str) => {
 const countOccuranceNoSpaces = (str) => {
     let arr = str.split(" ")
     let newStr = arr.join('');
+    console.log(newStr)
     let obj = {};
     for (let i = 0; i < newStr.length; i++) {
-     let key = str[i].toLowerCase();
+     let key = newStr[i].toLowerCase();
      if (obj[key]) {
      obj[key] += 1
       } else {
@@ -306,12 +307,15 @@ const updateList = (pairs, arr) => {
    let newArr = []; 
    for (let i = 0; i < arr.length; i++) {
      if(pairs.includes(arr[i])) {
-      newArr.push(arr[i])
-     }else{
-       newArr.push([i])
+       console.log(pairs)
+  //     newArr.push(arr[i])
+  //    }else{
+  //      newArr.push([i])
+  //    }
+  //  } 
+  //  return newArr
      }
-   } 
-   return newArr
+    }
 };
 
 /**
