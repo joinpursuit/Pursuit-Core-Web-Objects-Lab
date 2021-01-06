@@ -7,9 +7,7 @@
  */
 
 const eveAppleCount = (appleCountByName) => {
-  
-  return appleCountByName['Eve'];
-
+  return appleCountByName["Eve"];
 };
 
 /**
@@ -26,7 +24,7 @@ const eveAppleCount = (appleCountByName) => {
  * bracket notation? Try them both.
  */
 
-const appleCount = (appleCountByName,name) => {
+const appleCount = (appleCountByName, name) => {
   return appleCountByName[name];
   //console.table(appleCountByName);
 };
@@ -43,10 +41,9 @@ const appleCount = (appleCountByName,name) => {
  * @returns {Object} The updated object.
  */
 
-const eveAppleSet = (appleCountByName,appleCount) => {
-   appleCountByName['Eve']= appleCount
+const eveAppleSet = (appleCountByName, appleCount) => {
+  appleCountByName["Eve"] = appleCount;
   return appleCountByName;
-
 };
 
 /**
@@ -62,7 +59,7 @@ const eveAppleSet = (appleCountByName,appleCount) => {
  */
 
 const appleSet = (appleCountByName, name, newAppleCount) => {
-   appleCountByName[name] = newAppleCount;
+  appleCountByName[name] = newAppleCount;
   return appleCountByName;
 };
 
@@ -90,9 +87,9 @@ const adamAndEveApples = (appleCountByName) => {
  */
 
 const appleSum = (appleCountByName) => {
-  let sum = 0; 
-  let arrOfValues = Object.values(appleCountByName);
-  for(i = 0; i < arrOfValues.length; i++) {
+  let sum = 0;
+  let arrOfValues = Object.values(appleCountByName); 
+  for (i = 0; i < arrOfValues.length; i++) {
     sum += arrOfValues[i];
   }
   return sum;
@@ -108,12 +105,11 @@ const appleSum = (appleCountByName) => {
  */
 
 const appleSetToZero = (appleCountByName) => {
-  for(const value in appleCountByName ){
-    appleCountByName[value] = 0
-  } 
+  for (const value in appleCountByName) {
+    appleCountByName[value] = 0;
+  }
   return appleCountByName;
 };
-
 
 /**
  * Takes in an object of countries and their capitals.
@@ -124,7 +120,7 @@ const appleSetToZero = (appleCountByName) => {
  */
 
 const russiaCapital = (capitalByCountry) => {
-return capitalByCountry['Russia'];
+  return capitalByCountry["Russia"];
 };
 
 /**
@@ -151,7 +147,7 @@ const getCapital = (capitalByCountry, country) => {
  */
 
 const addsJamaica = (capitalByCountry) => {
-  capitalByCountry['Jamaica']='Kingston'
+  capitalByCountry["Jamaica"] = "Kingston";
   return capitalByCountry;
 };
 
@@ -168,8 +164,8 @@ const addsJamaica = (capitalByCountry) => {
  */
 
 const addsCountry = (capitalByCountry, country, capital) => {
-  capitalByCountry[country] = capital
-    return capitalByCountry;
+  capitalByCountry[country] = capital;
+  return capitalByCountry;
 };
 
 /**
@@ -183,10 +179,10 @@ const addsCountry = (capitalByCountry, country, capital) => {
 
 const authorScores = (authors) => {
   let objectAuthors = {};
-  let author; // index authors[i][0]
-  let score; // index authors[i][1]
-  for(let i = 0; i < authors.length; i++) {
-    objectAuthors[(authors[i][0])] = (authors[i][1]);
+   // index authors[i][0] -- author
+   // index authors[i][1] -- score
+  for (let i = 0; i < authors.length; i++) {
+    objectAuthors[authors[i][0]] = authors[i][1];
   }
   return objectAuthors;
 };
@@ -209,8 +205,8 @@ const bestScore = (submissions) => {};
 
 const cubeObj = () => {
   let objectCubed = {};
-  for(i = 1; i <= 20; i++) {
-      objectCubed[i] = i * i * i;
+  for (i = 1; i <= 20; i++) {
+    objectCubed[i] = i * i * i;
   }
   return objectCubed;
 };
@@ -222,19 +218,29 @@ const cubeObj = () => {
  * @returns {Object} Counts of e and a. {a: 2, e: 1}
  */
 
+/* https://www.codegrepper.com/code-examples/javascript/how+to+select+specific+keys+in+javascript+object
+const object = { a: 5, b: 6, c: 7  };
+const picked = (({ a, c }) => ({ a, c }))(object);
+console.log(picked); // { a: 5, c: 7 } 
+*/
+
 const countAandE = (str) => {
-  let counter = {};
-  for(let i = 0; i <= str.length; i++) {
-    if (counter[str[i]] === "a" || counter[str[i]]  === "A") {
-        counter[str[a]]++;
-    } else if (counter[str[i]]  === "e" || counter[str[i]]  === "E") {
-        counter[str[e]]++;
+  let counter = {}; //{"a" : 0, "e" : 0};
+  let objAE = ( ({a, e}) => ({a, e}) )(counter); // to get a subset of key value pairs
+  for (let i = 0; i <= str.length - 1; i++) {
+    let strI = str[i]
+    if (counter[strI]) { //(counter[str[i]] === "a" || counter[str[i]] === "A") {  //can i even compare this?  hence the undefined error
+      counter[strI] ++; // why is it not working for counter "a"
+      //console.log("string I is " + strI, counter[strI])
      } else {
-      counter[str[i]] = 0;
+      counter[strI] = 1;
     }
   }
-  return counter;
-};
+  //console.log(counter); // why doesn't counter["a", "e"] work? wrong syntax???
+  return objAE; // now i'm getting undefined !!!! :(
+    //console.log(counter); ==> { A: 1, ' ': 2, g: 1, o: 2, d: 1, s: 1, n: 1, a: 1, k: 1, e: 1 }
+    //return objAE; ==> { a: undefined, e: undefined }
+}; // I don't understand what is happening here
 
 /**
  * Takes in a string and returns an object with
@@ -244,16 +250,18 @@ const countAandE = (str) => {
  */
 
 const countOccurance = (str) => {
-  let counter = {};
-  for (let i = 0; i <= str.length; i++) {
-    if (counter[str[i]]) {
-      counter[str[i]]++;
+  let lowerStr = str.toLowerCase; // needs to count caps and lower case as same
+  let counter = {}; 
+  for (let i = 0; i <= str.length - 1; i++) {
+    let strI = lowerStr[i];
+    if (counter[strI]) {
+      counter[strI]++;
     } else {
-      counter[str[i]] = 1;
+      counter[strI] = 1;
     }
   }
   return counter;
-};
+}; 
 
 /**
  * Takes in a string and returns an object with
@@ -291,7 +299,17 @@ const mostCommonElement = () => {};
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = (pairs, arr) => {
+  let newArr = [];
+  // if arr[i] === object[key] add object[key][value] to the new array
+  // else add object[key] to the new array
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (const key in pairs) {
+      arr[i] === pairs[key] ? newArr.push(pairs[key][value]) : newArr.push(pairs[key]);
+    }
+  }
+  return newArr;
+}; // -- I don't understand what's wrong. Not sure if I am using [value] correctly
 
 /**
  * Takes in an object and a key.
@@ -302,22 +320,21 @@ const updateList = () => {};
  * @returns {Object} The Object without the key.
  */
 
- const deleteKey = (object, key) => {
-   delete object[key];
-   return object;
- };
+const deleteKey = (object, key) => {
+  delete object[key];
+  return object;
+};
 
-
- /**
-  * Takes in an object and returns the number of
-  * properties it has.
-  * @param {Object} obj
-  * @returns {number} Number of properties.
-  */
- const propertyCount = (obj) => {
-   let number = Object.values(obj)
-   return number.length;
- };
+/**
+ * Takes in an object and returns the number of
+ * properties it has.
+ * @param {Object} obj
+ * @returns {number} Number of properties.
+ */
+const propertyCount = (obj) => {
+  let number = Object.values(obj);
+  return number.length;
+};
 
 module.exports = {
   eveAppleCount,
