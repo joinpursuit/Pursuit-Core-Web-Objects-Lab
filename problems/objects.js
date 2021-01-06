@@ -62,7 +62,8 @@ const eveAppleSet = (appleCountByName, appleCount) => {
  */
 
 const appleSet = (appleCountByName, name, newAppleCount) => {
-  
+  name = newAppleCount
+  return appleCountByName
 };
 
 /**
@@ -88,7 +89,11 @@ const adamAndEveApples = (appleCountByName) => {
  */
 
 const appleSum = (appleCountByName) => {
-  
+  let sum = 0
+  for(let key in appleCountByName){
+    sum += appleCountByName[key]
+  }
+  return sum
 };
 
 /**
