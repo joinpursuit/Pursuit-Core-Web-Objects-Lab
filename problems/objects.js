@@ -287,8 +287,8 @@ const updateList = () => {};
   * @param {Object} obj
   * @returns {number} Number of properties.
   */
- const propertyCount = (obj) => {
-   return obj[name: "alex"],
+ const propertyCount = () => {
+   
  };
 
 module.exports = {
