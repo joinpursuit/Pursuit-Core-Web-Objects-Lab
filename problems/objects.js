@@ -24,14 +24,12 @@ const eveAppleCount = (obj) => {
  * bracket notation? Try them both.
  */
 
-const appleCount = (Obj, name) => {
-  if (Obj[name]) {
-    return Obj[name];
-
+const appleCount = (obj, name) => {
+  if (obj[name]) {
+    return obj[name];
   } else {
     return 0;
   }
-
 };
 /**
  * Takes in an object with peoples names as the keys and
@@ -48,8 +46,6 @@ const appleCount = (Obj, name) => {
 const eveAppleSet = (obj, num) => {
   obj["Eve"] = num;
   return obj;
-
-
 };
 
 /**
@@ -75,9 +71,14 @@ const appleSet = (obj, name, num) => {
  * @param {Object} appleCountByName - apple object with names and numbers
  * @returns {number} Sum of Adam and Eve's apples.
  *
+ * 
+ * 
  */
 
-const adamAndEveApples = () => { };
+const adamAndEveApples = (obj) => {
+  let total = obj["Adam"] + obj["Eve"]
+  return total;
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -85,10 +86,18 @@ const adamAndEveApples = () => { };
  * Returns the sum of all apples
  * @param {Object} appleCountByName - apple object with names and numbers
  * @returns {number} Total number of all apples
- *
+ * 
+ * apple = {"eve": 3, "Adam": 4, "dave": 5}
  */
 
-const appleSum = () => { };
+const appleSum = (obj) => {
+  let total = 0;
+
+  for (let key in obj) {
+    total += obj[key]
+  }
+  return total;
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -99,7 +108,12 @@ const appleSum = () => { };
  *
  */
 
-const appleSetToZero = () => { };
+const appleSetToZero = (obj) => {
+  for (let key in obj){
+    obj[key] = 0
+  }
+  return obj;
+ };
 
 /**
  * Takes in an object of countries and their capitals.
@@ -109,7 +123,9 @@ const appleSetToZero = () => { };
  * @returns {string} Capital of Russia
  */
 
-const russiaCapital = () => { };
+const russiaCapital = (obj) => {
+  return obj["Russia"]
+ };
 
 /**
  * Takes in an object of countries and their capitals.
@@ -119,9 +135,13 @@ const russiaCapital = () => { };
  * @param {Object} capitalByCountry - countries and capitals
  * @param {string} country
  * @returns {string} Capital of country
+ * 
+ * 
  */
 
-const getCapital = () => { };
+const getCapital = (obj,country) => {
+  return obj[country];
+ };
 
 /**
  * Takes in an object of countries and their capitals
@@ -130,9 +150,14 @@ const getCapital = () => { };
  *
  * @param {Object} capitalByCountry - countries and capitals
  * @returns {Object} countriesAndCapitals now with Jamaica
+ * 
+ * capitalByCountry = { USA: DC , Russia: Moscow} jamaica: Kingson
  */
 
-const addsJamaica = () => { };
+const addsJamaica = (obj) => {
+  obj.Jamaica = "Kingston"
+  return obj;
+ };
 
 /**
  * Takes in an object of countries and their capitals
