@@ -131,7 +131,9 @@ const appleSetToZero = (appleCountByName) => {
  * @returns {string} Capital of Russia
  */
 
-const russiaCapital = () => { };
+const russiaCapital = (capitalByCountry) => {
+  return capitalByCountry.Russia
+};
 
 /**
  * Takes in an object of countries and their capitals.
@@ -143,7 +145,9 @@ const russiaCapital = () => { };
  * @returns {string} Capital of country
  */
 
-const getCapital = () => { };
+const getCapital = (capitalByCountry, country) => {
+  return capitalByCountry[country];
+};
 
 /**
  * Takes in an object of countries and their capitals
@@ -154,7 +158,10 @@ const getCapital = () => { };
  * @returns {Object} countriesAndCapitals now with Jamaica
  */
 
-const addsJamaica = () => { };
+const addsJamaica = (capitalByCountry) => {
+  capitalByCountry["Jamaica"] = "Kingston"
+  return capitalByCountry
+};
 
 /**
  * Takes in an object of countries and their capitals
@@ -168,7 +175,10 @@ const addsJamaica = () => { };
  * @returns {Object} countriesAndCapitals
  */
 
-const addsCountry = () => { };
+const addsCountry = (capitalByCountry, country, capital) => {
+  capitalByCountry[country] = capital
+  return capitalByCountry
+};
 
 /**
  * Takes an array of arrays. First element of inner array is authorName, second element
@@ -179,7 +189,14 @@ const addsCountry = () => { };
  * @returns {Object} {"Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1}
  */
 
-const authorScores = () => { };
+const authorScores = (authors) => {
+//   let obj = {}
+//   for (let i = 0; i < authors.length; i++) {
+//     let el = authors[i]
+
+//   }
+//   return obj
+};
 
 /**
  * You are given an array of objects.
