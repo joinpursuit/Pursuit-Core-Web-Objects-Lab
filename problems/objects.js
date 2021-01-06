@@ -88,7 +88,14 @@ const adamAndEveApples = (appleCountByName) => {
  *
  */
 
-const appleSum = () => {};
+const appleSum = (appleCountByName) => {
+  let appleO = Object.values(appleCountByName)
+  let sum = 0;
+  for (let i = 0; i < appleO.length; i++) {
+    sum += appleO[i]
+  }
+  return sum;
+};
 
 /**
  * Takes in an object with peoples names as the keys and
