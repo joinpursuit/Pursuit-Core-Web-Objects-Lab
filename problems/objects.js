@@ -109,11 +109,11 @@ const appleSum = (obj) => {
  */
 
 const appleSetToZero = (obj) => {
-  for (let key in obj){
+  for (let key in obj) {
     obj[key] = 0
   }
   return obj;
- };
+};
 
 /**
  * Takes in an object of countries and their capitals.
@@ -125,7 +125,7 @@ const appleSetToZero = (obj) => {
 
 const russiaCapital = (obj) => {
   return obj["Russia"]
- };
+};
 
 /**
  * Takes in an object of countries and their capitals.
@@ -139,9 +139,9 @@ const russiaCapital = (obj) => {
  * 
  */
 
-const getCapital = (obj,country) => {
+const getCapital = (obj, country) => {
   return obj[country];
- };
+};
 
 /**
  * Takes in an object of countries and their capitals
@@ -157,7 +157,7 @@ const getCapital = (obj,country) => {
 const addsJamaica = (obj) => {
   obj.Jamaica = "Kingston"
   return obj;
- };
+};
 
 /**
  * Takes in an object of countries and their capitals
@@ -171,7 +171,12 @@ const addsJamaica = (obj) => {
  * @returns {Object} countriesAndCapitals
  */
 
-const addsCountry = () => { };
+const addsCountry = (obj, country, capital) => {
+  obj[country] = capital
+
+  return obj;
+
+};
 
 /**
  * Takes an array of arrays. First element of inner array is authorName, second element
@@ -182,7 +187,12 @@ const addsCountry = () => { };
  * @returns {Object} {"Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1}
  */
 
-const authorScores = () => { };
+const authorScores = (object) => {
+  for (let i = 0; i < Array.length; i++) {
+    let object = Array[i];
+    object[0] = object[i]
+  }
+};
 
 /**
  * You are given an array of objects.
@@ -200,7 +210,9 @@ const bestScore = () => { };
  * @returns {Object} {1: 1, 2: 8, 3: 27...}
  */
 
-const cubeObj = () => { };
+const cubeObj = () => {
+
+};
 
 /**
  * Takes in a string and returns an object with
@@ -218,7 +230,20 @@ const countAandE = () => { };
  * @returns {Object} Counts of all characters: {a: 2, g: 1, o: 2, d:1, " ": 2, s: 1, n:1, k:1, e: 1}
  */
 
-const countOccurance = () => { };
+const countOccurance = (str) => {
+  let obj = {};
+  for (let i = 0; i < str.length; i++) {
+    const el = str[i];
+    if (obj[el]) {
+      obj[el]++
+    } else {
+      obj[el] = 1
+
+    }
+
+  }
+  return obj;
+}
 
 /**
  * Takes in a string and returns an object with
