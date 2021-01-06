@@ -188,10 +188,10 @@ const addsCountry = (obj, country, capital) => {
  */
 
 const authorScores = (object) => {
-  for (let i = 0; i < Array.length; i++) {
-    let object = Array[i];
-    object[0] = object[i]
-  }
+  const obj = object.fromEntries(arr);
+  return obj;
+
+}
 };
 
 /**
@@ -202,7 +202,10 @@ const authorScores = (object) => {
  * @returns {string} The full name of person with best score.
  */
 
-const bestScore = () => { };
+const bestScore = (obj) => {
+
+};
+
 
 /**
  * Returns an object where the keys are numbers 1 through 20,
@@ -210,9 +213,7 @@ const bestScore = () => { };
  * @returns {Object} {1: 1, 2: 8, 3: 27...}
  */
 
-const cubeObj = () => {
-
-};
+const cubeObj = () => { };
 
 /**
  * Takes in a string and returns an object with
@@ -233,7 +234,7 @@ const countAandE = () => { };
 const countOccurance = (str) => {
   let obj = {};
   for (let i = 0; i < str.length; i++) {
-    const el = str[i];
+    const el = str[i].toLowerCase();
     if (obj[el]) {
       obj[el]++
     } else {
