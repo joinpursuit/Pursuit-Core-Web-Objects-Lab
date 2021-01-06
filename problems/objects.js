@@ -196,7 +196,9 @@ const authorScores = (authors) => {
  * @returns {string} The full name of person with best score.
  */
 
-const bestScore = () => {};
+const bestScore = (submissions) => {
+
+};
 
 /**
  * Returns an object where the keys are numbers 1 through 20,
@@ -222,7 +224,9 @@ const countAandE = () => {};
  * @returns {Object} Counts of all characters: {a: 2, g: 1, o: 2, d:1, " ": 2, s: 1, n:1, k:1, e: 1}
  */
 
-const countOccurance = () => {};
+const countOccurance = (str) => {
+  
+};
 
 /**
  * Takes in a string and returns an object with
@@ -271,8 +275,11 @@ const updateList = () => {};
  * @returns {Object} The Object without the key.
  */
 
- const deleteKey = () => {};
-
+ const deleteKey = (obj, key) => {
+  delete obj[key]
+  return obj
+  
+}
 
  /**
   * Takes in an object and returns the number of
