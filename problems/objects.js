@@ -173,9 +173,7 @@ const addsJamaica = (obj) => {
 
 const addsCountry = (obj, country, capital) => {
   obj[country] = capital
-
   return obj;
-
 };
 
 /**
@@ -187,11 +185,9 @@ const addsCountry = (obj, country, capital) => {
  * @returns {Object} {"Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1}
  */
 
-const authorScores = (object) => {
-  for (let i = 0; i < Array.length; i++) {
-    let object = Array[i];
-    object[0] = object[i]
-  }
+const authorScores = (arr) => {
+  const obj = Object.fromEntries(arr);
+  return obj;
 };
 
 /**
@@ -202,7 +198,17 @@ const authorScores = (object) => {
  * @returns {string} The full name of person with best score.
  */
 
-const bestScore = () => { };
+const bestScore = (arr) => {
+  let bestScore = -1000000;
+  let element = {}
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].score > bestScore) {
+      element = arr[i];
+      bestScore = element.score;
+    }
+  }
+  return element.firstName + " " + element.lastName;
+};
 
 /**
  * Returns an object where the keys are numbers 1 through 20,
@@ -211,7 +217,12 @@ const bestScore = () => { };
  */
 
 const cubeObj = () => {
+  let obj = {}
 
+  for (let i = 1; i <= 20; i++) {
+    obj[i] = i * i * i;
+  }
+  return obj;
 };
 
 /**
@@ -233,14 +244,12 @@ const countAandE = () => { };
 const countOccurance = (str) => {
   let obj = {};
   for (let i = 0; i < str.length; i++) {
-    const el = str[i];
+    const el = str[i].toLowerCase();
     if (obj[el]) {
       obj[el]++
     } else {
       obj[el] = 1
-
     }
-
   }
   return obj;
 }
