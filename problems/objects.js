@@ -324,9 +324,15 @@ const mostCommonElement = (array) => {
  */
 
 const updateList = (pairs, arr) => {
-  for (let i = 0; i < arr.length; i++){
-    
+  let newArr = [];
+  for(let i = 0; i < arr.length; i++){
+     if(pairs[arr[i]]) {
+       newArr.push(pairs[arr[i]])
+     }
+     else
+      newArr.push(arr[i])
   }
+return newArr
 };
 
 /**
@@ -349,7 +355,9 @@ const deleteKey = (obj, key) => {
   * @param {Object} obj
   * @returns {number} Number of properties.
   */
- const propertyCount = () => {};
+ const propertyCount = (obj) => {
+  return Object.keys(obj).length
+};
 
 module.exports = {
   eveAppleCount,
