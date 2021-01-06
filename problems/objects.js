@@ -204,16 +204,12 @@ const bestScore = (submissions) => {
   for (let i = 0; i < submissions.length; i++) {
     
     if (submissions[i].score > highestScore) {
-      highestScore = submissions[i].score; 
+      highestScore = submissions[i].score;
+      bestScore = submissions[i].firstName + " " + submissions[i].lastName;
     }
   }
-  
-  return bestScoresubmissions[i].firstName + " " + submissions[i].lastName
+  return bestScore 
 };
-
-
-// console.log(bestScore([{ firstName: "Kelvin", lastName: "Newt", score: 10}, { firstName: "Calvin", lastName: "Newton", score: 12}, { firstName: "Kalvin", lastName: "Pewton", score: 13}]))
-
 
 /**
  * Returns an object where the keys are numbers 1 through 20,
@@ -229,7 +225,7 @@ const cubeObj = () => {
   return newObj
 };
 
-console.log(cubeObj())
+// console.log(cubeObj())
 /**
  * Takes in a string and returns an object with
  * the number of a's and the number of e's contained in the string
