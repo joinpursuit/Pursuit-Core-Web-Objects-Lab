@@ -181,7 +181,15 @@ const addsCountry = (capitalByCountry, country, capital) => {
  * @returns {Object} {"Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1}
  */
 
-const authorScores = () => {};
+const authorScores = (authors) => {
+  let objectAuthors = {};
+  let author; // index authors[i][0]
+  let score; // index authors[i][1]
+  for(let i = 0; i < authors.length; i++) {
+    objectAuthors[(authors[i][0])] = (authors[i][1]);
+  }
+  return objectAuthors;
+};
 
 /**
  * You are given an array of objects.
@@ -191,7 +199,7 @@ const authorScores = () => {};
  * @returns {string} The full name of person with best score.
  */
 
-const bestScore = () => {};
+const bestScore = (submissions) => {};
 
 /**
  * Returns an object where the keys are numbers 1 through 20,
@@ -199,7 +207,13 @@ const bestScore = () => {};
  * @returns {Object} {1: 1, 2: 8, 3: 27...}
  */
 
-const cubeObj = () => {};
+const cubeObj = () => {
+  let objectCubed = {};
+  for(i = 1; i<= 20; i++) {
+      objectCubed[i] = i * i * i;
+  }
+  return objectCubed;
+};
 
 /**
  * Takes in a string and returns an object with
@@ -208,7 +222,19 @@ const cubeObj = () => {};
  * @returns {Object} Counts of e and a. {a: 2, e: 1}
  */
 
-const countAandE = () => {};
+const countAandE = (str) => {
+  let counter = {};
+  /* for(let i = 0; i < str.length; i++) {
+    if (counter[str[i]]  === "a") {
+        counter++;
+    } else if (counter[str[i]]  === "a"){
+      counter++;
+    // } else {
+    //   counter[str[i]] = 1;
+    // }
+  }
+  return counter; */
+};
 
 /**
  * Takes in a string and returns an object with
