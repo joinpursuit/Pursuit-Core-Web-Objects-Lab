@@ -75,7 +75,9 @@ const appleSet = (appleCountByName, name, newAppleCount) => {
  *
  */
 
-const adamAndEveApples = () => {};
+const adamAndEveApples = (appleCountByName) => {
+  return appleCountByName["Adam"] + appleCountByName["Eve"]
+};
 
 /**
  * Takes in an object with peoples names as the keys and
