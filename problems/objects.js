@@ -297,13 +297,24 @@ const countOccuranceNoSpaces = str => {
  */
 
 const mostCommonElement = array => {
-  let count = 0;
-  for (let i = 0; i < array.length; i++) {
-    if(array[i]){
-      count++;
+  let count = {};
+  for (let i = 0; i < array.length; i++){
+    const allLowerCaseLetters = array[i];
+    if (count[allLowerCaseLetters]) {
+      count[allLowerCaseLetters] += 1;
+    } else {
+      count[allLowerCaseLetters] = 1;
     }
   }
-  console.log(count);
+  let topEl = array[0];
+  let maxCount = 0;
+  for (let value of array) {
+    if (count[value] > maxCount) {
+      topEl = value;
+      maxCount = count[value];
+    }
+  }
+  return topEl;
 };
 
 /**
