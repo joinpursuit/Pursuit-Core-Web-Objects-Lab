@@ -237,7 +237,21 @@ console.log(cubeObj())
  * @returns {Object} Counts of e and a. {a: 2, e: 1}
  */
 
-const countAandE = () => {};
+const countAandE = (str) => {
+  const aEObj = {};
+  for (let i = 0; i < str.length; i++) {
+    const e = "e"
+    const a = "a"
+    if (aEObj[a].toLowerCase || aEObj[e].toLowerCase) {
+      aEObj[a] += 1
+    } else if (!aEObj[a].toLowerCase || !aEObj[e].toLowerCase){
+      
+    } else {
+      aEObj += 1
+    }
+  }
+};
+
 
 /**
  * Takes in a string and returns an object with
