@@ -115,7 +115,9 @@ const appleSetToZero = (appleCountByName) => {
  * @returns {string} Capital of Russia
  */
 
-const russiaCapital = () => {};
+const russiaCapital = (capitalByCountry) => {
+  return capitalByCountry["Russia"]
+};
 
 /**
  * Takes in an object of countries and their capitals.
