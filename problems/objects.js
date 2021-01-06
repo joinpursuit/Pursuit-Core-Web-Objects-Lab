@@ -6,7 +6,9 @@
  * @returns {number} The number of apples Eve has.
  */
 
-const eveAppleCount = () => {};
+const eveAppleCount = (appleCountByName) => {
+  return appleCountByName["Eve"]
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -22,7 +24,9 @@ const eveAppleCount = () => {};
  * bracket notation? Try them both.
  */
 
-const appleCount = () => {};
+const appleCount = (appleCountByName, name) => {
+  return appleCountByName[name]
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -36,7 +40,10 @@ const appleCount = () => {};
  * @returns {Object} The updated object.
  */
 
-const eveAppleSet = () => {};
+const eveAppleSet = (appleCountByName, appleCount) => {
+  appleCountByName["Eve"] = appleCount
+  return appleCountByName
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -50,7 +57,10 @@ const eveAppleSet = () => {};
  *
  */
 
-const appleSet = () => {};
+const appleSet = (appleCountByName, name, newAppleCount) => {
+  appleCountByName[name] = newAppleCount
+  return appleCountByName
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -61,7 +71,9 @@ const appleSet = () => {};
  *
  */
 
-const adamAndEveApples = () => {};
+const adamAndEveApples = (appleCountByName) => {
+  return appleCountByName["Eve"] + appleCountByName["Adam"]
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -72,7 +84,14 @@ const adamAndEveApples = () => {};
  *
  */
 
-const appleSum = () => {};
+const appleSum = (appleCountByName) => {
+  let sum = 0
+  for(key in appleCountByName){
+    let num = appleCountByName[key]
+    sum += num
+  }
+    return sum
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -83,7 +102,12 @@ const appleSum = () => {};
  *
  */
 
-const appleSetToZero = () => {};
+const appleSetToZero = (appleCountByName) => {
+  for(let key of Object.keys(appleCountByName)){
+    appleCountByName[key] = 0
+  }
+    return appleCountByName
+};
 
 /**
  * Takes in an object of countries and their capitals.
@@ -93,7 +117,9 @@ const appleSetToZero = () => {};
  * @returns {string} Capital of Russia
  */
 
-const russiaCapital = () => {};
+const russiaCapital = (capitalByCountry) => {
+  return capitalByCountry["Russia"]
+};
 
 /**
  * Takes in an object of countries and their capitals.
@@ -105,7 +131,9 @@ const russiaCapital = () => {};
  * @returns {string} Capital of country
  */
 
-const getCapital = () => {};
+const getCapital = (capitalByCountry, country) => {
+  return capitalByCountry[country]
+};
 
 /**
  * Takes in an object of countries and their capitals
@@ -116,7 +144,10 @@ const getCapital = () => {};
  * @returns {Object} countriesAndCapitals now with Jamaica
  */
 
-const addsJamaica = () => {};
+const addsJamaica = (capitalByCountry) => {
+  capitalByCountry["Jamaica"] = "Kingston"
+  return capitalByCountry
+};
 
 /**
  * Takes in an object of countries and their capitals
@@ -130,7 +161,10 @@ const addsJamaica = () => {};
  * @returns {Object} countriesAndCapitals
  */
 
-const addsCountry = () => {};
+const addsCountry = (capitalByCountry, country, capital) => {
+  capitalByCountry[country] = capital
+  return capitalByCountry
+};
 
 /**
  * Takes an array of arrays. First element of inner array is authorName, second element
@@ -141,7 +175,15 @@ const addsCountry = () => {};
  * @returns {Object} {"Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1}
  */
 
-const authorScores = () => {};
+const authorScores = (authors) => {
+  let obj = {}
+  for(let authorsArr of authors){
+    const name = authorsArr[0]
+    score = authorsArr[1]
+    obj[name] = score
+  }
+  return obj
+};
 
 /**
  * You are given an array of objects.
@@ -151,7 +193,13 @@ const authorScores = () => {};
  * @returns {string} The full name of person with best score.
  */
 
-const bestScore = () => {};
+const bestScore = (submissions) => {
+  for(let i = 0; i < submissions.length; i++){
+    if(submissions[i]["score"] > submissions[submissions.length - 1]["score"]){
+      return submissions[i]["firstName"] + " " + submissions[i]["lastName"]
+    }
+  }
+};
 
 /**
  * Returns an object where the keys are numbers 1 through 20,
@@ -159,7 +207,13 @@ const bestScore = () => {};
  * @returns {Object} {1: 1, 2: 8, 3: 27...}
  */
 
-const cubeObj = () => {};
+const cubeObj = () => {
+  let obj = {}
+  for(let i = 1; i <= 20; i++){
+    obj[i] = i * i * i
+  }
+  return obj
+};
 
 /**
  * Takes in a string and returns an object with
@@ -167,8 +221,17 @@ const cubeObj = () => {};
  * @param {string} str - "A good snake"
  * @returns {Object} Counts of e and a. {a: 2, e: 1}
  */
-
-const countAandE = () => {};
+const countAandE = (str) => {
+  let counter = {"a": 0, "e": 0}
+  for(let i = 0; i < str.length; i++){
+    if(str[i].toLowerCase() === "a"){
+      counter[str[i].toLowerCase()] += 1
+    } else if (str[i].toLowerCase() === "e"){
+      counter[str[i].toLowerCase()] += 1
+    }
+  }
+    return counter
+};
 
 /**
  * Takes in a string and returns an object with
@@ -177,7 +240,17 @@ const countAandE = () => {};
  * @returns {Object} Counts of all characters: {a: 2, g: 1, o: 2, d:1, " ": 2, s: 1, n:1, k:1, e: 1}
  */
 
-const countOccurance = () => {};
+const countOccurance = (str) => {
+  let counter = {}
+  for(let i = 0; i < str.length; i++){
+    if(counter[str[i].toLowerCase()]){
+      counter[str[i].toLowerCase()] += 1
+    }else{
+      counter[str[i].toLowerCase()] = 1
+    }
+  }
+    return counter
+};
 
 /**
  * Takes in a string and returns an object with
@@ -187,7 +260,11 @@ const countOccurance = () => {};
  * @returns {Object} Counts all characters except spaces  {a: 2, g: 1, o: 2, d:1, s: 1, n:a, k:1, e: 1}
  */
 
-const countOccuranceNoSpaces = () => {};
+const countOccuranceNoSpaces = (str) => {
+let object = countOccurance(str)
+delete object[' ']
+return object
+};
 
 /**
  * Takes in an array and returns the most common element.
@@ -195,7 +272,21 @@ const countOccuranceNoSpaces = () => {};
  * @returns {(number|string)} Most common element
  */
 
-const mostCommonElement = () => {};
+const mostCommonElement = (array) => {
+  let count = {}
+  for(let element of array){
+    count[element] = (count[element] || 0) + 1
+  }
+    let topValue = array[0];
+    let maxCount = 0;
+    for(let element of array){
+      if(count[element] > maxCount){
+        topValue = element
+        maxCount = count[element]
+      }
+    }
+    return topValue
+};
 
 /**
  * Takes in an object and an array.
@@ -215,7 +306,15 @@ const mostCommonElement = () => {};
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = (pairs, arr) => {
+  for(let i = 0; i < arr.length; i++){
+    val = arr[i]
+    if(pairs[val]){
+      arr[i] = pairs[val]
+    }
+  }
+    return arr
+};
 
 /**
  * Takes in an object and a key.
@@ -226,7 +325,10 @@ const updateList = () => {};
  * @returns {Object} The Object without the key.
  */
 
- const deleteKey = () => {};
+ const deleteKey = (obj, key) => {
+   delete obj[key]
+   return obj
+ };
 
 
  /**
@@ -235,7 +337,9 @@ const updateList = () => {};
   * @param {Object} obj
   * @returns {number} Number of properties.
   */
- const propertyCount = () => {};
+ const propertyCount = (obj) => {
+   return Object.values(obj).length
+ };
 
 module.exports = {
   eveAppleCount,
