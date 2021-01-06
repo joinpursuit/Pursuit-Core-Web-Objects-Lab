@@ -26,7 +26,7 @@ const eveAppleCount = (appleCountByName) => {
 
 const appleCount = (appleCountByName, name) => {
   if(appleCountByName.hasOwnProperty(name)){
-    return appleCountByName.name
+    return appleCountByName[name]
   } else {
     return 0
   }
@@ -173,7 +173,15 @@ const addsCountry = (capitalByCountry, country, capital) => {
  * @returns {Object} {"Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1}
  */
 
-const authorScores = () => {};
+const authorScores = (authors) => {
+  let obj = {}
+  for(let i = 0; i < authors[0].length; i++){
+    authors[0][0] = Object.key
+    authors[0][1] = Object.values
+    obj.push(authors[0], authors[1])
+  }
+  return obj
+};
 
 /**
  * You are given an array of objects.
