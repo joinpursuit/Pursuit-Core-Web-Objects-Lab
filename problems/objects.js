@@ -44,7 +44,10 @@ const appleCount = (appleCountByName, name) => {
  * @returns {Object} The updated object.
  */
 
-const eveAppleSet = () => {};
+const eveAppleSet = (appleCountByName, appleCount) => {
+  appleCountByName["Eve"] = appleCount
+  return appleCountByName
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -58,7 +61,10 @@ const eveAppleSet = () => {};
  *
  */
 
-const appleSet = () => {};
+const appleSet = (appleCountByName, name, newAppleCount) => {
+  appleCountByName[name] = newAppleCount
+  return appleCountByName
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -69,7 +75,9 @@ const appleSet = () => {};
  *
  */
 
-const adamAndEveApples = () => {};
+const adamAndEveApples = (appleCountByName) => {
+  return appleCountByName["Adam"] + appleCountByName["Eve"]
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -80,7 +88,14 @@ const adamAndEveApples = () => {};
  *
  */
 
-const appleSum = () => {};
+const appleSum = (appleCountByName) => {
+  let sum = 0
+  for (let key in appleCountByName) {
+  let num = appleCountByName[key];
+  sum = sum + num
+  }
+  return sum
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -91,7 +106,12 @@ const appleSum = () => {};
  *
  */
 
-const appleSetToZero = () => {};
+const appleSetToZero = (appleCountByName) => {
+  for (let key in appleCountByName) {
+    appleCountByName[key] = 0
+  }
+  return appleCountByName
+};
 
 /**
  * Takes in an object of countries and their capitals.
@@ -101,7 +121,9 @@ const appleSetToZero = () => {};
  * @returns {string} Capital of Russia
  */
 
-const russiaCapital = () => {};
+const russiaCapital = (capitalByCountry) => {
+  return capitalByCountry["Russia"]
+};
 
 /**
  * Takes in an object of countries and their capitals.
