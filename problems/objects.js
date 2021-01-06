@@ -175,7 +175,8 @@ const addsCountry = (capitalByCountry, country, capital) => {
  */
 
 const authorScores = (authors) => {
-
+    let obj = Object.fromEntries(authors);
+   return obj;
 };
 
 /**
@@ -187,7 +188,10 @@ const authorScores = (authors) => {
  */
 
 const bestScore = (submissions) => {
-
+// i = 0
+// if (submissions["score"] > i) {
+//   i += submissions["score"]
+// } if 
 };
 
 /**
@@ -196,8 +200,29 @@ const bestScore = (submissions) => {
  * @returns {Object} {1: 1, 2: 8, 3: 27...}
  */
 
-const cubeObj = () => {};
+const cubeObj = () => {
+  // var to = Object(target);
+  
+  // let key = i;
+  // let object = {};
+  // for (let i = 1; i <= 20; i++) {
 
+  // }
+   
+  // for (let key in object)
+  // for (var index = 1; index < arguments.length; index++) {
+  //   var nextSource = arguments[index];
+
+  //   if (nextSource !== null && nextSource !== undefined) {
+  //     for (var nextKey in nextSource) {
+  //       // Avoid bugs when hasOwnProperty is shadowed
+  //       if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+  //         to[nextKey] = nextSource[nextKey];
+  //       }
+
+
+};
+ 
 /**
  * Takes in a string and returns an object with
  * the number of a's and the number of e's contained in the string
@@ -206,7 +231,20 @@ const cubeObj = () => {};
  */
 
 const countAandE = (str) => {
-
+  // let counter = {};
+  // let letters = str.split("")
+  // for (let i = 0; i < letters.length; i++) {
+  //    const a = letters[i];
+  //    const e = letters[i];
+  //       if (counter[a]) {
+  //         counter[a] +=1;
+  //       } else if (counter[e]) {
+  //         counter[e] += 1;
+  //       } else {
+  //         counter[i] = 1;
+  //       }
+  //       return counter;
+  // }
 };
 
 /**
@@ -273,8 +311,9 @@ const updateList = (pairs, arr) => {
  * @returns {Object} The Object without the key.
  */
 
- const deleteKey = (key) => {
-
+ const deleteKey = (object, key) => {
+  delete object[key];  
+  return object;
  };
 
 
@@ -285,7 +324,11 @@ const updateList = (pairs, arr) => {
   * @returns {number} Number of properties.
   */
  const propertyCount = (obj) => {
-
+//  let arr = Object.keys(obj);
+//  return arr.length - 1
+//  propertyCount({ "Ed Sheeran": "guitar", "Ray Charles": "piano" })
+// //  console.log(arr);
+// console.log(Object.keys(obj));
  };
 
 module.exports = {
