@@ -179,14 +179,14 @@ const addsCountry = (capitalByCountry, country, capital) => {
  * @returns {Object} {"Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1}
  */
 
-const authorScores = (authors) => {}
-//  let obj = []
- // [   [  author name , score ] , [ author name2, score2] ]
-//for(i = 0; i < authors.length; i ++){
-
-//}
-
-//};
+const authorScores = (authors) => {
+   let obj = []
+  for(let i =0; i < authors.length; i ++){
+    let authorName = authors[i]
+    obj[authorName[0]] = authorName[1]
+  }
+return obj;
+}
 
 /**
  * You are given an array of objects.
