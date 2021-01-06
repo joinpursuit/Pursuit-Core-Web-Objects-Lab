@@ -5,7 +5,9 @@
  * @returns {string} - species
  */
 
-const catSpecies = () => {};
+const catSpecies = (catObj, species) => {
+  return catObj.species;
+};
 
 /**
  * Takes in a cat object and a color. Add the key
@@ -15,7 +17,10 @@ const catSpecies = () => {};
  * @returns {Object} catObj
  */
 
-const giveCatColor = () => {};
+const giveCatColor = (catObj, color) => {
+  catObj.color = color;
+  return catObj;
+};
 
 /**
  * Takes in a cat object and returns its 'texture', if it has that property.
@@ -25,15 +30,28 @@ const giveCatColor = () => {};
  * @throws {Error} 'Does not have texture property'
  */
 
-const catTexture = () => {};
-
+const catTexture = (catObj, str) => {
+  if (catObj["texture"]) {
+    return catObj["texture"];
+  } else {
+    throw Error('Does not have texture property')
+  }
+}
 /**
  * Takes in an object and returns all its keys as an array.
  * Does not use Object.keys in its implementation.
  * @param {Object}
  * @returns {string[]} All the keys from the object
  */
-const objKeys = () => {};
+const objKeys = (obj) => {
+  let arr = []
+  let i = 0;
+  for (let key in obj) {
+    arr[i] = key;
+    i++;
+  }
+  return arr;
+};
 
 /**
  * Takes in an object and returns all its keys as an array.
@@ -42,7 +60,9 @@ const objKeys = () => {};
  * @returns {string[]} All the keys from the object
  */
 
-const objKeys2 = () => {};
+const objKeys2 = (obj) => {
+  return Object.keys(obj)
+};
 
 /**
  * Takes in an object and returns all the values as an array.
@@ -50,7 +70,15 @@ const objKeys2 = () => {};
  * @param {Object}
  * @returns {*[]} All the values from the object
  */
-const objValues = () => {};
+const objValues = (obj) => {
+  let arr = []
+  let i = 0;
+  for (let key in obj) {
+    arr[i] = obj[key];
+    i++;
+  }
+  return arr;
+};
 
 /**
  * Takes in an object and returns all the values as an array.
@@ -59,17 +87,25 @@ const objValues = () => {};
  * @returns {*[]} All the values from the object
  */
 
-const objValues2 = () => {};
+const objValues2 = (obj) => {
+  return Object.values(obj)
+};
 
 /**
  * Takes in an array of film objects and
  * returns a new array with only the directors listed.
- * @param {Object[]} films
+ * @param {Object[]} films [{},{},{}]
  * @param {string} films[].director - The director of the film.
  * @returns {string[]} Only the directors
  */
 
-const findDirectors = () => {};
+const findDirectors = (films, director) => {
+  let arr = []
+  for (let i = 0; i < films.length; i++) {
+    arr.push(films[i].director)
+  }
+  return arr;
+};
 
 /**
  * Takes in an array of people objects with with properties
@@ -82,7 +118,13 @@ const findDirectors = () => {};
  * @returns {string[]} The full names of all people.
  */
 
-const fullNames = () => {};
+const fullNames = (people, firstName, lastName) => {
+  let names = [];
+  for (let i = 0; i < people.length; i++) {
+    names[i] = people[i].firstName + " " + people[i].lastName
+  }
+  return names;
+};
 
 /**
  * Takes in an object which maps a persons name to an array
@@ -103,7 +145,21 @@ const fullNames = () => {};
  *     Johnson: [126, 300, 640, 255, 268],
  *  };
  */
-const largestEarner = () => {};
+const largestEarner = (deposits) => {
+  let max = 0;
+  let person = "";
+  for (let key in deposits) {
+    let total = 0;
+    for (el of deposits[key]) {
+      total += el
+    }
+    if (total > max) {
+      max = total;
+      person = key;
+    }
+  }
+  return person + " made $" + max;
+};
 
 /**
  * Takes in an object and returns and array where
@@ -114,7 +170,13 @@ const largestEarner = () => {};
  * @returns {string[]}
  */
 
-const pairs = () => {};
+const pairs = (groups) => {
+  let arr = [];
+  for (let key in groups) {
+    arr.push(key + " & " + groups[key])
+  }
+  return arr;
+};
 
 /**
  * Takes in an array of films, where each film has the following
@@ -134,7 +196,19 @@ const pairs = () => {};
  * @param {boolean} films[].watched - Whether or not the film has been watched by the user.
  * @returns {string[]} Array of sentences about films
  */
-const movieList = () => {};
+const movieList = (films, director, title, watched) => {
+  let arr = [];
+  for (let key in films) {
+    let movie = films[key];
+    if (movie.watched) {
+      arr.push(`You already watched "${movie.title}" directed by ${movie.director}.`)
+    } else {
+      arr.push(`You still need to watch "${movie.title}" by director ${movie.director}.`)
+    }
+
+  }
+  return arr;
+};
 
 /**
  * Takes in a sentence and returns the most
@@ -143,7 +217,38 @@ const movieList = () => {};
  * @returns {string} The most frequent word longer than 5 characters
  */
 
-const mostFreqWordGreaterThanFive = () => {};
+const mostFreqWordGreaterThanFive = (sentence) => {
+
+  let arr = sentence.split(" ");
+  let arr2 = [];
+  for (let i = 0; i < arr.length; i++) {
+      if(arr[i].length>5){
+        arr2.push(arr[i])
+      }
+  }
+
+  let count = {}
+  for(let i=0;i<arr2.length;i++){
+    let element = arr2[i].toLowerCase();
+    if(count[element]){
+      count[element]++;
+    }else{
+      count[element] = 1;
+    }
+  }
+
+  let max =0;
+  let word = ""
+  for(let key in count){
+    if(count[key]>max){
+      max = count[key]
+      word = key
+    }
+
+  }
+  return word;
+};
+
 
 /**
  * Takes in a sentence and a length.
@@ -153,7 +258,7 @@ const mostFreqWordGreaterThanFive = () => {};
  * @returns {string} The most frequent word longer than length
  */
 
-const mostFreqWordGreaterThanLength = () => {};
+const mostFreqWordGreaterThanLength = () => { };
 
 /**
  * Takes in a sentence and returns the second most common letter
@@ -162,7 +267,7 @@ const mostFreqWordGreaterThanLength = () => {};
  * @returns {string} The second most used letter.
  */
 
-const secondMostFrequentLetter = () => {};
+const secondMostFrequentLetter = () => { };
 
 // Consider the following question: 
 // What will the code below log?  Explain why.
