@@ -6,7 +6,9 @@
  * @returns {number} The number of apples Eve has.
  */
 
-const eveAppleCount = () => {};
+const eveAppleCount = (appleCountByName) => {
+  return appleCountByName.Eve
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -22,7 +24,9 @@ const eveAppleCount = () => {};
  * bracket notation? Try them both.
  */
 
-const appleCount = () => {};
+const appleCount = (appleCountByName, name) => {
+  return appleCountByName[name]
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -36,7 +40,10 @@ const appleCount = () => {};
  * @returns {Object} The updated object.
  */
 
-const eveAppleSet = () => {};
+const eveAppleSet = (appleCountByName, appleCount) => {
+  appleCountByName["Eve"] = appleCount
+  return appleCountByName
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -50,7 +57,10 @@ const eveAppleSet = () => {};
  *
  */
 
-const appleSet = () => {};
+const appleSet = (appleCountByName, name, newAppleCount) => {
+  appleCountByName[name] = newAppleCount;
+  return appleCountByName;
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -61,7 +71,10 @@ const appleSet = () => {};
  *
  */
 
-const adamAndEveApples = () => {};
+const adamAndEveApples = (appleCountByName) => {
+  let sum = appleCountByName.Eve + appleCountByName.Adam
+  return sum
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -72,7 +85,14 @@ const adamAndEveApples = () => {};
  *
  */
 
-const appleSum = () => {};
+const appleSum = (appleCountByName) => {
+  let sum = 0
+  let appleValues = Object.values(appleCountByName)
+  for (const key in appleValues) {    
+    sum += appleValues[key]
+  }
+  return sum
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -83,7 +103,12 @@ const appleSum = () => {};
  *
  */
 
-const appleSetToZero = () => {};
+const appleSetToZero = (appleCountByName) => {
+  for (const key in appleCountByName) {
+    appleCountByName[key] = 0
+  }
+  return appleCountByName
+};
 
 /**
  * Takes in an object of countries and their capitals.
