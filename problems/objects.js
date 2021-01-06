@@ -209,7 +209,7 @@ const bestScore = (submissions) => {};
 
 const cubeObj = () => {
   let objectCubed = {};
-  for(i = 1; i<= 20; i++) {
+  for(i = 1; i <= 20; i++) {
       objectCubed[i] = i * i * i;
   }
   return objectCubed;
@@ -224,16 +224,16 @@ const cubeObj = () => {
 
 const countAandE = (str) => {
   let counter = {};
-  /* for(let i = 0; i < str.length; i++) {
-    if (counter[str[i]]  === "a") {
-        counter++;
-    } else if (counter[str[i]]  === "a"){
-      counter++;
-    // } else {
-    //   counter[str[i]] = 1;
-    // }
+  for(let i = 0; i <= str.length; i++) {
+    if (counter[str[i]] === "a" || counter[str[i]]  === "A") {
+        counter[str[a]]++;
+    } else if (counter[str[i]]  === "e" || counter[str[i]]  === "E") {
+        counter[str[e]]++;
+     } else {
+      counter[str[i]] = 0;
+    }
   }
-  return counter; */
+  return counter;
 };
 
 /**
@@ -243,7 +243,17 @@ const countAandE = (str) => {
  * @returns {Object} Counts of all characters: {a: 2, g: 1, o: 2, d:1, " ": 2, s: 1, n:1, k:1, e: 1}
  */
 
-const countOccurance = () => {};
+const countOccurance = (str) => {
+  let counter = {};
+  for (let i = 0; i <= str.length; i++) {
+    if (counter[str[i]]) {
+      counter[str[i]]++;
+    } else {
+      counter[str[i]] = 1;
+    }
+  }
+  return counter;
+};
 
 /**
  * Takes in a string and returns an object with
@@ -292,7 +302,10 @@ const updateList = () => {};
  * @returns {Object} The Object without the key.
  */
 
- const deleteKey = () => {};
+ const deleteKey = (object, key) => {
+   delete object[key];
+   return object;
+ };
 
 
  /**
@@ -301,7 +314,10 @@ const updateList = () => {};
   * @param {Object} obj
   * @returns {number} Number of properties.
   */
- const propertyCount = () => {};
+ const propertyCount = (obj) => {
+   let number = Object.values(obj)
+   return number.length;
+ };
 
 module.exports = {
   eveAppleCount,
