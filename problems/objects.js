@@ -6,7 +6,9 @@
  * @returns {number} The number of apples Eve has.
  */
 
-const eveAppleCount = () => {};
+const eveAppleCount = (obj) => {
+  return obj["Eve"]
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -22,8 +24,15 @@ const eveAppleCount = () => {};
  * bracket notation? Try them both.
  */
 
-const appleCount = () => {};
+const appleCount = (Obj, name) => {
+  if (Obj[name]) {
+    return Obj[name];
 
+  } else {
+    return 0;
+  }
+
+};
 /**
  * Takes in an object with peoples names as the keys and
  * the number of apples they have as values.
@@ -36,7 +45,12 @@ const appleCount = () => {};
  * @returns {Object} The updated object.
  */
 
-const eveAppleSet = () => {};
+const eveAppleSet = (obj, num) => {
+  obj["Eve"] = num;
+  return obj;
+
+
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -50,8 +64,10 @@ const eveAppleSet = () => {};
  *
  */
 
-const appleSet = () => {};
-
+const appleSet = (obj, name, num) => {
+  obj[name] = num
+  return obj;
+};
 /**
  * Takes in an object with peoples names as the keys and
  * the number of apples they have as values.
@@ -61,7 +77,7 @@ const appleSet = () => {};
  *
  */
 
-const adamAndEveApples = () => {};
+const adamAndEveApples = () => { };
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -72,7 +88,7 @@ const adamAndEveApples = () => {};
  *
  */
 
-const appleSum = () => {};
+const appleSum = () => { };
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -83,7 +99,7 @@ const appleSum = () => {};
  *
  */
 
-const appleSetToZero = () => {};
+const appleSetToZero = () => { };
 
 /**
  * Takes in an object of countries and their capitals.
@@ -93,7 +109,7 @@ const appleSetToZero = () => {};
  * @returns {string} Capital of Russia
  */
 
-const russiaCapital = () => {};
+const russiaCapital = () => { };
 
 /**
  * Takes in an object of countries and their capitals.
@@ -105,7 +121,7 @@ const russiaCapital = () => {};
  * @returns {string} Capital of country
  */
 
-const getCapital = () => {};
+const getCapital = () => { };
 
 /**
  * Takes in an object of countries and their capitals
@@ -116,7 +132,7 @@ const getCapital = () => {};
  * @returns {Object} countriesAndCapitals now with Jamaica
  */
 
-const addsJamaica = () => {};
+const addsJamaica = () => { };
 
 /**
  * Takes in an object of countries and their capitals
@@ -130,7 +146,7 @@ const addsJamaica = () => {};
  * @returns {Object} countriesAndCapitals
  */
 
-const addsCountry = () => {};
+const addsCountry = () => { };
 
 /**
  * Takes an array of arrays. First element of inner array is authorName, second element
@@ -141,7 +157,7 @@ const addsCountry = () => {};
  * @returns {Object} {"Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1}
  */
 
-const authorScores = () => {};
+const authorScores = () => { };
 
 /**
  * You are given an array of objects.
@@ -151,7 +167,7 @@ const authorScores = () => {};
  * @returns {string} The full name of person with best score.
  */
 
-const bestScore = () => {};
+const bestScore = () => { };
 
 /**
  * Returns an object where the keys are numbers 1 through 20,
@@ -159,7 +175,7 @@ const bestScore = () => {};
  * @returns {Object} {1: 1, 2: 8, 3: 27...}
  */
 
-const cubeObj = () => {};
+const cubeObj = () => { };
 
 /**
  * Takes in a string and returns an object with
@@ -168,7 +184,7 @@ const cubeObj = () => {};
  * @returns {Object} Counts of e and a. {a: 2, e: 1}
  */
 
-const countAandE = () => {};
+const countAandE = () => { };
 
 /**
  * Takes in a string and returns an object with
@@ -177,7 +193,7 @@ const countAandE = () => {};
  * @returns {Object} Counts of all characters: {a: 2, g: 1, o: 2, d:1, " ": 2, s: 1, n:1, k:1, e: 1}
  */
 
-const countOccurance = () => {};
+const countOccurance = () => { };
 
 /**
  * Takes in a string and returns an object with
@@ -187,7 +203,7 @@ const countOccurance = () => {};
  * @returns {Object} Counts all characters except spaces  {a: 2, g: 1, o: 2, d:1, s: 1, n:a, k:1, e: 1}
  */
 
-const countOccuranceNoSpaces = () => {};
+const countOccuranceNoSpaces = () => { };
 
 /**
  * Takes in an array and returns the most common element.
@@ -195,7 +211,7 @@ const countOccuranceNoSpaces = () => {};
  * @returns {(number|string)} Most common element
  */
 
-const mostCommonElement = () => {};
+const mostCommonElement = () => { };
 
 /**
  * Takes in an object and an array.
@@ -215,7 +231,7 @@ const mostCommonElement = () => {};
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = () => { };
 
 /**
  * Takes in an object and a key.
@@ -226,16 +242,16 @@ const updateList = () => {};
  * @returns {Object} The Object without the key.
  */
 
- const deleteKey = () => {};
+const deleteKey = () => { };
 
 
- /**
-  * Takes in an object and returns the number of
-  * properties it has.
-  * @param {Object} obj
-  * @returns {number} Number of properties.
-  */
- const propertyCount = () => {};
+/**
+ * Takes in an object and returns the number of
+ * properties it has.
+ * @param {Object} obj
+ * @returns {number} Number of properties.
+ */
+const propertyCount = () => { };
 
 module.exports = {
   eveAppleCount,
