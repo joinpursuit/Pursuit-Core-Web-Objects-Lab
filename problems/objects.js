@@ -6,7 +6,11 @@
  * @returns {number} The number of apples Eve has.
  */
 
-const eveAppleCount = () => {};
+const eveAppleCount = (appleCountByName) => {
+  
+  return appleCountByName['Eve'];
+
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -22,7 +26,10 @@ const eveAppleCount = () => {};
  * bracket notation? Try them both.
  */
 
-const appleCount = () => {};
+const appleCount = (appleCountByName,name) => {
+  return appleCountByName[name];
+  //console.table(appleCountByName);
+};
 
 /**
  * Takes in an object with peoples names as the keys and
