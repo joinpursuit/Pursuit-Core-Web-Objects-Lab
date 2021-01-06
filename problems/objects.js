@@ -142,7 +142,10 @@ const getCapital = (capitalByCountry, country) => {
  * @returns {Object} countriesAndCapitals now with Jamaica
  */
 
-const addsJamaica = () => {};
+const addsJamaica = (capitalByCountry) => {
+  capitalByCountry["Jamaica"] = "Kingston"
+  return capitalByCountry
+};
 
 /**
  * Takes in an object of countries and their capitals
