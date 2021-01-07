@@ -298,14 +298,27 @@ const countOccuranceNoSpaces = (str) => {
  */
 
 const mostCommonElement = (array) => {
+  newObject = {}
   for (let i = 0; i < array.length; i++) {
-    if (array[i] === ) {
-      newObject[letters[i]] = newObject[letters[i]] + 1
+    if (newObject[array[i]]) {
+      newObject[array[i]] = newObject[array[i]] + 1
     }
     else {
-      newObject[letters[i]] = 1
+      newObject[array[i]] = 1
     }
   }
+  let mostCommonNumber = 0
+  let mostCommonWord = ""
+  for (let key in newObject) {
+    if (newObject[key] > mostCommonNumber) {
+      mostCommonNumber = newObject[key]
+      mostCommonWord = key
+    }
+  }
+  if (Number(mostCommonWord)) {
+    mostCommonWord = Number(mostCommonWord)
+  }
+  return mostCommonWord
 };
 
 /**
@@ -326,7 +339,17 @@ const mostCommonElement = (array) => {
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = (pairs, arr) => {
+  let arr1 = arr
+  for (let i = 0; i < arr1.length; i++) {
+    for (let key in pairs) {
+      if (arr1[i] === key) {
+        arr1[i] = pairs[key]
+      }
+    }
+  }
+  return arr1
+};
 
 /**
  * Takes in an object and a key.
@@ -337,7 +360,15 @@ const updateList = () => {};
  * @returns {Object} The Object without the key.
  */
 
- const deleteKey = () => {};
+ const deleteKey = (obj, key) => {
+   let obj1 = obj
+   for (let keys in obj) {
+     if (keys === key) {
+       delete obj[keys]
+     }
+   }
+   return obj1
+ };
 
 
  /**
@@ -346,7 +377,13 @@ const updateList = () => {};
   * @param {Object} obj
   * @returns {number} Number of properties.
   */
- const propertyCount = () => {};
+ const propertyCount = (obj) => {
+   numberOfProperties = 0
+   for (let key in obj) {
+     numberOfProperties = numberOfProperties + 1
+   }
+   return numberOfProperties
+ };
 
 module.exports = {
   eveAppleCount,
