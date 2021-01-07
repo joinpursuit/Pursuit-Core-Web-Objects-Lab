@@ -231,7 +231,10 @@ const cubeObj = () => {
  * @returns {Object} Counts of e and a. {a: 2, e: 1}
  */
 
-const countAandE = () => { };
+const countAandE = (str) => {
+  let obj = {};
+  return arr.sort()
+};
 
 /**
  * Takes in a string and returns an object with
@@ -261,7 +264,19 @@ const countOccurance = (str) => {
  * @returns {Object} Counts all characters except spaces  {a: 2, g: 1, o: 2, d:1, s: 1, n:a, k:1, e: 1}
  */
 
-const countOccuranceNoSpaces = () => { };
+const countOccuranceNoSpaces = () => {
+  let obj = {};
+  for (let i = 0; i < str.length; i++) {
+    const el = str[i].toLowerCase();
+    if (obj[el]) {
+      obj[el]++
+    } else {
+      obj[el] = 1
+    }
+  }
+  return obj;
+
+};
 
 /**
  * Takes in an array and returns the most common element.
