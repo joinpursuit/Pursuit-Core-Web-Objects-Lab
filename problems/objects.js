@@ -195,13 +195,15 @@ const authorScores = (authors) => {
 const bestScore = (submissions) => {
   
   let highestScore = -Infinity;
-  let score = submissions[i]["score"]
+  let name = ""
   for (let i = 0; i < submissions.length; i++) {
+    let score = submissions[i]["score"]
     if (score > highestScore) {
       highestScore = score;
+      name = submissions[i]["firstName"] +" " + submissions[i]["lastName"];
     }
   }
-    return submissions[i]["firstName"] + submissions[i]["lastName"];
+    return name
 };
 
 /**
@@ -226,21 +228,16 @@ const cubeObj = () => {
  */
 
 const countAandE = (str) => {
-  let newObj = {};
-  let newArr = str.split("")
-  let el = newArr[i].toLowerCase
-  for(let i = 0; i <= newArr.length; i++) {
-  
-if(el === "a" && el === "e") {
-  newObj["a"] +=1
-  newObj["e"] +=1
-} else{
-  newObj["a"] = 1
-  newObj["e"] = 1
-}
-    } 
-  
-  return newObj
+  let stringObj = {"a" : 0 , "e" : 0};
+  let array = str.split("");
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].toLowerCase() === "a") {
+      stringObj[array[i].toLowerCase()] += 1
+    } else if (array[i].toLowerCase() === "e"){
+      stringObj[array[i].toLowerCase()] += 1
+    }
+  } return stringObj
+
 };
 
 /**
@@ -295,25 +292,29 @@ const countOccuranceNoSpaces = (str) => {
  */
 
 const mostCommonElement = (array) => {
-let mostCommon = {}
-let newArr = []
-let count = 0
-let max
+
+let obj = {}
 for(let i = 0; i < array.length; i++) {
   let el = array[i]
-if(newArr[el] !== undefined) {
-  newArr[el] ++;
+if(obj[el] !== undefined) {
+  obj[el] +=1;
 } else {
-  newArr[el] = 1
+  obj[el] = 1
 }
 }
-for(j = 0; j < newArr.length; j++) {
-  if(newArr[el] > count) {
-    count = newArr[el]
-    mostCommon = el
+let mostCommon = -Infinity
+let commonElement
+for(let key in obj) {
+  if(obj[key] > mostCommon) {
+    mostCommon = obj[key]
+    commonElement = key
   }
 }
-return mostCommon
+if(parseInt(commonElement)) {
+  return parseInt(commonElement)
+} else {
+  return commonElement
+}
 };
 
 
@@ -337,11 +338,15 @@ return mostCommon
 
 const updateList = (pairs, arr) => {
   let newArr = [];
-  if(pairs["keys"] === arr[i]) {
-    newArr.push(pairs["keys"])
+  for(let i = 0; i < arr.length; i++) {
+    let artists = arr[i]
+   
+  if(pairs[artists]) {
+    newArr.push(pairs[artists])
   } else {
-    newArr.push(object.keys(pairs))
+    newArr.push(artists)
   }
+}
   return newArr
 };
 
