@@ -169,7 +169,7 @@ const addsJamaica = (capitalByCountry) => {
  */
 
 const addsCountry = (capitalByCountry,country,capital) => {
-  capitalByCountry.country = capital 
+  capitalByCountry[country] = capital 
   return capitalByCountry
 };
 
@@ -182,7 +182,17 @@ const addsCountry = (capitalByCountry,country,capital) => {
  * @returns {Object} {"Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1}
  */
 
-const authorScores = () => {};
+const authorScores = (authors) => {
+  let obj = {}
+  for (let i =0; i < authors.length; i++){
+    let name = authors[i][0]
+    let score = authors[i][1]
+    obj [name] = score
+  }
+  return obj
+};
+//Remember this is an array, index makes a difference! authors[i][0] means "Mark Twain", and authors[i][1] means "8.9". 
+
 
 /**
  * You are given an array of objects.
@@ -192,7 +202,15 @@ const authorScores = () => {};
  * @returns {string} The full name of person with best score.
  */
 
-const bestScore = () => {};
+const bestScore = (submissions) => {
+  let blankScore = {score: 0}
+  for (let submission of submissions) {
+    if(submission['score']> blankScore['score']){
+      blankScore = submission
+    }
+  }
+  return blankScore["firstName"] + ' ' + blankScore["lastName"]
+};
 
 /**
  * Returns an object where the keys are numbers 1 through 20,
@@ -200,7 +218,9 @@ const bestScore = () => {};
  * @returns {Object} {1: 1, 2: 8, 3: 27...}
  */
 
-const cubeObj = () => {};
+const cubeObj = () => {
+
+};
 
 /**
  * Takes in a string and returns an object with
@@ -209,7 +229,7 @@ const cubeObj = () => {};
  * @returns {Object} Counts of e and a. {a: 2, e: 1}
  */
 
-const countAandE = () => {};
+const countAandE = (str) => {};
 
 /**
  * Takes in a string and returns an object with
@@ -218,7 +238,9 @@ const countAandE = () => {};
  * @returns {Object} Counts of all characters: {a: 2, g: 1, o: 2, d:1, " ": 2, s: 1, n:1, k:1, e: 1}
  */
 
-const countOccurance = () => {};
+const countOccurance = (str) => {
+
+};
 
 /**
  * Takes in a string and returns an object with
@@ -228,7 +250,7 @@ const countOccurance = () => {};
  * @returns {Object} Counts all characters except spaces  {a: 2, g: 1, o: 2, d:1, s: 1, n:a, k:1, e: 1}
  */
 
-const countOccuranceNoSpaces = () => {};
+const countOccuranceNoSpaces = (str) => {};
 
 /**
  * Takes in an array and returns the most common element.
@@ -236,7 +258,7 @@ const countOccuranceNoSpaces = () => {};
  * @returns {(number|string)} Most common element
  */
 
-const mostCommonElement = () => {};
+const mostCommonElement = (array) => {};
 
 /**
  * Takes in an object and an array.
@@ -256,7 +278,7 @@ const mostCommonElement = () => {};
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = (pairs, arr) => {};
 
 /**
  * Takes in an object and a key.
