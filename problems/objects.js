@@ -178,11 +178,10 @@ const addsCountry = (capitalByCountry, country, capital) => {
 
 const authorScores = (authors) => {
   let object = {}
-  for(let i = 0; i < authors.length - 1; i++){
-    let element = authors[i]
-    object[element[0]] = element[1]
+  for(let i = 0; i < authors.length; i++){
+    object[authors[i][0]] = authors[i][1]
   }
-  return objects
+  return object
 };
 
 /**
@@ -193,7 +192,17 @@ const authorScores = (authors) => {
  * @returns {string} The full name of person with best score.
  */
 
-const bestScore = () => {};
+const bestScore = (submissions) => {
+  let object = {}
+  let bestScore = 0
+  for (let i = 0; i < submissions.length; i++){
+    if (submissions[i].score > bestScore){
+      object = submissions[i]
+      bestScore = object.score
+    }
+  }
+  return object.firstName + ' ' + object.lastName
+};
 
 /**
  * Returns an object where the keys are numbers 1 through 20,
@@ -201,7 +210,13 @@ const bestScore = () => {};
  * @returns {Object} {1: 1, 2: 8, 3: 27...}
  */
 
-const cubeObj = () => {};
+const cubeObj = () => {
+  let object = {}
+for (let i = 1; i <= 20; i++){
+  object[i] = i * i * i
+}
+return object
+};
 
 /**
  * Takes in a string and returns an object with
@@ -210,7 +225,22 @@ const cubeObj = () => {};
  * @returns {Object} Counts of e and a. {a: 2, e: 1}
  */
 
-const countAandE = () => {};
+const countAandE = (str) => {
+  let object = {
+    a: 0,
+    e: 0,
+  }
+  for(let i = 0; i < str.length; i++){
+    let words = str[i].toLowerCase()
+     if (words === 'a' || words === 'e'){
+      object[words] = 1 + object[words]
+    }
+    else {
+      object[words]
+    }
+  }
+  return object
+};
 
 /**
  * Takes in a string and returns an object with
@@ -219,7 +249,19 @@ const countAandE = () => {};
  * @returns {Object} Counts of all characters: {a: 2, g: 1, o: 2, d:1, " ": 2, s: 1, n:1, k:1, e: 1}
  */
 
-const countOccurance = () => {};
+const countOccurance = (str) => {
+let object = {}
+for (let i = 0; i < str.length; i++){
+  let words = str[i].toLowerCase()
+  if (object[words]){
+object[words] = 1 + object[words]
+  }
+  else{
+    object[words] = 1
+  }
+}
+return object
+};
 
 /**
  * Takes in a string and returns an object with
@@ -229,7 +271,22 @@ const countOccurance = () => {};
  * @returns {Object} Counts all characters except spaces  {a: 2, g: 1, o: 2, d:1, s: 1, n:a, k:1, e: 1}
  */
 
-const countOccuranceNoSpaces = () => {};
+const countOccuranceNoSpaces = (str) => {
+  let object = {}
+  for (let i = 0; i < str.length; i++){
+    let words = str[i].toLowerCase()
+    if (words === ' '){
+      continue // On w3schools I found the break and continue since it wants us to skip the spaces I tried this and it works!!
+    }
+    if (object[words]){
+      object[words] = 1 + object[words]
+    }
+    else{
+      object[words] = 1
+    }
+  }
+  return object
+};
 
 /**
  * Takes in an array and returns the most common element.
@@ -237,7 +294,15 @@ const countOccuranceNoSpaces = () => {};
  * @returns {(number|string)} Most common element
  */
 
-const mostCommonElement = () => {};
+const mostCommonElement = (array) => {
+  let common = []
+  for (let i = 0; i < array.length - 2; i++){
+    if (array[i] !== array[i]+ 1)
+    common += 1
+    common = array[i]
+  }
+  return common
+};
 
 /**
  * Takes in an object and an array.
@@ -257,7 +322,17 @@ const mostCommonElement = () => {};
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = (pairs, arr) => {
+  let arr2 = []
+  for (let i = 0; i < arr.length; i++) {
+    if (pairs[arr[i]]) {
+      arr2[i] = pairs[arr[i]]
+    } else {
+      arr2[i] = arr[i];
+    }
+  }
+  return arr2;
+};
 
 /**
  * Takes in an object and a key.
@@ -268,7 +343,10 @@ const updateList = () => {};
  * @returns {Object} The Object without the key.
  */
 
- const deleteKey = () => {};
+ const deleteKey = (object, key) => {
+   delete object[key]
+   return object
+ };
 
 
  /**
@@ -277,7 +355,9 @@ const updateList = () => {};
   * @param {Object} obj
   * @returns {number} Number of properties.
   */
- const propertyCount = () => {};
+ const propertyCount = (obj) => {
+   return Object.keys(obj).length
+ };
 
 module.exports = {
   eveAppleCount,

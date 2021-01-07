@@ -353,7 +353,7 @@ describe("addsCountry", () => {
   });
 });
 
-describe.only("authorScores", () => {
+describe("authorScores", () => {
   test("returns an object with author name mapped to score", () => {
     const authors = [
       ["Mark Twain", 8.9],
