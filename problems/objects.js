@@ -229,7 +229,11 @@ const cubeObj = () => { // previous person was trying to use for in key. would t
  */
 
 const countAandE = (str) => {// dont understand this one
-  let counter = {"a": 0, "e": 0}
+  let counter = {
+    "a": 0, 
+    "e": 0
+  }
+
   for(let i = 0; i < str.length; i++){
     if(str[i].toLowerCase() === "a"){
       counter[str[i].toLowerCase()] += 1
