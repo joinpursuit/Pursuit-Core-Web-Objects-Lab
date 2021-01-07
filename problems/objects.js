@@ -252,15 +252,14 @@ const countAandE = (str) => {
 const countOccurance = (str) => {
   let snakeCount = { }
   for (let i = 0; i < str.length; i++){
-    if (snakeCount[str[i]]){
-      snakeCount[str[i]] += 1
-    } else {
-      snakeCount[str[i]] = 1
-    }
-  
+    let wordCount = str[i].toLowerCase()
+    if (snakeCount[wordCount]){
+      snakeCount[wordCount] += 1
+    }   else {
+        snakeCount[wordCount] = 1
+      }
   }
-  return snakeCount
-
+    return snakeCount
 };
 
 /**
@@ -271,7 +270,7 @@ const countOccurance = (str) => {
  * @returns {Object} Counts all characters except spaces  {a: 2, g: 1, o: 2, d:1, s: 1, n:a, k:1, e: 1}
  */
 
-const countOccuranceNoSpaces = () => {};
+const countOccuranceNoSpaces = (str) => {};
 
 /**
  * Takes in an array and returns the most common element.
@@ -279,7 +278,12 @@ const countOccuranceNoSpaces = () => {};
  * @returns {(number|string)} Most common element
  */
 
-const mostCommonElement = () => {};
+const mostCommonElement = (array) => {}
+// let common = []
+// let arrayElement = Object.values(array)
+// for (let i = 0 ; i < arrayElement.length; i++)
+//   if arrayElement 
+// };
 
 /**
  * Takes in an object and an array.
@@ -299,7 +303,17 @@ const mostCommonElement = () => {};
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = (pairs, arr) => {
+  let newArray = []
+  for (let i = 0; i < arr.length; i++){
+    if (pairs[arr[i]]){
+      newArray[i] = pairs[arr[i]]
+    } else {
+      newArray[i] = arr[i]
+    }
+  }
+  return newArray
+};
 
 /**
  * Takes in an object and a key.
@@ -310,7 +324,10 @@ const updateList = () => {};
  * @returns {Object} The Object without the key.
  */
 
- const deleteKey = () => {};
+ const deleteKey = (object, key) => {
+   delete object[key]
+   return object
+ };
 
 
  /**
@@ -319,8 +336,15 @@ const updateList = () => {};
   * @param {Object} obj
   * @returns {number} Number of properties.
   */
- const propertyCount = () => {};
-
+ const propertyCount = (obj) => {
+   let propertyKeys = Object.keys(obj)
+   let propertyTotal = 0
+   for (let i = 0; i < propertyKeys.length; i++){
+    propertyTotal +=1
+     
+   }
+   return propertyTotal
+ };
 module.exports = {
   eveAppleCount,
   appleCount,
