@@ -31,11 +31,11 @@ const giveCatColor = (catObj, color) => {
  */
 
 const catTexture = (catObj) => {
-  // if (catObj["texture]") {
-  //   throw 'Does not have texture property'
-  // } else {
-  //   return catObj["texture]"
-  // }
+  if (!catObj["texture"]) {
+    throw 'Does not have texture property'
+  } else {
+    return catObj["texture"]
+  }
 };
 
 /**
@@ -59,8 +59,8 @@ const objKeys = (object) => {
  * @returns {string[]} All the keys from the object
  */
 
-const objKeys2 = (Object) => {
-  let arrOfKeys = Object.keys(Object);
+const objKeys2 = (object) => {
+  let arrOfKeys = Object.keys(object);
   return arrOfKeys;
 };
 
@@ -85,8 +85,8 @@ const objValues = (object) => {
  * @returns {*[]} All the values from the object
  */
 
-const objValues2 = (Object) => {
-  let arrOfValues = Object.values(Object);
+const objValues2 = (object) => {
+  let arrOfValues = Object.values(object);
   return arrOfValues;
 };
 
