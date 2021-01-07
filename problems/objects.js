@@ -197,12 +197,15 @@ const authorScores = (authors) => {
  */
 
 const bestScore = (submissions) => {
-  // for(let i = 0; i < submissions.length; i++){
-  //   if(submissions[i].peopleWithScores.score > ){
-
-  //   }
-  //   return 
-  // }
+  let obj = {}
+  let highScore = 0
+  for(let i = 0; i < submissions.length; i++){
+    if(submissions[i]["score"] > highScore){
+      obj = submissions[i]
+      highScore = obj.score
+    }
+  }
+  return `${obj.firstName} ${obj.lastName}`
 };
 
 /**
@@ -212,8 +215,9 @@ const bestScore = (submissions) => {
  */
 
 const cubeObj = () => {
-  for(let key in obj){
-    obj[key] = Math.pow(key, 3)
+  let obj = {}
+  for(let i = 1; i <= 20; i++){
+    obj[i] = Math.pow(i, 3)
   }
   return obj
 };
@@ -225,7 +229,22 @@ const cubeObj = () => {
  * @returns {Object} Counts of e and a. {a: 2, e: 1}
  */
 
-const countAandE = () => {};
+const countAandE = (str) => {
+  let obj = {
+    a: 0,
+    e: 0,
+  }
+  let a = "aA"
+  let e = "eE"
+  for(let i in str){
+    if(a.includes(str[i])){
+      obj["a"]++
+    } else if (e.includes(str[i])){
+      obj["e"]++
+    }
+  }
+  return obj
+};
 
 /**
  * Takes in a string and returns an object with
@@ -235,7 +254,13 @@ const countAandE = () => {};
  */
 
 const countOccurance = (str) => {
-  
+  let obj = {}
+  for(let i in str){
+    obj[str[i]] = 0
+    i.includes(str[i])
+    obj[str[i]]++
+  }
+  return obj
 };
 
 /**
@@ -246,7 +271,9 @@ const countOccurance = (str) => {
  * @returns {Object} Counts all characters except spaces  {a: 2, g: 1, o: 2, d:1, s: 1, n:a, k:1, e: 1}
  */
 
-const countOccuranceNoSpaces = () => {};
+const countOccuranceNoSpaces = (str) => {
+  let obj = {}
+};
 
 /**
  * Takes in an array and returns the most common element.
@@ -254,7 +281,9 @@ const countOccuranceNoSpaces = () => {};
  * @returns {(number|string)} Most common element
  */
 
-const mostCommonElement = () => {};
+const mostCommonElement = (array) => {
+  
+};
 
 /**
  * Takes in an object and an array.
@@ -274,7 +303,17 @@ const mostCommonElement = () => {};
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = (pairs, arr) => {
+  let newArr = []
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] = pairs.key){
+      newArr.push(arr[i])
+      return newArr
+    } else {
+
+    }
+  }
+};
 
 /**
  * Takes in an object and a key.
@@ -287,8 +326,7 @@ const updateList = () => {};
 
  const deleteKey = (obj, key) => {
   delete obj[key]
-  return obj
-  
+  return obj 
 }
 
  /**
