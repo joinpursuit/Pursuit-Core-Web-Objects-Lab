@@ -22,6 +22,8 @@ const {
   deleteKey,
   propertyCount,
 } = require("../problems/objects");
+//use .only to grab a single test
+
 
 describe("eveAppleCount", () => {
   test("returns the number of apples that eve has", () => {
