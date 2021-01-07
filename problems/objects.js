@@ -276,7 +276,7 @@ const countOccuranceNoSpaces = (str) => {
   for (let i = 0; i < str.length; i++){
     let words = str[i].toLowerCase()
     if (words === ' '){
-      continue // On w3schools I found the break and continue since it wants us to skip the spaces I tried this and it works!!
+      continue 
     }
     if (object[words]){
       object[words] = 1 + object[words]
