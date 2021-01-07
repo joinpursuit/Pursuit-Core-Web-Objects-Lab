@@ -219,7 +219,11 @@ const bestScore = (submissions) => {
  */
 
 const cubeObj = () => {
-
+  let newobj = {}
+  for (let i = 1; i <= 20; i ++){
+  newobj[i] = (i*i*i)
+  }
+  return newobj
 };
 
 /**
@@ -229,7 +233,24 @@ const cubeObj = () => {
  * @returns {Object} Counts of e and a. {a: 2, e: 1}
  */
 
-const countAandE = (str) => {};
+const countAandE = (str) => {
+  let aCount = 0 
+  let eCount = 0
+  let newObject = {}
+  let lowerCaseWord = str.toLowerCase()
+  let letters = lowerCaseWord.split('')
+  for(let i = 0; i < letters.length; i++) {
+    if(letters[i] === 'a') {
+      aCount = aCount + 1
+    }
+    if (letters[i] === 'e') {
+      eCount = eCount + 1
+    }
+  }
+  newObject.a = aCount
+  newObject.e = eCount
+  return newObject
+};
 
 /**
  * Takes in a string and returns an object with
@@ -258,7 +279,16 @@ const countOccuranceNoSpaces = (str) => {};
  * @returns {(number|string)} Most common element
  */
 
-const mostCommonElement = (array) => {};
+const mostCommonElement = (array) => {
+  let common = []
+  for (let i = 0; i <array.length -2; i++) {
+    if (array[i] !== array[i]+1) {
+      common += 1
+      common = array[i]
+    }
+  }
+  return common
+};
 
 /**
  * Takes in an object and an array.
