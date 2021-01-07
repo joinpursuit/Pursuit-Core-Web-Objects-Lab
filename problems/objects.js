@@ -176,7 +176,14 @@ const addsCountry = (capitalByCountry, country, capital) => {
  * @returns {Object} {"Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1}
  */
 
-const authorScores = () => {};
+const authorScores = (authors) => {
+  let authorObject = {}
+  for (let i = 0; i < authors.length; i++){
+    authorObject[authors[i][0]] = authors[i][1]
+  }
+  return authorObject
+};
+console.log(authorScores([["Mark Twain", 8.9], ["Nathaniel Hawthorne", 5.1]]))
 
 /**
  * You are given an array of objects.
@@ -186,7 +193,14 @@ const authorScores = () => {};
  * @returns {string} The full name of person with best score.
  */
 
-const bestScore = () => {};
+const bestScore = (submissions) => {
+  for (let i = 0; i <submissions.length; i++){
+    if (submissions[i]["score"] > submissions[submissions.length - 1]["score"]){
+      return (submissions[i]["firstName"] + " " + submissions[i]["lastName"])
+    }
+  }
+
+};
 
 /**
  * Returns an object where the keys are numbers 1 through 20,
@@ -194,7 +208,13 @@ const bestScore = () => {};
  * @returns {Object} {1: 1, 2: 8, 3: 27...}
  */
 
-const cubeObj = () => {};
+const cubeObj = () => {
+  let obj = {}  
+  for (let i = 1; i <= 20; i++){
+  obj[i] = i ** 3
+  }
+  return obj
+};
 
 /**
  * Takes in a string and returns an object with
@@ -203,7 +223,24 @@ const cubeObj = () => {};
  * @returns {Object} Counts of e and a. {a: 2, e: 1}
  */
 
-const countAandE = () => {};
+const countAandE = (str) => {
+  let aeObject = {"a":0, "e":0}
+  let aCount = 0
+  let eCount = 0
+
+  for (let letter in str) {
+    if (str[letter] === "a" || str[letter] === "A"){
+      aCount ++
+      aeObject["a"] = aCount
+    }
+      else if (str[letter] === "e" || str[letter] === "E"){
+        eCount++
+        aeObject["e"] = eCount
+      }
+  }
+  return aeObject
+
+};
 
 /**
  * Takes in a string and returns an object with
@@ -212,7 +249,19 @@ const countAandE = () => {};
  * @returns {Object} Counts of all characters: {a: 2, g: 1, o: 2, d:1, " ": 2, s: 1, n:1, k:1, e: 1}
  */
 
-const countOccurance = () => {};
+const countOccurance = (str) => {
+  let snakeCount = { }
+  for (let i = 0; i < str.length; i++){
+    if (snakeCount[str[i]]){
+      snakeCount[str[i]] += 1
+    } else {
+      snakeCount[str[i]] = 1
+    }
+  
+  }
+  return snakeCount
+
+};
 
 /**
  * Takes in a string and returns an object with
