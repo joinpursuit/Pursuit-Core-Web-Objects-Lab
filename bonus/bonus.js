@@ -32,9 +32,9 @@ const giveCatColor = (catObj, color) => {
 
 const catTexture = (catObj) => {
   if (!catObj["texture"]) {
-    throw 'Does not have texture property'
+    throw "Does not have texture property";
   } else {
-    return catObj["texture"]
+    return catObj["texture"];
   }
 };
 
@@ -46,7 +46,7 @@ const catTexture = (catObj) => {
  */
 const objKeys = (object) => {
   let arrOfKeys = [];
-  for (const key of object) {
+  for (const key in object) {
     arrOfKeys.push(key);
   }
   return arrOfKeys;
@@ -73,7 +73,7 @@ const objKeys2 = (object) => {
 const objValues = (object) => {
   let objectValues = [];
   for (const values in object) {
-    objectValues.push(values);
+    objectValues.push(object[values]);
   }
   return objectValues;
 };
@@ -98,9 +98,7 @@ const objValues2 = (object) => {
  * @returns {string[]} Only the directors
  */
 
-const findDirectors = (films, director) => {
-  return films[director];
-};
+const findDirectors = (films, director) => {};
 
 /**
  * Takes in an array of people objects with with properties
@@ -114,7 +112,11 @@ const findDirectors = (films, director) => {
  */
 
 const fullNames = (people, firstName, lastName) => {
-  return people[firstName] + " " + people[lastName];
+  let arr = [];
+  for (const key in people) {
+    arr.push(people[firstName] + " " + people[lastName]);
+  }
+  return arr;
 };
 
 /**
@@ -129,14 +131,38 @@ const fullNames = (people, firstName, lastName) => {
  *
  * Exp Input:
  *  {
- *     Williams: [300, 270, 24, 52, 99],
+ *     Williams: [ [300, 270, 24, 52, 99], [200, 55, 600, 305, 410, 35], [9]]
  *     Cooper: [200, 55, 600, 305, 410, 35],
  *     Davies: [4008, 568, 300],
  *     Clark: [555, 457, 995, 806, 569, 46, 265],
  *     Johnson: [126, 300, 640, 255, 268],
  *  };
  */
-const largestEarner = (depositsByPerson) => {};
+const largestEarner = (depositsByPerson) => {
+  sumArr = [];
+  let personName = Object.keys(depositsByPerson); //depositByPerson[key]
+  let deposits = Object.values(depositsByPerson); //[array of deposits] ==> is this an array of arrays?
+  let sum = 0;
+  let highest = -Infinity;
+  //loop through the deposits and get the sum for each person
+  for (let i = 0; i < deposits.length; i++) {
+    for (let j = 0; j < deposits[i].length; j++) {
+      sum += deposits[i][j];
+      sumArr.push(sum);
+    }
+  }
+  //loop sumArr to find the largest number and return the index ==> use that index to get the name
+  for (let i = 0; i < sumArr.length; i++) {
+    if (highest < sumArr[i]) {
+      highest = sumArr[i];
+    }
+  }
+  //how do I tie it back to the person? ==> create 2 arrays so each index is the same ==> personName
+  //str.indexOf(searchValue [, fromIndex])
+  //array.indexOf(item, start)
+  //link = sumArr.indexof(highest);//${personName}
+  return ` Person made $${highest}`;
+};
 
 /**
  * Takes in an object and returns and array where
@@ -148,12 +174,11 @@ const largestEarner = (depositsByPerson) => {};
  */
 
 const pairs = (groups) => {
-
-//   let arrPairs = [];
-//   for(let i = 0; i < groups.length; i++){
-//     arrPairs.push()  //(groups[key i].join("&")(groups[value i])) 
-//   }
-// return arrPairs;
+  //   let arrPairs = [];
+  //   for(let i = 0; i < groups.length; i++){
+  //     arrPairs.push()  //(groups[key i].join("&")(groups[value i]))
+  //   }
+  // return arrPairs;
 };
 
 /**
