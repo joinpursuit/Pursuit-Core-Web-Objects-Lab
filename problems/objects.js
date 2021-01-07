@@ -246,7 +246,29 @@ const countOccuranceNoSpaces = () => {};
  * @returns {(number|string)} Most common element
  */
 
-const mostCommonElement = () => {};
+const mostCommonElement = (array) => {
+  let obj = {}
+  for (let i = 0; i < array.length; i++) {
+    let element = array[i]
+    if (obj[element]) {
+        obj[element] += 1
+    } else {
+      obj[element] = 1
+    }
+    } let mostCommon = -Infinity
+      let commonElement
+      for (let key in obj) {
+      if (obj[key] > mostCommon) {
+        mostCommon = obj[key]
+        commonElement = key
+      } 
+    } if (parseInt(commonElement)) {
+      return parseInt(commonElement)
+    }
+     else {
+       return commonElement
+     }
+};
 
 /**
  * Takes in an object and an array.
@@ -266,8 +288,19 @@ const mostCommonElement = () => {};
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
-
+const updateList = (pairs, arr) => {
+  let newArr = [];
+  for(let i = 0; i < arr.length; i++) {
+    let artists = arr[i]
+   
+  if(pairs[artists]) {
+    newArr.push(pairs[artists])
+  } else {
+    newArr.push(artists)
+  }
+}
+  return newArr
+};
 /**
  * Takes in an object and a key.
  * It should delete the key value pair from the object and
