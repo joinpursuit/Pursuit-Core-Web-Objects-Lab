@@ -202,14 +202,26 @@ const authorScores = (authors) => {
  */
 
 const bestScore = (submissions) => {
-  for (let i = 0; i < submissions.length; i++){
-    if(submissions[i]["score"] > submissions[submissions.length -1]["score"]){
-      return submissions[i] ["firstName"] + " " + submissions[i]["lastName"]
+  let highestScore = -Infinity;
+  let name = "";
+  for (let i = 0; i < submissions.length; i++) {
+    if (submissions[i].score > highestScore) {
+      highestScore = submissions[i].score;
+      name = submissions[i].firstName + " " + submissions[i].lastName;
     }
+  }
+  return name;
+};
+//   for (let i = 0; i < submissions.length; i++){
+//     if(submissions[i]["score"] > submissions[submissions.length -1]["score"]){
+//       return submissions[i] ["firstName"] + " " + submissions[i]["lastName"]
+//     }
     
 
-  }
-};
+//   }
+// };
+
+
 
 /**
  * Returns an object where the keys are numbers 1 through 20,
@@ -252,16 +264,30 @@ const countAandE = (str) => {
  */
 
 const countOccurance = (str) => {
-  let counter = {}
-  for(let i = 0; i < str.length; i++){
-    if(counter[str[i].toLowerCase()]){
-      counter[str[i].toLowerCase()] += 1
+  let obj = {}
+  let newStr = str.toLowerCase();
+  for (let i = 0; i < newStr.length; i++){
+    let el = newStr[i]
+    if (obj[el]){
+      obj[el] += 1
     }else{
-      counter[str[i].toLowerCase()] = 1
+      obj[el] = 1
     }
   }
-    return counter
-};
+  return obj
+}
+
+
+//   let counter = {}
+//   for(let i = 0; i < str.length; i++){
+//     if(counter[str[i].toLowerCase()]){
+//       counter[str[i].toLowerCase()] += 1
+//     }else{
+//       counter[str[i].toLowerCase()] = 1
+//     }
+//   }
+//     return counter
+// };
 
 /**
  * Takes in a string and returns an object with
@@ -284,20 +310,42 @@ const countOccuranceNoSpaces = (str) => {
  */
 
 const mostCommonElement = (array) => {
-  let count = {}
-  for(let element of array){
-    count[element] = (count[element] || 0) + 1
-  }
-    let topValue = array[0];
-    let maxCount = 0;
-    for(let element of array){
-      if(count[element] > maxCount){
-        topValue = element
-        maxCount = count[element]
-      }
+  let obj = {}
+  for (let i = 0; i < array.length; i++) {
+    let element = array[i]
+    if (obj[element]) {
+        obj[element] += 1
+    } else {
+      obj[element] = 1
     }
-    return topValue
+    } let mostCommon = -Infinity
+      let commonElement
+      for (let key in obj) {
+      if (obj[key] > mostCommon) {
+        mostCommon = obj[key]
+        commonElement = key
+      } 
+    } if (parseInt(commonElement)) {
+      return parseInt(commonElement)
+    }
+     else {
+       return commonElement
+     }
 };
+//   let count = {}
+//   for(let element of array){
+//     count[element] = (count[element] || 0) + 1
+//   }
+//     let topValue = array[0];
+//     let maxCount = 0;
+//     for(let element of array){
+//       if(count[element] > maxCount){
+//         topValue = element
+//         maxCount = count[element]
+//       }
+//     }
+//     return topValue
+// };
 
 /**
  * Takes in an object and an array.
@@ -318,14 +366,25 @@ const mostCommonElement = (array) => {
  */
 
 const updateList = (pairs, arr) => {
-  for(let i = 0; i < arr.length; i++){
-    val = arr[i]
-    if(pairs[val]){
-      arr[i] = pairs[val]
-    }
+  let newArr = [];
+  for(let i = 0; i < arr.length; i++) {
+    let artists = arr[i] 
+  if(pairs[artists]) {
+    newArr.push(pairs[artists])
+  } else {
+    newArr.push(artists)
   }
-    return arr
+}
+  return newArr
 };
+//   for(let i = 0; i < arr.length; i++){
+//     val = arr[i]
+//     if(pairs[val]){
+//       arr[i] = pairs[val]
+//     }
+//   }
+//     return arr
+// };
 
 /**
  * Takes in an object and a key.
