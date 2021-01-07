@@ -178,9 +178,11 @@ const addsCountry = (capitalByCountry, country, capital) => {
 
 const authorScores = (authors) => {
   let object = {}
-  for(let i = 0; i < authors.length; i++){
-    
+  for(let i = 0; i < authors.length - 1; i++){
+    let element = authors[i]
+    object[element[0]] = element[1]
   }
+  return objects
 };
 
 /**
