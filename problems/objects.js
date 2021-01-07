@@ -197,12 +197,17 @@ const authorScores = (authors) => {
  */
 
 const bestScore = (submissions) => {
+  let highScore = -Infinity
+  let name = ""
   for(let i=0; i<submissions.length; i++) {
-    if (submissions[i]["score"] > submissions[submissions.length - 1]["score"]){
-      return submissions[i]["firstName"] + " " + submissions[i]["lastName"]
+    if (submissions[i]["score"] > highScore){
+      highScore =  submissions[i]["score"]
+      name= submissions[i]["firstName"] + " " + submissions[i]["lastName"];
     }
   }
+  return name 
 };
+
 
 
 /**
@@ -228,7 +233,6 @@ const cubeObj = () => {
 
 const countAandE = (str) => {
   let stringObj = {"a" : 0 , "e" : 0}
-  let array = str.split("")
   for (let i = 0; i < str.length ; i++){
     if(str[i].toLowerCase() === "a"){
       stringObj[str[i].toLowerCase()] += 1
@@ -249,12 +253,13 @@ const countAandE = (str) => {
 
 const countOccurance = (str) => {
   let obj = {}
-  for (let i = 0; i<str.length; i++){
-    str[i]
-    if(obj[str[i].toLowerCase()]){
-      obj[str[i].toLowerCase()] +=1
+  let newStr = str.toLowerCase()
+  for (let i = 0; i<newStr.length; i++){
+    if(obj[newStr[i]]) {
+      obj[newStr[i]] += 1
+    
     }else {
-      obj[str[i].toLowerCase()] =1
+      obj[newStr[i]] =1
     }
   }
   return obj
@@ -282,22 +287,33 @@ const countOccuranceNoSpaces = (str) => {
  * @returns {(number|string)} Most common element
  */
 
-const mostCommonElement = (array) => {
-  let obj = {}
-  for (let element of array){
-    obj[element] = (obj[element] || 0) + 1
-  }
-    let topValue = array[0]
-    let maxCount = 0
-    for(let element of array){
-    if(obj[element] > maxCount){
-      topValue = element
-      maxCount = obj[element]
+
+const mostCommonElement = (array)=>{
+  let obj ={}
+  for (let i =0; i < array.length; i++){
+    let element=array[i]
+    if (obj[element] === undefined){
+      obj[element] = 1
+    } else {
+      obj[element] += 1
     }
   }
-  return topValue
-};
-console.log(mostCommonElement['pear', 'apple', 'orange', 'apple'])
+  let largeValue = 0
+  let largeValueName = ''
+  for (let i = 0; i < Object.keys(obj).length; i++ ){
+    let valueName = Object.keys(obj)[i]
+    let value = obj[valueName]
+    if (value > largeValue){
+      largeValue = value
+      largeValueName = valueName
+    }
+  }
+  if (isNaN(largeValueName)){
+    return largeValueName
+  } else {
+    return parseInt(largeValueName)
+  }
+}
 
 /**
  * Takes in an object and an array.
