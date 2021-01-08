@@ -233,20 +233,39 @@ const cubeObj = () => {
  * @returns {Object} Counts of e and a. {a: 2, e: 1}
  */
 
-const countAandE = (str) => {
-  const aEObj = {};
-  for (let i = 0; i < str.length; i++) {
-    const e = "e"
-    const a = "a"
-    if (aEObj[a].toLowerCase || aEObj[e].toLowerCase) {
-      aEObj[a] += 1
-    } else if (!aEObj[a].toLowerCase || !aEObj[e].toLowerCase){
-      
-    } else {
-      aEObj += 1
-    }
-  }
-};
+
+
+
+ const countAandE = (str) => {
+   const aAndEObj = {}
+     for(const key in str) { 
+      if (Object.keys("a").toLowerCase) {
+        aAndEObj.a = 1 
+      } else if (Object.keys("e")) {
+        aAndEObj.e = 1 
+      } aAndEObj.e = 0;
+        aAndEObj.a = 0
+     }
+     return aAndEObj
+   }
+ 
+// const countAandE = (str) => {
+//   const aAndEObj = {};
+//   for (let i = 0; i < str.length; i++) {
+//     if (str["a"]) {
+//       aAndEObj["a"] += 1
+//     } else if (str["e"]) {
+//       aAndEObj["e"] += 1
+//     } else if (str["e"]) {
+//       aAndEObj["e"] += 0
+//     }  else {
+//       aAndEObj["a"] += 0
+//     }
+//   }
+//   return aAndEObj
+// };
+
+console.log(countAandE("A good snake"))
 
 
 /**
@@ -294,7 +313,17 @@ const mostCommonElement = () => {};
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = (pairs, arr) => {
+  let newStr;
+  for (let i = 0; i < arr.length; i++) {
+   if (pairs[arr]) {
+     newStr.push(pairs[arr[i]])
+   } else {
+     newStr.push(arr[i])
+   }
+  }
+  return newStr
+};
 
 /**
  * Takes in an object and a key.
