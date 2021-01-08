@@ -204,13 +204,12 @@ const bestScore = (submissions) => {
   for (let i = 0; i < submissions.length; i++) {
     
     if (submissions[i].score > highestScore) {
-      highestScore = submissions[i].score; 
+      highestScore = submissions[i].score;
+      bestScore = submissions[i].firstName + " " + submissions[i].lastName;
     }
   }
-  
-  return bestScoresubmissions[i].firstName + " " + submissions[i].lastName
+  return bestScore 
 };
-
 
 // console.log(bestScore([{ firstName: "Kelvin", lastName: "Newt", score: 10}, { firstName: "Calvin", lastName: "Newton", score: 12}, { firstName: "Kalvin", lastName: "Pewton", score: 13}]))
 /**
@@ -219,7 +218,13 @@ const bestScore = (submissions) => {
  * @returns {Object} {1: 1, 2: 8, 3: 27...}
  */
 
-const cubeObj = () => {};
+const cubeObj = () => {
+  let newObj = {};
+  for (let i = 1; i <= 20; i++) {
+    newObj[i] = Math.pow(i, 3);
+  }
+  return newObj
+};
 
 /**
  * Takes in a string and returns an object with
@@ -228,7 +233,17 @@ const cubeObj = () => {};
  * @returns {Object} Counts of e and a. {a: 2, e: 1}
  */
 
-const countAandE = () => {};
+const countAandE = (str) => {
+  let stringObj = {"a" : 0 , "e" : 0};
+  let array = str.split("");
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].toLowerCase() === "a") {
+      stringObj[array[i].toLowerCase()] += 1
+    } else if (array[i].toLowerCase() === "e"){
+      stringObj[array[i].toLowerCase()] += 1
+    }
+  } return stringObj
+};
 
 /**
  * Takes in a string and returns an object with
@@ -255,8 +270,29 @@ const countOccuranceNoSpaces = () => {};
  * @returns {(number|string)} Most common element
  */
 
-const mostCommonElement = () => {};
-
+const mostCommonElement = (array) => {
+  let obj = {}
+  for (let i = 0; i < array.length; i++) {
+    let element = array[i]
+    if (obj[element]) {
+        obj[element] += 1
+    } else {
+      obj[element] = 1
+    }
+    } let mostCommon = -Infinity
+      let commonElement
+      for (let key in obj) {
+      if (obj[key] > mostCommon) {
+        mostCommon = obj[key]
+        commonElement = key
+      } 
+    } if (parseInt(commonElement)) {
+      return parseInt(commonElement)
+    }
+     else {
+       return commonElement
+     }
+};
 /**
  * Takes in an object and an array.
  * Returns a new array.
