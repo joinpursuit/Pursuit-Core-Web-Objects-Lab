@@ -252,7 +252,19 @@ const countAandE = (str) => {
  * @returns {Object} Counts of all characters: {a: 2, g: 1, o: 2, d:1, " ": 2, s: 1, n:1, k:1, e: 1}
  */
 
-const countOccurance = () => {};
+const countOccurance = (str) => {
+  let counterObj = {}
+  let newStr = str.toLowerCase()
+  for(let i=0;i<newStr.length;i++){
+    let el = newStr[i]
+    if(counterObj[el]){
+      counterObj[el]+=1
+    }else{
+      counterObj[el] = 1
+    }
+  }
+  return counterObj
+};
 
 /**
  * Takes in a string and returns an object with
@@ -262,7 +274,21 @@ const countOccurance = () => {};
  * @returns {Object} Counts all characters except spaces  {a: 2, g: 1, o: 2, d:1, s: 1, n:a, k:1, e: 1}
  */
 
-const countOccuranceNoSpaces = () => {};
+const countOccuranceNoSpaces = (str) => {
+  let lilStr = str.toLowerCase()
+  let countObj = {}
+  for(let i=0;i<lilStr.length;i++){
+    let el = lilStr[i]
+    if(countObj[el]){
+      if(countObj[el]!==" "){
+        countObj[el]+=1}
+    }else{
+      if(el !== " ") {
+        countObj[el] = 1}
+    }
+  }
+  return countObj
+};
 
 /**
  * Takes in an array and returns the most common element.
@@ -311,7 +337,17 @@ const mostCommonElement = (array) => {
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = (pairs,arr) => {
+  let outputArray =[]
+  arr.forEach((el)=>{
+    if(pairs[el]){
+      outputArray.push(pairs[el])
+    } else {
+      outputArray.push(el)
+    }
+  })
+ return outputArray
+};
 
 /**
  * Takes in an object and a key.
@@ -322,16 +358,25 @@ const updateList = () => {};
  * @returns {Object} The Object without the key.
  */
 
- const deleteKey = () => {};
+ const deleteKey = (obj,string) => {
+   for(key in obj){
+   if(key === string){
+    delete obj[key]
+   }
+   }
+   return obj
+ };
 
-
+//console.log(deleteKey({color:"red",fruit:"apple"},"fruit"))
  /**
   * Takes in an object and returns the number of
   * properties it has.
   * @param {Object} obj
   * @returns {number} Number of properties.
   */
- const propertyCount = () => {};
+ const propertyCount = (obj) => {
+   return Object.values(obj).length
+ };
 
 module.exports = {
   eveAppleCount,
