@@ -17,7 +17,7 @@ const {
   secondMostFrequentLetter,
 } = require("./bonus.js");
 
-describe("catSpecies", () => {
+describe.only("catSpecies", () => {
   test("returns the correct cat species", () => {
     expect(
       catSpecies({
@@ -34,7 +34,7 @@ describe("catSpecies", () => {
   ).toBe("Cool Cat");
 });
 
-describe("giveCatColor", () => {
+describe.only("giveCatColor", () => {
   test("adds color to cat object", () => {
     const cat = {
       genus: "Felis",
@@ -53,7 +53,7 @@ describe("giveCatColor", () => {
   });
 });
 
-describe("catTexture", () => {
+describe.only("catTexture", () => {
   test("returns cat texture when property exists", () => {
     expect(
       catTexture({
@@ -81,7 +81,7 @@ describe("catTexture", () => {
   });
 });
 
-describe("objKeys", () => {
+describe.only("objKeys", () => {
   test("returns all keys as an array", () => {
     expect(
       objKeys({
@@ -104,7 +104,7 @@ describe("objKeys", () => {
     expect(funcString === "() => {}").toBe(false)
   });
 });
-describe("objKeys2", () => {
+describe.only("objKeys2", () => {
   test("returns all keys as an array", () => {
     expect(
       objKeys2({
@@ -126,7 +126,7 @@ describe("objKeys2", () => {
     expect(funcString.includes("Object.keys")).toBe(true);
   });
 });
-describe("objValues", () => {
+describe.only("objValues", () => {
   test("returns all values as an array", () => {
     expect(
       objValues({
@@ -149,7 +149,7 @@ describe("objValues", () => {
     expect(funcString === "() => {}").toBe(false)
   });
 });
-describe("objValues2", () => {
+describe.only("objValues2", () => {
   test("returns all values as an array", () => {
     expect(
       objValues2({
@@ -172,7 +172,7 @@ describe("objValues2", () => {
   });
 });
 
-describe("findDirectors", () => {
+describe.only("findDirectors", () => {
   test("returns an array of only the directors", () => {
     const films = [
       {
@@ -199,7 +199,7 @@ describe("findDirectors", () => {
   });
 });
 
-describe("fullNames", () => {
+describe.only("fullNames", () => {
   test("returns an array of everyone's full name", () => {
     const people = [
       {
@@ -233,7 +233,7 @@ describe("fullNames", () => {
   });
 });
 
-describe("largestEarner", () => {
+describe.only("largestEarner", () => {
   test("Correctly determines the largest earner", () => {
     expect(
       largestEarner({
