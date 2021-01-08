@@ -195,13 +195,14 @@ const authorScores = (authors) => {
 const bestScore = (submissions) => {
   let bestScorePerson = ""
   let bestScore = 0
+
   for( let i =0; i < submissions.length; i++){
     if(bestScore <= submissions[i]["score"]) {
     bestScore = submissions[i]["score"]
       
     }
   }
-  for(let i=0; i< submissions.length; i++) {
+  for(let i=0; i< submissions.length; i++) { 
 if(bestScore === submissions[i]["score"]){
   bestScorePerson = submissions[i].firstName + " " + submissions[i].lastName
 }
@@ -298,15 +299,15 @@ return newOb
  */
 
 const mostCommonElement = (array) => {
-  let count = 0
-  for(let i = 0; i < array.length; i++) {
-    if(array[i] === array[i+1]) {
-      count += 1
-  }
-}
-  return mostCommonElement
-};
-
+  let common = []
+  for (let i =0; i < array.length-2; i++){
+  if (array[i] !== array[i]+1){
+    common += 1
+    common = array[i]
+ }
+}return common
+  };
+ 
 /**
  * Takes in an object and an array.
  * Returns a new array.
