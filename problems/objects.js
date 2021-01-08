@@ -256,9 +256,12 @@ const countAandE = (str) => {
 const countOccurance = (str) => {
   let obj = {}
   for(let i in str){
-    obj[str[i]] = 0
-    i.includes(str[i])
-    obj[str[i]]++
+    let lowerCase = str[i].toLowerCase()
+    if(obj[lowerCase]){
+      obj[lowerCase]++
+    } else {
+      obj[lowerCase] = 1
+    }
   }
   return obj
 };
@@ -272,7 +275,8 @@ const countOccurance = (str) => {
  */
 
 const countOccuranceNoSpaces = (str) => {
-  let obj = {}
+  let splitStr = str.split(" ").join("")
+  return countOccurance(splitStr)
 };
 
 /**
@@ -282,7 +286,23 @@ const countOccuranceNoSpaces = (str) => {
  */
 
 const mostCommonElement = (array) => {
-  
+  let mostCommon = 1
+  let count = 0
+  let char
+ 
+  for(let i = 0; i < array.length; i++){
+    for(let j = 0; j < array.length; j++){
+      if(array[i] === array[j]){
+        count++
+      }
+      if(mostCommon < count){
+        mostCommon = count
+        char = array[i]
+      }
+    }
+    count = 0
+  }
+  return char
 };
 
 /**
@@ -306,13 +326,13 @@ const mostCommonElement = (array) => {
 const updateList = (pairs, arr) => {
   let newArr = []
   for(let i = 0; i < arr.length; i++){
-    if(arr[i] = pairs.key){
-      newArr.push(arr[i])
-      return newArr
+    if(pairs[arr[i]]){
+      newArr[i] = pairs[arr[i]]
     } else {
-
+      newArr[i] = arr[i]
     }
   }
+  return newArr
 };
 
 /**
