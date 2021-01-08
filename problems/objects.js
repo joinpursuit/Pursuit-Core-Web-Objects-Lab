@@ -193,7 +193,7 @@ const authorScores = (authors) => {
  */
 
 const bestScore = (submissions) => {
-  let bestSubmissionScore = { score: -1 };
+  let bestSubmissionScore = {score: -Infinity};
   for (const key of submissions) {
     if (key.score > bestSubmissionScore.score) {
       bestSubmissionScore = key;
@@ -297,8 +297,24 @@ const countOccuranceNoSpaces = (str) => {
 
 const mostCommonElement = (array) => {
   let obj = {}
-
+  let mostCommon = 0
+  let nameToReturn = " "
+  for (const i of array) {
+    if (obj[i]) {
+      obj[i]++
+    } else {
+      obj[i] = 1
+    }
+  }
+  for (const key of array) {
+    if (obj[key] > mostCommon) {
+      nameToReturn = key
+      mostCommon = obj[key]
+    }
+  }
+  return nameToReturn
 };
+
 
 /**
  * Takes in an object and an array.
@@ -350,6 +366,7 @@ const deleteKey = (object, key) => {
  */
 const propertyCount = (obj) => {
   return Object.values(obj).length
+
 };
 
 module.exports = {
