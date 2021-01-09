@@ -88,7 +88,7 @@ const adamAndEveApples = (appleCountByName) => {
 
 const appleSum = (appleCountByName) => {
   let sum = 0;
-  let arrOfValues = Object.values(appleCountByName); 
+  let arrOfValues = Object.values(appleCountByName);
   for (i = 0; i < arrOfValues.length; i++) {
     sum += arrOfValues[i];
   }
@@ -179,8 +179,8 @@ const addsCountry = (capitalByCountry, country, capital) => {
 
 const authorScores = (authors) => {
   let objectAuthors = {};
-   // index authors[i][0] -- author
-   // index authors[i][1] -- score
+  // index authors[i][0] -- author
+  // index authors[i][1] -- score
   for (let i = 0; i < authors.length; i++) {
     objectAuthors[authors[i][0]] = authors[i][1];
   }
@@ -195,7 +195,17 @@ const authorScores = (authors) => {
  * @returns {string} The full name of person with best score.
  */
 
-const bestScore = (submissions) => {};
+const bestScore = (submissions) => {
+  let nameOf = "";
+  let highest = -Infinity; // smallest number is - Infinity
+  for (i = 0; i < submissions.length; i++) {
+    if (submissions[i].score > highest) {
+      highest = submissions[i].score;
+      nameOf = submissions[i].firstName + " " + submissions[i].lastName;
+    }
+  }
+  return nameOf;
+};
 
 /**
  * Returns an object where the keys are numbers 1 through 20,
@@ -223,24 +233,44 @@ const object = { a: 5, b: 6, c: 7  };
 const picked = (({ a, c }) => ({ a, c }))(object);
 console.log(picked); // { a: 5, c: 7 } 
 */
-
+// -- TO COMPARE OBJECTS --
+/* var object1 = {name: "humza" , gender : "male", age: 23}
+var object2 = {name: "humza" , gender : "male", age: 23}
+var result = Object.keys(object1).every((key) =>  object1[key] === object2[key]) 
+*/
+//const countAandE = (str) => {}
 const countAandE = (str) => {
-  let counter = {}; //{"a" : 0, "e" : 0};
-  let objAE = ( ({a, e}) => ({a, e}) )(counter); // to get a subset of key value pairs
-  for (let i = 0; i <= str.length - 1; i++) {
-    let strI = str[i]
-    if (counter[strI]) { //(counter[str[i]] === "a" || counter[str[i]] === "A") {  //can i even compare this?  hence the undefined error
-      counter[strI] ++; // why is it not working for counter "a"
+  let objAE = { a: 0, e: 0 };
+  let newStr = str.toLowerCase();
+  for (let i = 0; i <= newStr.length - 1; i++) {
+    if (newStr[i] === "a") {
+      objAE[newStr[i]] += 1;
+    } else if (newStr[i] === "e") {
+      objAE[newStr[i]] += 1;
+    }
+  }
+  return objAE;
+};
+// I don't understand what is happening here
+/*const countAandE = (str) => {
+  let objAE = {"a" : 0, "e" : 0 };
+   let counter = {};
+   (({ a, e }) => ({ a, e }))(counter); // to get a subset of key value pairs
+  for (let i = 0; i <= newStr.length - 1; i++)
+    let strI = str[i];
+    if (counter[strI]) {
+      //(counter[str[i]] === "a" || counter[str[i]] === "A") {  //can i even compare this?  hence the undefined error
+      counter[strI]++; // why is it not working for counter "a"
       //console.log("string I is " + strI, counter[strI])
-     } else {
+    } else {
       counter[strI] = 1;
     }
   }
   //console.log(counter); // why doesn't counter["a", "e"] work? wrong syntax???
   return objAE; // now i'm getting undefined !!!! :(
-    //console.log(counter); ==> { A: 1, ' ': 2, g: 1, o: 2, d: 1, s: 1, n: 1, a: 1, k: 1, e: 1 }
-    //return objAE; ==> { a: undefined, e: undefined }
-}; // I don't understand what is happening here
+  //console.log(counter); ==> { A: 1, ' ': 2, g: 1, o: 2, d: 1, s: 1, n: 1, a: 1, k: 1, e: 1 }
+  //return objAE; ==> { a: undefined, e: undefined }
+}; */
 
 /**
  * Takes in a string and returns an object with
@@ -250,9 +280,9 @@ const countAandE = (str) => {
  */
 
 const countOccurance = (str) => {
-  let lowerStr = str.toLowerCase; // needs to count caps and lower case as same
-  let counter = {}; 
-  for (let i = 0; i <= str.length - 1; i++) {
+  let lowerStr = str.toLowerCase(); 
+  let counter = {};
+  for (let i = 0; i <= lowerStr.length - 1; i++) {
     let strI = lowerStr[i];
     if (counter[strI]) {
       counter[strI]++;
@@ -261,7 +291,7 @@ const countOccurance = (str) => {
     }
   }
   return counter;
-}; 
+};
 
 /**
  * Takes in a string and returns an object with
@@ -271,7 +301,21 @@ const countOccurance = (str) => {
  * @returns {Object} Counts all characters except spaces  {a: 2, g: 1, o: 2, d:1, s: 1, n:a, k:1, e: 1}
  */
 
-const countOccuranceNoSpaces = () => {};
+const countOccuranceNoSpaces = () => {
+  // let lowerStr = str.toLowerCase(); //how do I take out the spaces?
+  // let counter = {};
+  // for (let i = 0; i <= lowerStr.length - 1; i++) {
+  //   let strI = lowerStr[i];
+  //   if (counter[strI] === " ") {
+  //     delete counter[strI];
+  //   } else if (counter[strI]) {
+  //     counter[strI]++;
+  //   } else {
+  //     counter[strI] = 1;
+  //   }
+  // }
+  // return counter;
+};
 
 /**
  * Takes in an array and returns the most common element.
@@ -279,7 +323,35 @@ const countOccuranceNoSpaces = () => {};
  * @returns {(number|string)} Most common element
  */
 
-const mostCommonElement = () => {};
+const mostCommonElement = (array) => {
+  let countObj = {};
+  let most = 0;
+  let mostName;
+  for (i = 0; i < array.length; i++) {
+    let element = array[i];
+    if (countObj[element]) {
+      countObj[element]++;
+    } else {
+      countObj[element] = 1;
+    }
+  } 
+  for (const key in countObj) {
+    if (most < countObj[key]) {
+      most = countObj[key];
+      mostName = key;
+    }
+  }
+  if(parseInt(mostName)) {
+    return parseInt(mostName)
+  } else {
+    return mostName;
+  }
+  // if (typeof(mostName) === "number") {
+  //   parseInt(mostName)
+  // } else {
+  //   return mostName;
+  // } 
+};
 
 /**
  * Takes in an object and an array.
@@ -301,15 +373,13 @@ const mostCommonElement = () => {};
 
 const updateList = (pairs, arr) => {
   let newArr = [];
-  // if arr[i] === object[key] add object[key][value] to the new array
-  // else add object[key] to the new array
-  for (let i = 0; i < arr.length - 1; i++) {
-    for (const key in pairs) {
-      arr[i] === pairs[key] ? newArr.push(pairs[key][value]) : newArr.push(pairs[key]);
-    }
+  let artist;
+  for (let i = 0; i <= arr.length - 1; i++) {
+    artist = arr[i];
+      pairs[artist] ? newArr.push(pairs[artist]) : newArr.push(artist);
   }
   return newArr;
-}; // -- I don't understand what's wrong. Not sure if I am using [value] correctly
+}; 
 
 /**
  * Takes in an object and a key.
