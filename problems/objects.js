@@ -70,8 +70,6 @@ const appleSet = (obj, name, num) => {
  * Should return the total number of apples for Adam and Eve.
  * @param {Object} appleCountByName - apple object with names and numbers
  * @returns {number} Sum of Adam and Eve's apples.
- *
- * 
  * 
  */
 
@@ -86,8 +84,6 @@ const adamAndEveApples = (obj) => {
  * Returns the sum of all apples
  * @param {Object} appleCountByName - apple object with names and numbers
  * @returns {number} Total number of all apples
- * 
- * apple = {"eve": 3, "Adam": 4, "dave": 5}
  */
 
 const appleSum = (obj) => {
@@ -150,8 +146,6 @@ const getCapital = (obj, country) => {
  *
  * @param {Object} capitalByCountry - countries and capitals
  * @returns {Object} countriesAndCapitals now with Jamaica
- * 
- * capitalByCountry = { USA: DC , Russia: Moscow} jamaica: Kingson
  */
 
 const addsJamaica = (obj) => {
@@ -186,7 +180,11 @@ const addsCountry = (obj, country, capital) => {
  */
 
 const authorScores = (arr) => {
-  const obj = Object.fromEntries(arr);
+  let obj = {}
+  for (let i = 0; i < arr.length; i++) {
+    const el = arr[i]
+    obj[el[0]] = el[1]
+  }
   return obj;
 
 };
@@ -199,7 +197,7 @@ const authorScores = (arr) => {
  * @returns {string} The full name of person with best score.
  */
 const bestScore = (arr) => {
-  let bestScore = -1000000;
+  let bestScore = - Infinity;
   let element = {}
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].score > bestScore) {
@@ -232,8 +230,14 @@ const cubeObj = () => {
  */
 
 const countAandE = (str) => {
-  let obj = {};
-  return arr.sort()
+  let obj = { a: 0, e: 0 }
+  for (let i = 0; i < str.length; i++) {
+    let element = str[i].toLowerCase();
+    if (element === "e" || element === "a") {
+      obj[element]++;
+    }
+  }
+  return obj
 };
 
 /**
@@ -264,18 +268,20 @@ const countOccurance = (str) => {
  * @returns {Object} Counts all characters except spaces  {a: 2, g: 1, o: 2, d:1, s: 1, n:a, k:1, e: 1}
  */
 
-const countOccuranceNoSpaces = () => {
-  let obj = {};
+const countOccuranceNoSpaces = (str) => {
+  let counter = {};
   for (let i = 0; i < str.length; i++) {
-    const el = str[i].toLowerCase();
-    if (obj[el]) {
-      obj[el]++
+    let element = str[i].toLowerCase();
+    if (element === " ") {
+      continue;
+    }
+    if (counter[element]) {
+      counter[element]++;
     } else {
-      obj[el] = 1
+      counter[element] = 1;
     }
   }
-  return obj;
-
+  return counter;
 };
 
 /**
@@ -284,7 +290,33 @@ const countOccuranceNoSpaces = () => {
  * @returns {(number|string)} Most common element
  */
 
-const mostCommonElement = () => { };
+const mostCommonElement = arr => {
+
+  let counter = {}
+  for (let i = 0; i < arr.length; i++) {
+    let el = arr[i];
+    if (counter[el]) {
+      counter[el]++;
+    } else {
+      counter[el] = 1;
+    }
+  }
+  let count = 0;
+  let commonElement;
+  for (let key in counter) {
+    if (counter[key] > count) {
+      count = counter[key]
+      commonElement = key
+    }
+  }
+
+  if (!isNaN(commonElement)) {
+    return parseInt(commonElement)
+  } else {
+    return commonElement;
+  }
+
+};
 
 /**
  * Takes in an object and an array.
@@ -304,7 +336,17 @@ const mostCommonElement = () => { };
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => { };
+const updateList = (pairs, arr) => {
+  let arr2 = []
+  for (let i = 0; i < arr.length; i++) {
+    if (pairs[arr[i]]) {
+      arr2[i] = pairs[arr[i]]
+    } else {
+      arr2[i] = arr[i];
+    }
+  }
+  return arr2;
+};
 
 /**
  * Takes in an object and a key.
@@ -315,7 +357,11 @@ const updateList = () => { };
  * @returns {Object} The Object without the key.
  */
 
-const deleteKey = () => { };
+const deleteKey = (obj, key) => {
+  delete obj[key]
+  return obj
+
+};
 
 
 /**
@@ -324,7 +370,10 @@ const deleteKey = () => { };
  * @param {Object} obj
  * @returns {number} Number of properties.
  */
-const propertyCount = () => { };
+const propertyCount = obj => {
+  return Object.keys(obj).length
+
+};
 
 module.exports = {
   eveAppleCount,
