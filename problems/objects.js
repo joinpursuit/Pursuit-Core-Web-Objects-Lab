@@ -214,7 +214,7 @@ const cubeObj = () => {
   let obj = {};
   let num = 1;
   while (num <= 20) {
-    obj[num] = num * num * num;
+    obj[num] = Math.pow(num, 3);
     num++;
   }
   return obj;
@@ -233,16 +233,11 @@ const countAandE = (str) => {
     e: 0,
   };
 
-  let sumA = 0;
-  let sumE = 0;
-
   for (let i = 0; i < str.length; i++) {
     if (str[i] === "a" || str[i] === "A") {
-      sumA++;
-      obj["a"] = sumA;
+      obj["a"] ++;
     } else if (str[i] === "e" || str[i] === "E") {
-      sumE++;
-      obj["e"] = sumE;
+      obj["e"] ++;
     }
   }
   return obj;
@@ -300,12 +295,10 @@ const mostCommonElement = (arr) => {
   let obj = {}
   let maxEl = arr[0];
   for (let i = 0; i < arr.length; i++) {
-    console.log(arr[i])
     if (!obj[arr[i]]) {
       obj[arr[i]] = 1;
     } else {
       obj[arr[i]]++;
-      console.log(obj)
       if (obj[arr[i]] > obj[maxEl]) {
         maxEl = arr[i];
       }
@@ -344,7 +337,7 @@ const updateList = (pairs, arr) => {
   return newArr;
 };
 
-// let newArr = [];
+// let newArr = [];    //Long way to do the problem.. double loop.
 // let arrOfKeys = Object.keys(pairs);
 // for (let i = 0; i < arr.length; i++) {
 //   let el = arr[i];
