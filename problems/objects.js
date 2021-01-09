@@ -198,19 +198,38 @@ const authorScores = (authors) => {
  * @param {Object[]} submissions - array of objects [ { firstName: "Calvin", lastName: "Newton", score: 13} ...]
  * @returns {string} The full name of person with best score.
  */
+//let arr = [1,2,3,4]
 
-const bestScore = (submissions) => {// did not understand question
+// * for loop, loops through indexes
+// for(let i = 0; i, arr.length; i++){
+//   console.log(arr[i])
+// }
+// *for of loop, loops through elements
+// for(let element of arr) {
+//   console.log(element)
+// }
+//* for in loop, loops through keys
+// for(let key in obj) {
+//   console.log(obj[key])
+// }
+
+// let arr = [{score: 10}, {score:5}, score]
+const bestScore = (submissions) => {// did not understand question. better understanding now(went over it)
+  let highestScore = -Infinity;
+  let fullName = "";
   for(let i = 0; i < submissions.length; i++) {
-    if(submissions[i]["score"] > submissions[submissions.length -1]["score"]){
-      return submissions[i]["firstName"] + " " + submissions[i]["lastName"]
+    if(submissions[i]["score"] > highestScore){
+      highestScore = submissions[i]["score"]
+      fullName = submissions[i].firstName + " " + submissions[i].lastName
     }
   }
+  return fullName
 };
 
 /**
  * Returns an object where the keys are numbers 1 through 20,
  * and their respective values is key cubed (num * num * num).
- * @returns {Object} {1: 1, 2: 8, 3: 27...}
+ * @returns {Object} {1: 1, 2: 8,safwgr 3: 27...}
  */
 
 const cubeObj = () => { // previous person was trying to use for in key. would that work for this problem?
