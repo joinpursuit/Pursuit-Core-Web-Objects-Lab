@@ -5,7 +5,9 @@
  * @returns {string} - species
  */
 
-const catSpecies = () => {};
+const catSpecies = (catObj) => {
+  return catObj.species
+};
 
 /**
  * Takes in a cat object and a color. Add the key
@@ -15,7 +17,10 @@ const catSpecies = () => {};
  * @returns {Object} catObj
  */
 
-const giveCatColor = () => {};
+const giveCatColor = (catObj,color) => {
+  catObj['color'] = color
+  return catObj
+};
 
 /**
  * Takes in a cat object and returns its 'texture', if it has that property.
@@ -25,7 +30,13 @@ const giveCatColor = () => {};
  * @throws {Error} 'Does not have texture property'
  */
 
-const catTexture = () => {};
+const catTexture = (catObj) => {
+  if (catObj.texture) {
+    return catObj.texture
+  } else {
+    throw Error ('Does not have texture property')
+  }
+};
 
 /**
  * Takes in an object and returns all its keys as an array.
@@ -33,7 +44,13 @@ const catTexture = () => {};
  * @param {Object}
  * @returns {string[]} All the keys from the object
  */
-const objKeys = () => {};
+const objKeys = (obj) => {
+  let newArray = []
+  for (let key in obj) {
+    newArray.push(key)
+  }
+   return newArray
+};
 
 /**
  * Takes in an object and returns all its keys as an array.
@@ -42,7 +59,10 @@ const objKeys = () => {};
  * @returns {string[]} All the keys from the object
  */
 
-const objKeys2 = () => {};
+const objKeys2 = (obj) => {
+  let newArray = Object.keys(obj)
+  return newArray
+};
 
 /**
  * Takes in an object and returns all the values as an array.
@@ -50,7 +70,13 @@ const objKeys2 = () => {};
  * @param {Object}
  * @returns {*[]} All the values from the object
  */
-const objValues = () => {};
+const objValues = (obj) => {
+  let newArray = []
+  for (let key in obj) {
+    newArray.push(obj[key])
+  }
+  return newArray
+};
 
 /**
  * Takes in an object and returns all the values as an array.
@@ -59,7 +85,10 @@ const objValues = () => {};
  * @returns {*[]} All the values from the object
  */
 
-const objValues2 = () => {};
+const objValues2 = (obj) => {
+  let newArray = Object.values(obj)
+  return newArray
+};
 
 /**
  * Takes in an array of film objects and
