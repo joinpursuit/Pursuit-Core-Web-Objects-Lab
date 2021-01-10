@@ -338,10 +338,11 @@ const mostCommonElement = (array) => {
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {
- 
+const updateList = (pairs) => {
 
 };
+
+
 // console.log(updateList({ "Ed Sheeran": "guitar", "Ray Charles": "piano" }, ["Ed Sheeran","John Lennon", "Ray Charles"]))
 // console.log(updateList({ tony: "tiger", sam: "toucan" }, ["nelly", "tony"]))
 
@@ -350,19 +351,16 @@ const updateList = () => {
  * Takes in an object and a key.
  * It should delete the key value pair from the object and
  * return the changed object.
- * @param {Object}
+ * @param {Object} object
  * @param {string} key
  * @returns {Object} The Object without the key.
  */
 
-const deleteKey = () => {};
+const deleteKey = (object, key) => { // don't understand
+  delete object[key]
+  return object
 
-// console.log(deleteKey({ tony: "tiger", sam: "toucan" }))
-
-
-
-
-
+};
 
 
 /**
