@@ -112,13 +112,13 @@ const adamAndEveApples = (appleCountByName) => {
   return appleCountByName["Adam"] + appleCountByName["Eve"]
 
 };
-// console.log(appleCountByName = {
+// console.log(adamAndEveApples({
 //   Adam: 3,
 //   Beth: 5,
 //   Cal: 3,
 //   Dan: 5,
 //   Eve: 4,
-// })
+// }))
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -137,7 +137,7 @@ const appleSum = (appleCountByName) => {
   return num
 
 };
-// console.log(appleSum (appleCountByName = {
+// console.log(appleSum ({
 //   Adam: 19,
 //   Beth: 5,
 //   Cal: 3,
@@ -160,7 +160,13 @@ const appleSetToZero = (appleCountByName) => {
   }
   return appleCountByName
 };
-
+// console.log(appleSetToZero({
+//   Adam: 19,
+//   Beth: 5,
+//   Cal: 3,
+//   Dan: 5,
+//   Eve: 21,
+// }))
 
 /**
  * Takes in an object of countries and their capitals.
@@ -347,7 +353,7 @@ const countOccurance = (str) => {
   }
   return newObj
 };
-
+//console.log(countOccurance("hello world"))
 /**
  * Takes in a string and returns an object with
  * the count occurrence of each character.
@@ -376,20 +382,22 @@ const countOccuranceNoSpaces = (str) => {
  */
 
 const mostCommonElement = (array) => {
-  winner = ""
+
   newObj = {}
   for (let i = 0; i < array.length; i++) {
     newObj[array[i]] = (newObj[array[i]] || 0) + 1
   }
   console.log(newObj)
-  for (let key in newObj) {
-    if (newObj[key] > newObj[key]) {
-      winner = newObj[key]
+  maxKey = array[0]
+  for (let key of array) {
+    if (newObj[key] > newObj[maxKey]) {
+      maxKey = key
     }
   }
-  return winner
+  return maxKey
 };
-console.log(mostCommonElement(["s", "f", "s", "q"]))
+//console.log(mostCommonElement(["s", "f", "q", 1, 3, 4, "z", "z",]))
+
 
 /**
  * Takes in an object and an array.
@@ -409,7 +417,49 @@ console.log(mostCommonElement(["s", "f", "s", "q"]))
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => { };
+const updateList = (pairs, arr) => {
+  let pairsKeysArr = Object.keys(pairs)
+  let newArr = []
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < pairsKeysArr.length; j++) {
+      if (arr[i] === pairsKeysArr[j]) {
+        newArr[i] = pairs[pairsKeysArr[j]]
+        break;
+      }
+      else {
+        newArr[i] = arr[i]
+      }
+    }
+  }
+  return newArr
+};
+console.log(updateList({ "Ed Sheeran": "guitar", "Ray Charles": "piano" }, [
+  "Ed Sheeran",
+  "John Lennon",
+  "Ray Charles",
+]))
+//console.log(Object.keys(pairs))
+//console.log(arr[1])
+// let newArr = [arr[0]]
+// for (let key in pairs) {
+//   temp = key
+//   for (let key of arr) {
+//     if (key === temp) {
+//       newArr[key] = pairs[key]
+//     } else {
+//       newArr[key] = key
+//     }
+//   }
+
+// }
+
+
+
+
+// return newArr
+//console.log(newArr)
+//return arr
+
 
 /**
  * Takes in an object and a key.
@@ -420,8 +470,10 @@ const updateList = () => { };
  * @returns {Object} The Object without the key.
  */
 
-const deleteKey = () => { };
-
+const deleteKey = (obj, key) => {
+  delete obj[key]
+  return obj
+};
 
 /**
  * Takes in an object and returns the number of
@@ -429,7 +481,17 @@ const deleteKey = () => { };
  * @param {Object} obj
  * @returns {number} Number of properties.
  */
-const propertyCount = () => { };
+const propertyCount = (obj) => {
+  let properties = Object.keys(obj)
+  let num = 0
+  for (let i = 0; i < properties.length; i++) {
+    if (true) {
+      num += 1
+    }
+  }
+  return num
+};
+
 
 module.exports = {
   eveAppleCount,
