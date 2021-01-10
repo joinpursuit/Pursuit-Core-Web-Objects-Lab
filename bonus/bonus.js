@@ -178,7 +178,7 @@ const pairs = (groups) => {
   //   for(let i = 0; i < groups.length; i++){
   //     arrPairs.push()  //(groups[key i].join("&")(groups[value i]))
   //   }
-  // return arrPairs;
+  // return arrPairs; 
 };
 
 /**

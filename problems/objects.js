@@ -299,22 +299,28 @@ const countOccurance = (str) => {
  * Skips spaces
  * @param {string} str - "A good snake"
  * @returns {Object} Counts all characters except spaces  {a: 2, g: 1, o: 2, d:1, s: 1, n:a, k:1, e: 1}
+ * RESEARCH: 
+ * .replace(" ", "") only takes out 1 whitespace
+ * https://flaviocopes.com/how-to-replace-whitespace-javascript/
+ * const name = 'Hi my name is Flavio'
+ * name.replace(/\s/g, '') //HimynameisFlavio
+ * also works with .replace(/ /g, "")
+ * The \s meta character in JavaScript regular expressions matches any whitespace character: spaces, tabs, 
+ * newlines and Unicode spaces. And the g flag tells JavaScript to replace it multiple times. If you miss it, it will only replace the first occurrence of the white space.
  */
 
-const countOccuranceNoSpaces = () => {
-  // let lowerStr = str.toLowerCase(); //how do I take out the spaces?
-  // let counter = {};
-  // for (let i = 0; i <= lowerStr.length - 1; i++) {
-  //   let strI = lowerStr[i];
-  //   if (counter[strI] === " ") {
-  //     delete counter[strI];
-  //   } else if (counter[strI]) {
-  //     counter[strI]++;
-  //   } else {
-  //     counter[strI] = 1;
-  //   }
-  // }
-  // return counter;
+const countOccuranceNoSpaces = (str) => {
+  let lowerStr = str.toLowerCase().replace(/ /g, ""); 
+  let counter = {};
+  for (let i = 0; i <= lowerStr.length - 1; i++) {
+    let strI = lowerStr[i];
+    if (counter[strI]) {
+      counter[strI]++;
+    } else {
+      counter[strI] = 1;
+    }
+  }
+  return counter;
 };
 
 /**
