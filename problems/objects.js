@@ -331,36 +331,15 @@ const mostCommonElement = (array) => {
  * @returns {string[]} Elements or their pair values.
  */
 
- const updateList = () => {}
-  // const updateList = (pairs, arr) => {
-//   let newArray = [];
-//   for(let i = 0; i < arr.length; i++) {
-//     if(Object.keys(pairs) === arr[i]) {
-//       newArray.push(element)
-//   } else {
-//     newArray.push(Objects.keys(pairs))
-//   }
-// }
-// return newArray
-// }
-
-// for (const key in pairs) {
-//   if(Object.values(key) === element) {
-//     newArray.push(Object.values(key))
-//   } else {
-//     newArray.push(element)
-//   }
-// }
-// for (const element of arr) {
-//   if (Obkect.keys(pairs) === element) {
-//     newArray.push(element)
-//   } else {
-//     newArray.push(Object.keys(pairs))
-//   }
-// }
-// return newArray
-
-
+ const updateList = (pairs, arr) => {
+   for(let i = 0; i < arr.length; i++) {
+     let el = arr[i]
+     if(pairs[el]) {
+       arr[i] = pairs[el]
+     }
+   }
+   return arr
+ }
 
 /**
  * Takes in an object and a key.
@@ -371,9 +350,11 @@ const mostCommonElement = (array) => {
  * @returns {Object} The Object without the key.
  */
 
-  const deleteKey = () => {}
-//   return Object.keys(key)
-//  };
+  const deleteKey = (obj, key) => {
+    delete obj[key]
+    return obj
+  }
+
 
 
  /**
