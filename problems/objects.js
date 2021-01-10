@@ -232,7 +232,7 @@ const cubeObj = () => {
  */
 
 const countAandE = (str) => {
-  let stringObj = {a: 0, e: 0};
+  let stringObj = { a: 0, e: 0 };
   let array = str.split("");
   for (let i = 0; i < array.length; i++) {
     if (array[i].toLowerCase() === "a") {
@@ -252,14 +252,14 @@ const countAandE = (str) => {
  */
 
 const countOccurance = (str) => {
-  let newStr = str.toLowerCase().split("")
+  let newStr = str.toLowerCase().split("");
   let obj = {};
   for (let i = 0; i < newStr.length; i++) {
     const el = newStr[i];
     if (obj[el]) {
-      obj[el] += 1 
+      obj[el] += 1;
     } else {
-      obj[el] = 1
+      obj[el] = 1;
     }
   }
   return obj;
@@ -273,7 +273,21 @@ const countOccurance = (str) => {
  * @returns {Object} Counts all characters except spaces  {a: 2, g: 1, o: 2, d:1, s: 1, n:a, k:1, e: 1}
  */
 
-const countOccuranceNoSpaces = () => {};
+const countOccuranceNoSpaces = (str) => {
+  let newArr = str.toLowerCase().split(" ");
+  let strNoSpace = newArr.join("");
+  let obj = {};
+  for (let i = 0; i < strNoSpace.length; i++) {
+    const el = strNoSpace[i];
+    if (obj[el]) {
+      obj[el] += 1;
+    } else {
+      obj[el] = 1;
+    }
+  }
+  return obj;
+};
+
 
 /**
  * Takes in an array and returns the most common element.
