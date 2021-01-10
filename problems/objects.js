@@ -6,8 +6,17 @@
  * @returns {number} The number of apples Eve has.
  */
 
-const eveAppleCount = () => {};
-
+const eveAppleCount = () => {
+  let appleCountByName = {
+    Adam: 3,
+    Beth: 5,
+    Cal: 3,
+    Dan: 5,
+    Eve: 4,
+  }
+  console.log(eveAppleCount[4])
+};
+eveAppleCount()
 /**
  * Takes in an object with peoples names as the keys and
  * the number of apples they have as values. Also takes in the argument of someone's
@@ -22,7 +31,18 @@ const eveAppleCount = () => {};
  * bracket notation? Try them both.
  */
 
-const appleCount = () => {};
+const appleCount = () => {
+  let appleCountByName = {
+    Celine: 3,
+    Corey: 5,
+    Jimmy: 3,
+    Ben: 5,
+    Eve: 7,
+  } 
+  console.log(appleCount.Celine + ' ' + appleCount.Eve);
+  console.log(appleCount.John);
+};
+appleCount();
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -36,7 +56,16 @@ const appleCount = () => {};
  * @returns {Object} The updated object.
  */
 
-const eveAppleSet = () => {};
+const eveAppleSet = (appleCount) => {
+  let appleCountByName = {
+          Celine: 3,
+          Corey: 5,
+          Jimmy: 3,
+          Ben: 5,
+          Eve: 7,
+
+  }
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -260,3 +289,22 @@ module.exports = {
   deleteKey,
   propertyCount,
 };
+
+
+// write a function that takes in a string and for any e letter replaces them with a ?
+// inut "hello"
+// output "h?llo"
+
+const replaceEWithQuestionMark = (str) => {
+  let output = "";
+  for(let i = 0; i < str.length; i += 1) {
+    const currChar = str[i];
+    if(currChar = "e") {
+      output += "?";
+    } else {
+      output += ""
+    }
+  } 
+  return output; 
+}
+console.log(replaceEwithQuestionMark("every"))
