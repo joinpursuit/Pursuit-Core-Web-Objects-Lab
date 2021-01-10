@@ -228,9 +228,21 @@ const cubeObj = () => {
  * @returns {Object} Counts of e and a. {a: 2, e: 1}
  */
 
-const countAandE = () => {
+  
+  const countAandE = str => {
+    let count = {'a': 0, 'e': 0};
+    for (let eachLetter in str) {
+      console.log(str)
+      el = str[eachLetter].toLowerCase();
+      if( el === 'a') {
+        count['a']++;
+      } else if (el === 'e') {
+        count['e']++;
+      }
+    }
+    return count;
+  };
 
-};
 
 /**
  * Takes in a string and returns an object with
@@ -264,7 +276,6 @@ const countOccurance = (str) => {
 const countOccuranceNoSpaces = (str) => {
     let arr = str.split(" ")
     let newStr = arr.join('');
-    console.log(newStr)
     let obj = {};
     for (let i = 0; i < newStr.length; i++) {
      let key = newStr[i].toLowerCase();
@@ -283,7 +294,26 @@ const countOccuranceNoSpaces = (str) => {
  * @returns {(number|string)} Most common element
  */
 
-const mostCommonElement = () => {};
+const mostCommonElement = (array) => {
+  let count = {};
+  for (let i = 0; i < array.length; i++){
+    const allLowerCaseLetters = array[i];
+    if (count[allLowerCaseLetters]) {
+      count[allLowerCaseLetters] += 1;
+    } else {
+      count[allLowerCaseLetters] = 1;
+    }
+  }
+  let topEl = array[0];
+  let maxCount = 0;
+  for (let value of array) {
+    if (count[value] > maxCount) {
+      topEl = value;
+      maxCount = count[value];
+    }
+  }
+  return topEl;
+};
 
 /**
  * Takes in an object and an array.
@@ -303,19 +333,17 @@ const mostCommonElement = () => {};
  * @returns {string[]} Elements or their pair values.
  */
 
+
 const updateList = (pairs, arr) => {
-   let newArr = []; 
-   for (let i = 0; i < arr.length; i++) {
-     if(pairs.includes(arr[i])) {
-       console.log(pairs)
-  //     newArr.push(arr[i])
-  //    }else{
-  //      newArr.push([i])
-  //    }
-  //  } 
-  //  return newArr
-     }
-    }
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (pairs[arr[i]]){
+      newArr.push(pairs[arr[i]])
+    } else {
+      newArr.push(arr[i]);
+    }   
+  }
+  return newArr;
 };
 
 /**
