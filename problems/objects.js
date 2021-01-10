@@ -338,13 +338,29 @@ const mostCommonElement = (array) => {
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = (pairs) => {
-
+const updateList = (pairs, arr) => {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    let artist = arr[i]
+    if (pairs[artist]) {
+      newArr.push(pairs[artist])
+    } else {
+      newArr.push(artist)
+    }
+  }
+  return newArr
 };
 
 
-// console.log(updateList({ "Ed Sheeran": "guitar", "Ray Charles": "piano" }, ["Ed Sheeran","John Lennon", "Ray Charles"]))
-// console.log(updateList({ tony: "tiger", sam: "toucan" }, ["nelly", "tony"]))
+// for (let i = 0; i < arr.length; i++) {
+//   if (Object.keys(pairs) === arr[i]) {
+//     newArr.push(Object.values(pairs))
+//   } else {
+//     newArr.push(Object.keys(pairs))
+//   }
+// }
+// return newArr
+
 
 
 /**
