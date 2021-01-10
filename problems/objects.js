@@ -270,9 +270,17 @@ const countAandE = (str) => {
 
 const countOccurance = (str) => {
   let obj = {}
-  obj[letter][0]
-  for(i=0;i<str.length;i++){
-    obj[letter]=obj[i] + 1
+  let newString = str.toLowerCase()
+  
+  for(i=0;i<newString.length;i++){
+    let character
+    if(obj[newString[i]]){
+      obj[newString[i]]=obj[newString[i]] + 1 
+    }
+    else {
+      obj[newString[i]] = 1
+    }
+   
     
   }
   return obj
@@ -286,7 +294,21 @@ const countOccurance = (str) => {
  * @returns {Object} Counts all characters except spaces  {a: 2, g: 1, o: 2, d:1, s: 1, n:a, k:1, e: 1}
  */
 
-const countOccuranceNoSpaces = (str) => {};
+const countOccuranceNoSpaces = (str) => {
+  let obj = {}
+  let disposeOf = {}
+  let newString = str.toLowerCase()
+  // obj[letter][0]
+  for(i=0;i<newString.length;i++){
+    if(newString[i] === ' '){
+      disposeOf[newString[i]] = disposeOf[newString[i]]
+    } else{
+   obj[newString[i]]=(obj[newString[i]] || 0) + 1
+    } 
+  }
+  return obj
+
+};
 
 /**
  * Takes in an array and returns the most common element.
@@ -295,7 +317,23 @@ const countOccuranceNoSpaces = (str) => {};
  */
 
 const mostCommonElement = (array) => {
+  obj ={}
+  for(i=0;i<array.length;i++){
+    let setCharacter = array[i]
+    if(obj[setCharacter]){
+    obj[setCharacter]= obj[setCharacter] + 1
+    } else {obj[setCharacter] =  1}
+  } 
 
+let maxNumOfElements = array[0]
+for(i=0;i<array.length;i++){
+  if(obj[array[i]]> obj[maxNumOfElements]){
+    maxNumOfElements =array[i] 
+  }
+
+
+}
+ return maxNumOfElements
 };
 
 /**
@@ -317,18 +355,21 @@ const mostCommonElement = (array) => {
  */
 
 const updateList = (pairs,arr) => {
-  let newArray =[]
-    for(let key in pairs){
-    for(i=0;i<arr.length;i++){
-      if(arr[i] in pairs){
-        newArray.push(pairs[key])
-      }else
-        newArray.push(arr[i])
-
-      }
+  let output = [];
+  for (let el of arr) {
+    // If the element in the array is a key in the object...
+    if (pairs[el]) {
+      // ... the new array should have its value
+      // ==> WRITE CODE HERE <===
+      output.push(pairs[el])
+    } else {
+      // Otherwise, it should use the array element
+      // ==> WRITE CODE HERE <===
+      output.push(el)
     }
-    
-  return newArray
+  }
+  return output;
+
 };
 
 /**
