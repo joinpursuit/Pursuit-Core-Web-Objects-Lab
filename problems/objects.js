@@ -296,15 +296,14 @@ const countOccuranceNoSpaces = (str) => {
  */
 
 const mostCommonElement = (array) => {
-  let count = 0
-  for(let i = 0; i < array.length; i++) {
-    if(array[i] === array[i+1]) {
-      count += 1
+  let common = [];
+  for (let i = 0; i < array.length - 2; i++) {
+    if (array[i] !== array[i] + 1) {
+      common += 1;
+      common = array[i];
     }
-  
-
-    
   }
+  return common;
 };
 
 /**
@@ -325,7 +324,20 @@ const mostCommonElement = (array) => {
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = (pairs, arr) => {
+  // Myra reviewed this problem in class
+  let values = [];
+
+  for (let key of arr) {
+    console.log(key);
+    if (pairs[key] === undefined) {
+      values.push(key);
+    } else {
+      values.push(pairs[key]);
+    }
+  }
+  return values;
+};
 
 /**
  * Takes in an object and a key.
@@ -336,7 +348,10 @@ const updateList = () => {};
  * @returns {Object} The Object without the key.
  */
 
-const deleteKey = () => {};
+const deleteKey = (Object, key) => {
+  delete Object[key];
+  return Object;
+};
 
 /**
  * Takes in an object and returns the number of
@@ -344,7 +359,13 @@ const deleteKey = () => {};
  * @param {Object} obj
  * @returns {number} Number of properties.
  */
-const propertyCount = () => {};
+const propertyCount = (obj) => {
+  let count = 0;
+  for (let key in obj) {
+    count += 1;
+  }
+  return count;
+};
 
 module.exports = {
   eveAppleCount,
