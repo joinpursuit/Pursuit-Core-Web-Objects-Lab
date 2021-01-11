@@ -326,7 +326,18 @@ const mostCommonElement = (array) => {
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = (pairs, arr) => {
+  let values = []
+  for (let key of arr){
+    if (pairs[key] === undefined){
+      values.push(key)
+    } else {
+values.push(pairs[key])
+    }
+
+  }
+  return values
+};
 
 /**
  * Takes in an object and a key.
@@ -337,7 +348,10 @@ const updateList = () => {};
  * @returns {Object} The Object without the key.
  */
 
- const deleteKey = () => {};
+ const deleteKey = (obj, key) => {
+   delete obj[key]
+   return obj
+ };
 
 
  /**
@@ -346,7 +360,12 @@ const updateList = () => {};
   * @param {Object} obj
   * @returns {number} Number of properties.
   */
- const propertyCount = () => {};
+ const propertyCount = (obj, key) => {
+   let count = 0
+   for (let key in obj){
+   count ++ }
+   return count
+ };
 
 module.exports = {
   eveAppleCount,
