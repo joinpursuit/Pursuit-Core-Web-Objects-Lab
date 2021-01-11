@@ -334,6 +334,19 @@ const updateList = (pairs, arr) => {
   return arr2;
 };
 
+     // let arr2 =[]
+     // for (let key of arr){
+   //   if (pairs[key] === undefined){
+ //     arr2.push(key)
+   //   }
+   //   else{
+ //     arr2.push(pairs[key])
+   //   }
+     // }
+     // return arr2
+
+
+
 /**
  * Takes in an object and a key.
  * It should delete the key value pair from the object and
