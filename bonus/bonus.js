@@ -5,7 +5,9 @@
  * @returns {string} - species
  */
 
-const catSpecies = () => {};
+const catSpecies = (catObj, catObj.species ) => {
+  
+};
 
 /**
  * Takes in a cat object and a color. Add the key
