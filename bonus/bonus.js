@@ -176,6 +176,8 @@ const secondMostFrequentLetter = () => {};
 
 // console.log(p1 === p2)
 
+// It will log out as undefined because even though both objects have the same contents they are technically different 
+
 module.exports = {
   catSpecies,
   giveCatColor,
