@@ -179,10 +179,12 @@ const addsCountry = (capitalByCountry, country, capital) => {
 const authorScores = (authors) => {
   let newAuthors = {}
   for(let i = 0; i < authors.length; i++) {
+    console.log(authors[i])
     newAuthors[authors[i][0]] = authors[i][1]
-  }
+  } 
   return newAuthors
 };
+console.log(authorScores([["Mark Twain", 8.9], ["Nathaniel Hawthorne", 5.1]]))
 
 /**
  * You are given an array of objects.
@@ -276,18 +278,21 @@ const countOccurance = (str) => {
  * @returns {Object} Counts all characters except spaces  {a: 2, g: 1, o: 2, d:1, s: 1, n:a, k:1, e: 1}
  */
 
-const countOccuranceNoSpaces = () => {
-  let newObj = {};
-  for(let i = 0; i < str.length; i++){
-    if(str[i] !== " ") {
-     if(newObj[str[i].toLowerCase()]===undefined){
-       newObj[str[i].toLowerCase()] = 1
-     } else {
-       newObj[str[i].toLowerCase()] += 1
-     }
+const countOccuranceNoSpaces = (str) => {
+  let object = {}
+  for (let i = 0; i < str.length; i++){
+    let words = str[i].toLowerCase()
+    if (words === ' '){
+      continue 
+    }
+    if (object[words]){
+      object[words] = 1 + object[words]
+    }
+    else{
+      object[words] = 1
     }
   }
-  return newObj;
+  return object
 };
 
 /**
@@ -296,7 +301,15 @@ const countOccuranceNoSpaces = () => {
  * @returns {(number|string)} Most common element
  */
 
-const mostCommonElement = () => {};
+const mostCommonElement = (array) => {
+  let common = []
+  for (let i = 0; i < array.length - 2; i++){
+    if (array[i] !== array[i]+ 1)
+    common += 1
+    common = array[i]
+  }
+  return common
+};
 
 /**
  * Takes in an object and an array.
@@ -316,7 +329,17 @@ const mostCommonElement = () => {};
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = (pairs, arr) => {
+  let arr2 = []
+  for (let i = 0; i < arr.length; i++) {
+    if (pairs[arr[i]]) {
+      arr2[i] = pairs[arr[i]]
+    } else {
+      arr2[i] = arr[i];
+    }
+  }
+  return arr2;
+};
 
 /**
  * Takes in an object and a key.
@@ -327,15 +350,19 @@ const updateList = () => {};
  * @returns {Object} The Object without the key.
  */
 
-const deleteKey = () => {};
-
+const deleteKey = (object, key) => {
+  delete object[key]
+  return object
+};
 /**
  * Takes in an object and returns the number of
  * properties it has.
  * @param {Object} obj
  * @returns {number} Number of properties.
  */
-const propertyCount = () => {};
+const propertyCount = (obj) => {
+  return Object.keys(obj).length
+};
 
 module.exports = {
   eveAppleCount,
