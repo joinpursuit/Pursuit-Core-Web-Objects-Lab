@@ -333,8 +333,12 @@ const deleteKey = (object, key) => {
  * @param {Object} obj
  * @returns {number} Number of properties.
  */
-const propertyCount = (obj) => {
-	return Object.values(obj).length;
+const propertyCount = (obj, key) => {
+	let count = 0;
+	for (let key in obj) {
+		count++;
+	}
+	return count;
 };
 
 module.exports = {
