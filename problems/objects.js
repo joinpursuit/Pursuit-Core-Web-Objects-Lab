@@ -259,13 +259,15 @@ const countAandE = (str) => {
 
 const countOccurance = (str) => {
   let obj = {}
-  //let arr = str.split('')
-  let count = 0
-
+  
   for (let i = 0; i < str.length; i += 1) {
-    if (str.includes(str.indexOf[i])) {
-      count = count + 1
-      obj[str[i]] = count
+    let char = str[i].toLowerCase()
+
+    if (obj.hasOwnProperty(char)) {
+      obj[char] += 1
+    }
+    else {
+      obj[char] = 1
     }
   }
   return obj
@@ -279,7 +281,24 @@ const countOccurance = (str) => {
  * @returns {Object} Counts all characters except spaces  {a: 2, g: 1, o: 2, d:1, s: 1, n:a, k:1, e: 1}
  */
 
-const countOccuranceNoSpaces = () => {};
+const countOccuranceNoSpaces = (str) => {
+  let obj = {}
+
+  for (let i = 0; i < str.length; i += 1) {
+    let char = str[i].toLowerCase()
+
+    if (char === ' ') {
+      
+    }
+    else if (obj.hasOwnProperty(char)) {
+      obj[char] += 1
+    }
+    else {
+      obj[char] = 1
+    }
+  }
+  return obj
+};
 
 /**
  * Takes in an array and returns the most common element.
@@ -287,16 +306,32 @@ const countOccuranceNoSpaces = () => {};
  * @returns {(number|string)} Most common element
  */
 
-const mostCommonElement = () => {
-  // let obj = {}
+const mostCommonElement = (array) => {
+  let obj = {}
+  let greater = 0
+  let element
 
-  // if (object[letter] === undefined) {
-  //   object[letter] = 1
-  // }
-  // else {
-  //   object[letter] += 1
-  // }
-
+  for (let i = 0; i < array.length; i += 1) {
+    let char = array[i]
+    
+    if (obj.hasOwnProperty(char)) {
+      obj[char] += 1
+    }
+    else {
+      obj[char] = 1
+    }
+  }  
+  for (let key in obj) {
+    
+    if (obj[key] > greater) {
+      greater = obj[key]
+      element = key
+    }
+  }
+  if (typeof element != typeof array[0]) {
+    return Number(element)
+  }
+  return element
 };
 
 /**
@@ -317,7 +352,21 @@ const mostCommonElement = () => {
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = (pairs, arr) => {
+let values = []
+  for (let key of arr) {
+    if (pairs[key]) {
+      values.push(pairs[key])
+    }
+    else if (!pairs.hasOwnProperty(key)) {
+      values.push(key)
+    }
+    else {
+      values.push(arr[key])
+    }
+  }
+  return values
+};
 
 /**
  * Takes in an object and a key.
@@ -328,7 +377,10 @@ const updateList = () => {};
  * @returns {Object} The Object without the key.
  */
 
- const deleteKey = () => {};
+ const deleteKey = (obj, key) => {
+  delete obj[key]
+  return obj
+ };
 
 
  /**
@@ -337,7 +389,14 @@ const updateList = () => {};
   * @param {Object} obj
   * @returns {number} Number of properties.
   */
- const propertyCount = () => {};
+ const propertyCount = (obj) => {
+  let count = 0
+
+  for (let key in obj) {
+    count += 1
+  }
+  return count
+ };
 
 module.exports = {
   eveAppleCount,
