@@ -148,7 +148,7 @@ const getCapital = (capitalByCountry, country) => {
  */
 
 const addsJamaica = (capitalByCountry) => {
-  
+
 };
 
 /**
@@ -174,7 +174,9 @@ const addsCountry = () => {};
  * @returns {Object} {"Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1}
  */
 
-const authorScores = () => {};
+const authorScores = (authors) => {
+
+};
 
 /**
  * You are given an array of objects.
@@ -248,7 +250,21 @@ const mostCommonElement = () => {};
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = (pairs, arr) => {
+let values = []
+for (let key of arr) {
+  if(pairs[key]=== undefined) {
+    values.push(key)
+  } else {
+    values.push(pairs[key])
+  }
+
+}
+return values
+};
+const musToInstrument =  {"Ed Sheeran": "guitar", "Ray Charles": "piano"}
+const musician = ["Ed Sheeran", "John Lennon", "Ray Charles"]
+console.log(updatedList(musToInstrument, musician))
 
 /**
  * Takes in an object and a key.
