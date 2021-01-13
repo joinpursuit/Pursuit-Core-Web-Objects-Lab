@@ -170,7 +170,7 @@ const addsJamaica = (capitalByCountry) => {
  * @returns {Object} countriesAndCapitals
  */
 
-const addsCountry = (capitalByCountry, country, capitalByCountry) => {
+const addsCountry = (capitalByCountry, country, capital) => {
   capitalByCountry[country] = capital
   return capitalByCountry
 };
@@ -187,11 +187,23 @@ const addsCountry = (capitalByCountry, country, capitalByCountry) => {
 const authorScores = (authors) => {
   let object = {}
 for(let i = 0; i < authors.length; i++){
-  
+  let name = authors[i][0]
+  console.log(name)
+  let score = authors[i][1]
+  console.log(score)
+  object[name]=score
 }
+ return object
   // (authors[0].authorname) (authors[1].score)
   }
-};
+
+  console.log(authorScores([
+    ["Mark Twain", 8.9],
+    ["Nathaniel Hawthorne", 5.1],
+    ["John Steinbeck", 2.3],
+    ["C.S. Lewis", 9.9],
+    ["Jon Krakauer", 6.1],
+  ]))
 
 /**
  * You are given an array of objects.
@@ -265,7 +277,16 @@ const mostCommonElement = () => {};
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = (pairs, arr) => {
+ let values = []
+ for(let key of arr) {
+   console.log(key)
+ }
+
+};
+const musToInstrument = {"Ed Sheeran": "guitar", "Ray Charles": "piano"}
+const musicians = ["Ed Sheeran", "John Lennon", "Ray Charles"]
+console.log(updateLIst(musToInstrument, musicians))//
 
 /**
  * Takes in an object and a key.
