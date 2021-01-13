@@ -25,7 +25,7 @@ const eveAppleCount = (appleCountByName) => {
  */
 
 const appleCount = (appleCountByName, name) => {
-    return appleCountByName[name];
+  return appleCountByName[name];
 };
 
 /**
@@ -41,8 +41,8 @@ const appleCount = (appleCountByName, name) => {
  */
 
 const eveAppleSet = (appleCountByName, appleCount) => {
-  appleCountByName["Eve"] = appleCount
-  return appleCountByName
+  appleCountByName["Eve"] = appleCount;
+  return appleCountByName;
 };
 
 /**
@@ -58,8 +58,8 @@ const eveAppleSet = (appleCountByName, appleCount) => {
  */
 
 const appleSet = (appleCountByName, name, newAppleCount) => {
-  appleCountByName[name] = newAppleCount
-  return appleCountByName
+  appleCountByName[name] = newAppleCount;
+  return appleCountByName;
 };
 
 /**
@@ -72,7 +72,7 @@ const appleSet = (appleCountByName, name, newAppleCount) => {
  */
 
 const adamAndEveApples = (appleCountByName) => {
-  return appleCountByName["Eve"]+ appleCountByName["Adam"];
+  return appleCountByName["Eve"] + appleCountByName["Adam"];
 };
 
 /**
@@ -86,10 +86,10 @@ const adamAndEveApples = (appleCountByName) => {
 
 const appleSum = (appleCountByName) => {
   let total = 0;
-  for(let value in appleCountByName) {
+  for (let value in appleCountByName) {
     total += appleCountByName[value];
   }
-  return total
+  return total;
 };
 
 /**
@@ -102,10 +102,10 @@ const appleSum = (appleCountByName) => {
  */
 
 const appleSetToZero = (appleCountByName) => {
-  for(let value in appleCountByName) {
+  for (let value in appleCountByName) {
     appleCountByName[value] = 0;
   }
-  return appleCountByName
+  return appleCountByName;
 };
 
 /**
@@ -117,7 +117,7 @@ const appleSetToZero = (appleCountByName) => {
  */
 
 const russiaCapital = (capitalByCountry) => {
-  return capitalByCountry["Russia"]
+  return capitalByCountry["Russia"];
 };
 
 /**
@@ -144,8 +144,8 @@ const getCapital = (capitalByCountry, country) => {
  */
 
 const addsJamaica = (capitalByCountry) => {
-  capitalByCountry["Jamaica"] = "Kingston"
-  return capitalByCountry
+  capitalByCountry["Jamaica"] = "Kingston";
+  return capitalByCountry;
 };
 
 /**
@@ -161,8 +161,8 @@ const addsJamaica = (capitalByCountry) => {
  */
 
 const addsCountry = (capitalByCountry, country, capital) => {
-  capitalByCountry[country] = capital
-  return capitalByCountry
+  capitalByCountry[country] = capital;
+  return capitalByCountry;
 };
 
 /**
@@ -175,8 +175,8 @@ const addsCountry = (capitalByCountry, country, capital) => {
  */
 
 const authorScores = (authors) => {
-    let obj = Object.fromEntries(authors);
-   return obj;
+  let obj = Object.fromEntries(authors);
+  return obj;
 };
 
 /**
@@ -188,10 +188,15 @@ const authorScores = (authors) => {
  */
 
 const bestScore = (submissions) => {
-// i = 0
-// if (submissions["score"] > i) {
-//   i += submissions["score"]
-// } if 
+  let highestScore = -Infinity;
+  let name = "";
+  for (let i = 0; i < submissions.length; i++) {
+    if (submissions[i].score > highestScore) {
+      highestScore = submissions[i].score;
+      name = submissions[i].firstName + " " + submissions[i].lastName;
+    }
+  }
+  return name;
 };
 
 /**
@@ -201,28 +206,14 @@ const bestScore = (submissions) => {
  */
 
 const cubeObj = () => {
-  // var to = Object(target);
-  
-  // let key = i;
-  // let object = {};
-  // for (let i = 1; i <= 20; i++) {
-
-  // }
-   
-  // for (let key in object)
-  // for (var index = 1; index < arguments.length; index++) {
-  //   var nextSource = arguments[index];
-
-  //   if (nextSource !== null && nextSource !== undefined) {
-  //     for (var nextKey in nextSource) {
-  //       // Avoid bugs when hasOwnProperty is shadowed
-  //       if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
-  //         to[nextKey] = nextSource[nextKey];
-  //       }
-
-
+  let cubedObj = {};
+  for (let i = 1; i <= 20; i++) {
+    let key = i;
+    cubedObj[i] = key ** 3;
+  }
+  return cubedObj;
 };
- 
+
 /**
  * Takes in a string and returns an object with
  * the number of a's and the number of e's contained in the string
@@ -231,20 +222,18 @@ const cubeObj = () => {
  */
 
 const countAandE = (str) => {
-  // let counter = {};
-  // let letters = str.split("")
-  // for (let i = 0; i < letters.length; i++) {
-  //    const a = letters[i];
-  //    const e = letters[i];
-  //       if (counter[a]) {
-  //         counter[a] +=1;
-  //       } else if (counter[e]) {
-  //         counter[e] += 1;
-  //       } else {
-  //         counter[i] = 1;
-  //       }
-  //       return counter;
-  // }
+  let stringObj = { a: 0, e: 0 };
+  let array = str.split("");
+  console.log(array);
+  for (let i = 0; i < array.length; i++) {
+    console.log(str[i]);
+    if (array[i].toLowerCase() === "a") {
+      stringObj[array[i].toLowerCase()] += 1;
+    } else if (array[i].toLowerCase() === "e") {
+      stringObj[array[i].toLowerCase()] += 1;
+    }
+  }
+  return stringObj;
 };
 
 /**
@@ -255,7 +244,17 @@ const countAandE = (str) => {
  */
 
 const countOccurance = (str) => {
-
+  let newArr = str.toLowerCase().split("");
+  let obj = {};
+  for (let i = 0; i < newArr.length; i++) {
+    const el = newArr[i];
+    if (obj[el]) {
+      obj[el] += 1;
+    } else {
+      obj[el] = 1;
+    }
+  }
+  return obj;
 };
 
 /**
@@ -267,7 +266,19 @@ const countOccurance = (str) => {
  */
 
 const countOccuranceNoSpaces = (str) => {
-
+  let newArr = str.toLowerCase().split(" ");
+  let newStr = newArr.join("");
+  console.log(newStr);
+  let obj = {};
+  for (let i = 0; i < newStr.length; i++) {
+    const el = newStr[i];
+    if (obj[el]) {
+      obj[el] += 1;
+    } else {
+      obj[el] = 1;
+    }
+  }
+  return obj;
 };
 
 /**
@@ -277,7 +288,28 @@ const countOccuranceNoSpaces = (str) => {
  */
 
 const mostCommonElement = (array) => {
-
+  let obj = {};
+  for (let i = 0; i < array.length; i++) {
+    let element = array[i];
+    if (obj[element]) {
+      obj[element] += 1;
+    } else {
+      obj[element] = 1;
+    }
+  }
+  let mostCommon = -Infinity;
+  let commonElement;
+  for (let key in obj) {
+    if (obj[key] > mostCommon) {
+      mostCommon = obj[key];
+      commonElement = key;
+    }
+    if (parseInt(commonElement)) {
+      return parseInt(commonElement);
+    } else {
+      return commonElement;
+    }
+  }
 };
 
 /**
@@ -299,8 +331,24 @@ const mostCommonElement = (array) => {
  */
 
 const updateList = (pairs, arr) => {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    let artists = arr[i];
 
+    if (pairs[artists]) {
+      newArr.push(pairs[artists]);
+    } else {
+      newArr.push(artists);
+      console.log(pairs[artists]);
+    }
+  }
+  return newArr;
 };
+updateList({ "Ed Sheeran": "guitar", "Ray Charles": "piano" }, [
+  "Ed Sheeran",
+  "John Lennon",
+  "Ray Charles",
+]);
 
 /**
  * Takes in an object and a key.
@@ -311,25 +359,25 @@ const updateList = (pairs, arr) => {
  * @returns {Object} The Object without the key.
  */
 
- const deleteKey = (object, key) => {
-  delete object[key];  
+const deleteKey = (object, key) => {
+  delete object[key];
   return object;
- };
+};
 
+/**
+ * Takes in an object and returns the number of
+ * properties it has.
+ * @param {Object} obj
+ * @returns {number} Number of properties.
+ */
+const propertyCount = (obj) => {
+   let number = 0
+   for (let key in obj) {
+    number += 1;
+   } 
+   return number;
+};
 
- /**
-  * Takes in an object and returns the number of
-  * properties it has.
-  * @param {Object} obj
-  * @returns {number} Number of properties.
-  */
- const propertyCount = (obj) => {
-//  let arr = Object.keys(obj);
-//  return arr.length - 1
-//  propertyCount({ "Ed Sheeran": "guitar", "Ray Charles": "piano" })
-// //  console.log(arr);
-// console.log(Object.keys(obj));
- };
 
 module.exports = {
   eveAppleCount,
