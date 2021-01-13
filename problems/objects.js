@@ -6,7 +6,10 @@
  * @returns {number} The number of apples Eve has.
  */
 
-const eveAppleCount = () => {};
+const eveAppleCount = (appleCountByName) => {
+  // console.log(appleCountByName)
+  return appleCountByName.Eve
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -22,7 +25,9 @@ const eveAppleCount = () => {};
  * bracket notation? Try them both.
  */
 
-const appleCount = () => {};
+const appleCount = (appleCountByName , name) => {
+  return appleCountByName[name]
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -36,7 +41,11 @@ const appleCount = () => {};
  * @returns {Object} The updated object.
  */
 
-const eveAppleSet = () => {};
+const eveAppleSet = (appleCountByName, appleCount) => {
+  appleCountByName['Eve'] = appleCount
+  return appleCountByName
+  
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -50,7 +59,10 @@ const eveAppleSet = () => {};
  *
  */
 
-const appleSet = () => {};
+const appleSet = (appleCountByName, name, newAppleCount) => {
+  appleCountByName[name] = newAppleCount
+  return appleCountByName
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -61,7 +73,9 @@ const appleSet = () => {};
  *
  */
 
-const adamAndEveApples = () => {};
+const adamAndEveApples = (appleCountByName) => {
+  return appleCountByName['Adam'] + appleCountByName['Eve']
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -72,7 +86,14 @@ const adamAndEveApples = () => {};
  *
  */
 
-const appleSum = () => {};
+const appleSum = (appleCountByName) => {
+  let totalNum = Object.values(appleCountByName)
+  let  sum = 0
+  for (let i = 0; i < totalNum.length; i ++){
+   sum += totalNum[i]
+  }
+  return sum
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -83,7 +104,12 @@ const appleSum = () => {};
  *
  */
 
-const appleSetToZero = () => {};
+const appleSetToZero = (appleCountByName) => {
+  for( let key in appleCountByName) {
+    appleCountByName[key] = 0
+  }
+  return appleCountByName
+};
 
 /**
  * Takes in an object of countries and their capitals.
@@ -93,7 +119,9 @@ const appleSetToZero = () => {};
  * @returns {string} Capital of Russia
  */
 
-const russiaCapital = () => {};
+const russiaCapital = (capitalByCountry) => {
+  return capitalByCountry['Russia']
+};
 
 /**
  * Takes in an object of countries and their capitals.
@@ -105,7 +133,10 @@ const russiaCapital = () => {};
  * @returns {string} Capital of country
  */
 
-const getCapital = () => {};
+const getCapital = (capitalByCountry, country) => {
+  let myCapital = capitalByCountry[country]
+  return myCapital
+};
 
 /**
  * Takes in an object of countries and their capitals
@@ -116,7 +147,9 @@ const getCapital = () => {};
  * @returns {Object} countriesAndCapitals now with Jamaica
  */
 
-const addsJamaica = () => {};
+const addsJamaica = (capitalByCountry) => {
+
+};
 
 /**
  * Takes in an object of countries and their capitals
@@ -141,7 +174,9 @@ const addsCountry = () => {};
  * @returns {Object} {"Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1}
  */
 
-const authorScores = () => {};
+const authorScores = (authors) => {
+
+};
 
 /**
  * You are given an array of objects.
@@ -215,7 +250,21 @@ const mostCommonElement = () => {};
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = (pairs, arr) => {
+let values = []
+for (let key of arr) {
+  if(pairs[key]=== undefined) {
+    values.push(key)
+  } else {
+    values.push(pairs[key])
+  }
+
+}
+return values
+};
+const musToInstrument =  {"Ed Sheeran": "guitar", "Ray Charles": "piano"}
+const musician = ["Ed Sheeran", "John Lennon", "Ray Charles"]
+console.log(updatedList(musToInstrument, musician))
 
 /**
  * Takes in an object and a key.
