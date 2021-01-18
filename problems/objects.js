@@ -270,7 +270,19 @@ const countOccurance = (str) => {
  * @returns {Object} Counts all characters except spaces  {a: 2, g: 1, o: 2, d:1, s: 1, n:a, k:1, e: 1}
  */
 
-const countOccuranceNoSpaces = (str) => {};
+const countOccuranceNoSpaces = (str) => {
+  let count = {}
+  newStr = str.split(" ").join("")
+  for (let i = 0; i < newStr.length; i++){
+    const lowerCase = newStr[i].toLowerCase()
+    if (count[lowerCase]){
+      count[lowerCase] += 1
+    } else {
+      count[lowerCase] = 1
+    }
+  }
+  return count
+};
 
 /**
  * Takes in an array and returns the most common element.
@@ -278,12 +290,22 @@ const countOccuranceNoSpaces = (str) => {};
  * @returns {(number|string)} Most common element
  */
 
-const mostCommonElement = (array) => {}
-// let common = []
-// let arrayElement = Object.values(array)
-// for (let i = 0 ; i < arrayElement.length; i++)
-//   if arrayElement 
-// };
+const mostCommonElement = (array) => {
+let obj = {}
+for (let value of array) {
+  obj[value] = (obj[value] || 0) + 1
+}
+let maxElement = array[0]
+let maxCount = 0
+for (let value of array) {
+  if (obj[value] > maxCount) {
+    maxElement = value
+    maxCount = obj[value]
+  }
+}
+return maxElement
+
+};
 
 /**
  * Takes in an object and an array.
