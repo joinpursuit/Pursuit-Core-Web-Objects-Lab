@@ -319,10 +319,10 @@ const mostCommonElement = (array) => {
   }, {});
   let maxCount = Math.max(...Object.values(counts));
   let mostFrequent = Object.keys(counts).filter((k) => counts[k] === maxCount);
-  if (typeof mostFrequent === "string") {
-    return mostFrequent.toString()
+  if (parseInt(mostFrequent)) {
+    return parseInt(mostFrequent);
   } else {
-    return parseInt(mostFrequent)
+    return mostFrequent.join("");
   }
   //
   // let obj = {};
@@ -411,8 +411,9 @@ const deleteKey = (obj, key) => {
  * @param {Object} obj
  * @returns {number} Number of properties.
  */
-const propertyCount = () => {};
-
+const propertyCount = (obj) => {
+  return Object.keys(obj).length;
+};
 module.exports = {
   eveAppleCount,
   appleCount,
