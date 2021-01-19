@@ -161,7 +161,6 @@ const getCapital = (capitalByCountry, country) => {
 const addsJamaica = (capitalByCountry) => {
   capitalByCountry["Jamaica"] = "Kingston";
   return capitalByCountry;
-  c;
 };
 
 /**
@@ -294,7 +293,7 @@ const countOccuranceNoSpaces = (str) => {
   let characterObject = {};
   let strArray = str.toLowerCase();
   strArray = strArray.split(" ").join("");
-  console.log("This is the array: " + strArray);
+  // console.log("This is the array: " + strArray);
 
   for (let i = 0; i < strArray.length; i++) {
     if (characterObject[strArray[i]]) {
@@ -314,29 +313,44 @@ const countOccuranceNoSpaces = (str) => {
  */
 
 const mostCommonElement = (array) => {
-  let obj = {};
-  console.log("this is the array: " + array);
-  for (let i = 0; i < array.length; i++) {
-    if (obj[array[i]]) {
-      obj[array[i]] += 1;
-    } else {
-      obj[array[i]] = 1;
-    }
-  }
-  console.log("this is the obj" + obj);
-  let mostCommon = -Infinity;
-  let commonElement;
-  for (let key in obj) {
-    if (obj[key] > mostCommon) {
-      mostCommon = obj[key];
-      key = commonElement;
-    }
-  }
-  if (parseInt(commonElement)) {
-    return parseInt(commonElement);
+  let counts = array.reduce((a, c) => {
+    a[c] = (a[c] || 0) + 1;
+    return a;
+  }, {});
+  let maxCount = Math.max(...Object.values(counts));
+  let mostFrequent = Object.keys(counts).filter((k) => counts[k] === maxCount);
+  if (typeof mostFrequent === "string") {
+    return mostFrequent.toString()
   } else {
-    return commonElement;
+    return parseInt(mostFrequent)
   }
+  //
+  // let obj = {};
+  // console.log("this is the array: " + array);
+  // for (let el of array) {
+  // console.log("This is the index: " + array[i]);
+  // let el = array[i];
+  // console.log("This is el: " + el);
+  // if (obj[el]) {
+  //   obj[el]++;
+  // } else {
+  //   obj[el] = 1;
+  // }
+  // }
+  // console.log("this are the obj keys: " + Object.keys(obj));
+  // console.log("this is the object: " + Object.values(obj));
+  // let mostCommon = -Infinity;
+  // let commonElement;
+  // for (let key in obj) {
+  //   if (obj[key] > mostCommon) {
+  //     mostCommon = obj[key];
+  //     key = commonElement;
+  //     console.log("This is most common: " + mostCommon);
+  //     console.log("This is the key: " + key);
+  //     console.log("This is the common element: " + commonElement);
+  //   }
+  // }
+  // return commonElement;
 };
 
 /**
@@ -357,7 +371,25 @@ const mostCommonElement = (array) => {
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = (pairs, arr) => {
+  newArray = [];
+
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (pairs[arr[i]]) {
+      newArr.push(pairs[arr[i]]);
+    } else newArr.push(arr[i]);
+  }
+  return newArr;
+
+  //     // newArray.push(el);
+  //   }
+  //   console.log("This is the array: " + arr);
+  //   console.log(pairs);
+  //   console.log("This is the new array: " + newArray);
+
+  //   return newArray;
+};
 
 /**
  * Takes in an object and a key.
@@ -368,7 +400,10 @@ const updateList = () => {};
  * @returns {Object} The Object without the key.
  */
 
-const deleteKey = () => {};
+const deleteKey = (obj, key) => {
+  delete obj[key];
+  return obj;
+};
 
 /**
  * Takes in an object and returns the number of
