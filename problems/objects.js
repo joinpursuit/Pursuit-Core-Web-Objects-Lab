@@ -188,11 +188,13 @@ return capitalByCountry
 
 const authorScores = (authors) => {
 let object = {}
-authors[0][0]
 for(let i = 0; i < authors.length; i++){
-  let authorName = authors[i][0]
-  let scores = authors[i][1]
-  object[authorName] = scores
+let KeyValuePairs = authors[i]
+  object[KeyValuePairs[0]] = KeyValuePairs[1]
+  // This also works
+  // let authorName = authors[i][0]
+  // let scores = authors[i][1]
+  // object[authorName] = scores
 }
   return object
 };
