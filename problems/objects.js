@@ -6,7 +6,9 @@
  * @returns {number} The number of apples Eve has.
  */
 
-const eveAppleCount = () => {};
+const eveAppleCount = (appleCountByName) => {
+  return appleCountByName.Eve;
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -22,7 +24,9 @@ const eveAppleCount = () => {};
  * bracket notation? Try them both.
  */
 
-const appleCount = () => {};
+const appleCount = (appleCountByName, name) => {
+  return appleCountByName[name];
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -36,7 +40,10 @@ const appleCount = () => {};
  * @returns {Object} The updated object.
  */
 
-const eveAppleSet = () => {};
+const eveAppleSet = (appleCountByName, appleCount) => {
+  appleCountByName.Eve = appleCount;
+  return appleCountByName;
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -50,7 +57,10 @@ const eveAppleSet = () => {};
  *
  */
 
-const appleSet = () => {};
+const appleSet = (appleCountByName, name, newAppleCount) => {
+  appleCountByName[name] = newAppleCount;
+  return appleCountByName;
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -61,7 +71,9 @@ const appleSet = () => {};
  *
  */
 
-const adamAndEveApples = () => {};
+const adamAndEveApples = (appleCountByName) => {
+  return appleCountByName.Eve + appleCountByName.Adam;
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -72,7 +84,13 @@ const adamAndEveApples = () => {};
  *
  */
 
-const appleSum = () => {};
+const appleSum = (appleCountByName) => {
+  let sum = 0
+  for (let el in appleCountByName) {
+    sum += appleCountByName[el]
+  }
+  return sum
+}
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -83,7 +101,12 @@ const appleSum = () => {};
  *
  */
 
-const appleSetToZero = () => {};
+const appleSetToZero = (appleCountByName) => {
+  for (let el in appleCountByName) {
+    appleCountByName[el] = 0
+  }
+  return appleCountByName
+};
 
 /**
  * Takes in an object of countries and their capitals.
@@ -93,7 +116,9 @@ const appleSetToZero = () => {};
  * @returns {string} Capital of Russia
  */
 
-const russiaCapital = () => {};
+const russiaCapital = (capitalByCountry) => {
+  return capitalByCountry["Russia"];
+};
 
 /**
  * Takes in an object of countries and their capitals.
@@ -105,7 +130,9 @@ const russiaCapital = () => {};
  * @returns {string} Capital of country
  */
 
-const getCapital = () => {};
+const getCapital = (capitalByCountry, country) => {
+  return capitalByCountry[country];
+};
 
 /**
  * Takes in an object of countries and their capitals
@@ -116,8 +143,10 @@ const getCapital = () => {};
  * @returns {Object} countriesAndCapitals now with Jamaica
  */
 
-const addsJamaica = () => {};
-
+const addsJamaica = (capitalByCountry) => {
+  capitalByCountry.Jamaica = "Kingston";
+  return capitalByCountry;
+};
 /**
  * Takes in an object of countries and their capitals
  * and a country and capital. The country and capital should be
@@ -130,7 +159,10 @@ const addsJamaica = () => {};
  * @returns {Object} countriesAndCapitals
  */
 
-const addsCountry = () => {};
+const addsCountry = (capitalByCountry, capital, country) => {
+  capitalByCountry[capital] = country
+  return capitalByCountry;
+};
 
 /**
  * Takes an array of arrays. First element of inner array is authorName, second element
@@ -141,7 +173,11 @@ const addsCountry = () => {};
  * @returns {Object} {"Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1}
  */
 
-const authorScores = () => {};
+const authorScores = (authors) => {
+  let obj = {};
+  for (i = 0; i < authors.length; i++) obj[authors[i][0]] = authors[i][1];
+  return obj;
+};
 
 /**
  * You are given an array of objects.
@@ -151,7 +187,15 @@ const authorScores = () => {};
  * @returns {string} The full name of person with best score.
  */
 
-const bestScore = () => {};
+const bestScore = (submissions) => {
+  for (let i = 0; i < submissions.length; i++) {
+    if (
+      submissions[i]["score"] > submissions[submissions.length - 1]["score"]
+    ) {
+      return submissions[i]["firstName"] + " " + submissions[i]["lastName"];
+    }
+  }
+};
 
 /**
  * Returns an object where the keys are numbers 1 through 20,
@@ -159,7 +203,7 @@ const bestScore = () => {};
  * @returns {Object} {1: 1, 2: 8, 3: 27...}
  */
 
-const cubeObj = () => {};
+const cubeObj = (num) => {};
 
 /**
  * Takes in a string and returns an object with
@@ -168,7 +212,18 @@ const cubeObj = () => {};
  * @returns {Object} Counts of e and a. {a: 2, e: 1}
  */
 
-const countAandE = () => {};
+const countAandE = (str) => {
+  let obj = { a: 0, e: 0 };
+  let string = str.toLowerCase();
+  for (let letter of string) {
+    if (letter === "a") {
+      obj.a++;
+    } else if (letter === "e") {
+      obj.e++;
+    }
+  }
+  return obj;
+};
 
 /**
  * Takes in a string and returns an object with
@@ -177,7 +232,7 @@ const countAandE = () => {};
  * @returns {Object} Counts of all characters: {a: 2, g: 1, o: 2, d:1, " ": 2, s: 1, n:1, k:1, e: 1}
  */
 
-const countOccurance = () => {};
+const countOccurance = (str) => {};
 
 /**
  * Takes in a string and returns an object with
@@ -215,7 +270,17 @@ const mostCommonElement = () => {};
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = (pairs, arr) => {
+  let values = [];
+  for (let key of arr) {
+    if (pairs[key] === undefined) {
+      values.push();
+    } else {
+      values.push(pairs[key]);
+    }
+  }
+  return Values;
+};
 
 /**
  * Takes in an object and a key.
@@ -226,16 +291,18 @@ const updateList = () => {};
  * @returns {Object} The Object without the key.
  */
 
- const deleteKey = () => {};
+const deleteKey = (obj, key) => {
+  delete obj[key] 
+  return obj
+};
 
-
- /**
-  * Takes in an object and returns the number of
-  * properties it has.
-  * @param {Object} obj
-  * @returns {number} Number of properties.
-  */
- const propertyCount = () => {};
+/**
+ * Takes in an object and returns the number of
+ * properties it has.
+ * @param {Object} obj
+ * @returns {number} Number of properties.
+ */
+const propertyCount = () => {};
 
 module.exports = {
   eveAppleCount,
