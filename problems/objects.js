@@ -85,9 +85,12 @@ const adamAndEveApples = (appleCountByName) => {
  */
 
 const appleSum = (appleCountByName) => {
-  let sum = appleCountByName.name;
-  return sum;
-};
+  let sum = 0
+  for (let el in appleCountByName) {
+    sum += appleCountByName[el]
+  }
+  return sum
+}
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -98,7 +101,12 @@ const appleSum = (appleCountByName) => {
  *
  */
 
-const appleSetToZero = (appleCountByName) => {};
+const appleSetToZero = (appleCountByName) => {
+  for (let el in appleCountByName) {
+    appleCountByName[el] = 0
+  }
+  return appleCountByName
+};
 
 /**
  * Takes in an object of countries and their capitals.
@@ -152,7 +160,7 @@ const addsJamaica = (capitalByCountry) => {
  */
 
 const addsCountry = (capitalByCountry, capital, country) => {
-  capitalByCountry.country;
+  capitalByCountry[capital] = country
   return capitalByCountry;
 };
 
@@ -264,13 +272,14 @@ const mostCommonElement = () => {};
 
 const updateList = (pairs, arr) => {
   let values = [];
-  for (let key of arr){
+  for (let key of arr) {
     if (pairs[key] === undefined) {
       values.push();
     } else {
       values.push(pairs[key]);
     }
-    }  return Values
+  }
+  return Values;
 };
 
 /**
@@ -282,7 +291,10 @@ const updateList = (pairs, arr) => {
  * @returns {Object} The Object without the key.
  */
 
-const deleteKey = () => {};
+const deleteKey = (obj, key) => {
+  delete obj[key] 
+  return obj
+};
 
 /**
  * Takes in an object and returns the number of

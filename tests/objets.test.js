@@ -23,7 +23,7 @@ const {
   propertyCount,
 } = require("../problems/objects");
 
-describe("eveAppleCount", () => {
+describe.only("eveAppleCount", () => {
   test("returns the number of apples that eve has", () => {
     expect(
       eveAppleCount({
@@ -52,7 +52,7 @@ describe("eveAppleCount", () => {
   });
 });
 
-describe("appleCount", () => {
+describe.only("appleCount", () => {
   test("returns the number of apples for a specific name", () => {
     expect(
       appleCount(
@@ -86,7 +86,7 @@ describe("appleCount", () => {
   });
 });
 
-describe("eveAppleSet", () => {
+describe.only("eveAppleSet", () => {
   test("updates Eve's apple count", () => {
     expect(
       eveAppleSet(
@@ -132,7 +132,7 @@ describe("eveAppleSet", () => {
   });
 });
 
-describe("appleSet", () => {
+describe.only("appleSet", () => {
   test("updates the apple count", () => {
     expect(
       appleSet(
@@ -180,7 +180,7 @@ describe("appleSet", () => {
   });
 });
 
-describe("adamAndEveApples", () => {
+describe.only("adamAndEveApples", () => {
   test("correctly adds together Adam and Eve's apples", () => {
     expect(
       adamAndEveApples({
@@ -208,7 +208,7 @@ describe("adamAndEveApples", () => {
   });
 });
 
-describe("appleSum", () => {
+describe.only("appleSum", () => {
   test("returns the sum of all apples", () => {
     expect(
       appleSum({
@@ -231,7 +231,7 @@ describe("appleSum", () => {
   });
 });
 
-describe("appleSetToZero", () => {
+describe.only("appleSetToZero", () => {
   test("should reset all apple values to 0", () => {
     const obj = {
       Adam: 19,
@@ -265,7 +265,7 @@ describe("appleSetToZero", () => {
   });
 });
 
-describe("russiaCapital", () => {
+describe.only("russiaCapital", () => {
   test("returns the capital of Russia", () => {
     const citiesObj = {
       Afghanistan: "Kabul",
@@ -287,7 +287,7 @@ describe("russiaCapital", () => {
   });
 });
 
-describe("getCapital", () => {
+describe.only("getCapital", () => {
   test("returns the capital of a given country", () => {
     const citiesObj = {
       Afghanistan: "Kabul",
@@ -305,7 +305,7 @@ describe("getCapital", () => {
   });
 });
 
-describe("addsJamaica", () => {
+describe.only("addsJamaica", () => {
   test("adds Jamaica to given object", () => {
     const citiesObj = {
       Afghanistan: "Kabul",
@@ -353,7 +353,7 @@ describe.only("addsCountry", () => {
   });
 });
 
-describe("authorScores", () => {
+describe.only("authorScores", () => {
   test("returns an object with author name mapped to score", () => {
     const authors = [
       ["Mark Twain", 8.9],
@@ -373,7 +373,7 @@ describe("authorScores", () => {
   });
 });
 
-describe("bestScore", () => {
+describe.only("bestScore", () => {
   test("returns the full name of the person with the best score", () => {
     const peopleWithScores = [
       {
@@ -418,7 +418,7 @@ describe("cubeObj", () => {
   });
 });
 
-describe("countAandE", () => {
+describe.only("countAandE", () => {
   test("still shows zero when no a's or e's are found", () => {
     expect(countAandE("dirt")).toEqual({ a: 0, e: 0 });
   });
@@ -504,7 +504,7 @@ describe("updateList", () => {
   });
 });
 
-describe("deleteKey", ()=> {
+describe.only("deleteKey", ()=> {
     test("deletes key from object", () => {
         const cereal = { tony: "tiger", sam: "toucan" };
         const result = deleteKey(cereal, "tony")
