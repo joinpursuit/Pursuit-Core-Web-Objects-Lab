@@ -5,7 +5,9 @@
  * @returns {string} - species
  */
 
-const catSpecies = () => {};
+const catSpecies = (catObj) => {
+  return catObj.species
+};
 
 /**
  * Takes in a cat object and a color. Add the key
@@ -15,7 +17,11 @@ const catSpecies = () => {};
  * @returns {Object} catObj
  */
 
-const giveCatColor = () => {};
+const giveCatColor = (catObj,color) => {
+  catObj['color'] = color
+  return catObj
+
+};
 
 /**
  * Takes in a cat object and returns its 'texture', if it has that property.
@@ -25,7 +31,13 @@ const giveCatColor = () => {};
  * @throws {Error} 'Does not have texture property'
  */
 
-const catTexture = () => {};
+const catTexture = (catObj) => {
+  if(catObj['texture']){
+    return catObj['texture']
+  } else {
+    throw Error('Does not have texture property')
+  }
+};
 
 /**
  * Takes in an object and returns all its keys as an array.
@@ -33,7 +45,13 @@ const catTexture = () => {};
  * @param {Object}
  * @returns {string[]} All the keys from the object
  */
-const objKeys = () => {};
+const objKeys = (obj) => {
+  let arr =[]
+  for (let keys in  obj){
+    arr.push(keys)
+  }
+  return arr
+};
 
 /**
  * Takes in an object and returns all its keys as an array.
@@ -42,7 +60,9 @@ const objKeys = () => {};
  * @returns {string[]} All the keys from the object
  */
 
-const objKeys2 = () => {};
+const objKeys2 = (obj) => {
+  return Object.keys(obj)
+};
 
 /**
  * Takes in an object and returns all the values as an array.
@@ -50,7 +70,13 @@ const objKeys2 = () => {};
  * @param {Object}
  * @returns {*[]} All the values from the object
  */
-const objValues = () => {};
+const objValues = (obj) => {
+  let arr = []
+  for(let keys in obj){
+    arr.push(obj[keys])
+  }
+  return arr
+};
 
 /**
  * Takes in an object and returns all the values as an array.
@@ -59,7 +85,9 @@ const objValues = () => {};
  * @returns {*[]} All the values from the object
  */
 
-const objValues2 = () => {};
+const objValues2 = (obj) => {
+  return Object.values(obj)
+};
 
 /**
  * Takes in an array of film objects and
@@ -69,7 +97,11 @@ const objValues2 = () => {};
  * @returns {string[]} Only the directors
  */
 
-const findDirectors = () => {};
+const findDirectors = (films) => {
+  return films.map((film) => {
+    return  film.director
+  })  
+};
 
 /**
  * Takes in an array of people objects with with properties
@@ -82,7 +114,11 @@ const findDirectors = () => {};
  * @returns {string[]} The full names of all people.
  */
 
-const fullNames = () => {};
+const fullNames = (people) => {
+  return people.map((obj) =>{
+    return obj.firstName + " " + obj.lastName
+  })
+};
 
 /**
  * Takes in an object which maps a persons name to an array

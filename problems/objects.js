@@ -298,22 +298,22 @@ const mostCommonElement = (array)=>{
       obj[element] += 1
     }
   }
-  let largeValue = 0
-  let largeValueName = ''
-  for (let i = 0; i < Object.keys(obj).length; i++ ){
-    let valueName = Object.keys(obj)[i]
-    let value = obj[valueName]
-    if (value > largeValue){
-      largeValue = value
-      largeValueName = valueName
+  let mostCommon = 0
+  let mostCommonKey
+  for(let key in obj){
+    if(obj[key] > mostCommon){
+      mostCommon = obj[key]
+      mostCommonKey = key
     }
   }
-  if (isNaN(largeValueName)){
-    return largeValueName
+  if (parseInt(mostCommonKey)){
+    return parseInt(mostCommonKey)
   } else {
-    return parseInt(largeValueName)
+    return mostCommonKey
   }
 }
+   
+
 
 /**
  * Takes in an object and an array.
@@ -334,14 +334,26 @@ const mostCommonElement = (array)=>{
  */
 
 const updateList = (pairs, arr) => {
-  for(let i = 0; i<arr.length;i++){
-    val = arr [i]
-    if(pairs[val]) {
-      arr[i] = pairs [val]
-    }
+  let newArr = [];
+  for(let i = 0; i < arr.length; i++) {
+    let artists = arr[i]
+  if(pairs[artists]) {
+    newArr.push(pairs[artists])
+  } else {
+    newArr.push(artists)
   }
-  return arr 
+}
+  return newArr
 };
+//   for(let i = 0; i<arr.length;i++){
+//     val = arr [i]
+//     if(pairs[val]) {
+//       arr[i] = pairs [val]
+//     }
+//   }
+//   return arr 
+// };
+
 
 /**
  * Takes in an object and a key.
