@@ -430,14 +430,13 @@ console.log(countAandE("cats"))
 
 const countOccurance = (str) => {
   let newObject = {}
+  let newStr = str.toLowerCase()
   let letter
-  let amount = 0
   
-  for (letter of str) {
+  for (letter of newStr) {
     newObject[letter] = 0
-
   }
-  for (letter of str) {
+  for (letter of newStr) {
     newObject[letter] = newObject[letter] + 1
   }
 
@@ -447,6 +446,8 @@ const countOccurance = (str) => {
 console.log(countOccurance("A good snake"))
 console.log(countOccurance("HELLO world"))
 
+console.log("")
+
 /**
  * Takes in a string and returns an object with
  * the count occurrence of each character.
@@ -455,7 +456,33 @@ console.log(countOccurance("HELLO world"))
  * @returns {Object} Counts all characters except spaces  {a: 2, g: 1, o: 2, d:1, s: 1, n:a, k:1, e: 1}
  */
 
-const countOccuranceNoSpaces = () => {};
+const countOccuranceNoSpaces = (str) => {
+  let newObject = {}
+  newStr = str.toLowerCase()
+
+  // for (let letter in newStr) {
+  //   if (letter === ' ') {
+  //     newStr.pop()
+  //   }
+  // }
+  for (letter of newStr) {
+    newObject[letter] = 0
+  }
+  for (letter of newStr) {
+    newObject[letter] = newObject[letter] + 1
+  }
+  let space = ' '
+  delete newObject[space] //is there a better way to do this? 
+//  I tried an if statement inside for loop:
+//  if (newObject[letter] === ' ') {delete newObject[letter]}
+//  and this would move the ' ' property to the end of the object in console.log, and display ' ': NaN
+//  Seemed like assigning a space variable and using delete was the only way.
+
+  return newObject
+
+};
+
+console.log(countOccuranceNoSpaces("A good snake"))
 
 /**
  * Takes in an array and returns the most common element.
@@ -463,7 +490,50 @@ const countOccuranceNoSpaces = () => {};
  * @returns {(number|string)} Most common element
  */
 
-const mostCommonElement = () => {};
+const mostCommonElement = (array) => {
+  // Take in an array
+  // Create an empty object to collect values
+  // Iterate through the array
+  // Store each new value into the newObject
+  // Each value from original array is now a key in the newObject, with a value of 0
+  // Iterate through the original array again
+  // Every time we come across a key from newObject, we increment by +1
+  // Loop through the pairs in object to find the property with highest value
+  // Element is going to be added to commonElement
+  // When we come across a property with a higher value while looping, we add to commonElement
+  // return
+  let newObject = {}
+  let commonElement = 0
+  let objectKey = ""
+
+  for (element of array) {
+    newObject[element] = 0
+  }
+  for (element of array) {
+    newObject[element] = newObject[element] + 1
+  }
+  for (element in newObject) {
+    
+    if (commonElement < newObject[element]) {
+      commonElement = newObject[element]
+      objectKey = element
+    }
+  }
+
+  // if the objectKey is a number, and we don't want that number returned as a string, 
+  // we need to change the type with a type constructor
+  if (typeof objectKey !== typeof array[0]) {
+    return Number(objectKey)
+  }
+
+  return objectKey
+  console.log(newObject)
+};
+
+console.log(mostCommonElement(["bird", "cat", "cat"]))
+console.log(mostCommonElement([2, 1, 1, 1, 3, 2]))
+
+console.log('')
 
 /**
  * Takes in an object and an array.
@@ -483,7 +553,35 @@ const mostCommonElement = () => {};
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = (pairs, arr) => {
+  let newArr = []
+  let values = Object.values(pairs)
+  let j = 0
+  let i = 0
+
+  while (i < arr.length) {
+    if (pairs.hasOwnProperty(arr[i])) {
+      newArr[i] = values[j]
+      j++   //increments the iteration for values within the object
+    }
+    else {
+      newArr.push(arr[i])
+    }
+    i++     //increments the iteration for items within the array
+  }
+  return newArr
+}
+
+//THIS EXERCISE WAS PARAMOUNT TO HELPING ME UNDERSTAND SITUATIONS WHERE I SHOULD ITERATE THROUGH
+//TWO SEPERATE ITEMS WITHIN THE SAME LOOP, WITH DIFFERENT VARIABLES, WHILE INCREMENTING THE VALUES 
+//AT DIFFERENT TIMES UNDER DIFFERENT CONDITIONS
+
+console.log(updateList({ "Ed Sheeran": "guitar", "Ray Charles": "piano" }, 
+[
+  "Ed Sheeran",
+  "John Lennon",
+  "Ray Charles",
+]))
 
 /**
  * Takes in an object and a key.
@@ -494,7 +592,14 @@ const updateList = () => {};
  * @returns {Object} The Object without the key.
  */
 
- const deleteKey = () => {};
+let tracks = {decapitated : "Spheres of Madness", necrophagist : "Mutilate the Stillborn"}
+
+const deleteKey = (obj, key) => {
+  delete obj[key]
+  return obj
+};
+
+console.log(deleteKey(tracks, "decapitated"))
 
 
  /**
@@ -503,7 +608,12 @@ const updateList = () => {};
   * @param {Object} obj
   * @returns {number} Number of properties.
   */
- const propertyCount = () => {};
+ const propertyCount = (obj) => {
+   let numOfProps = Object.keys(obj)
+   return numOfProps.length
+ };
+
+console.log(propertyCount({name: "Ivan", ethnicity: "hispanic", Sex: "male"}))
 
 module.exports = {
   eveAppleCount,
