@@ -299,7 +299,7 @@ const countOccuranceNoSpaces = (str) => {
 
 const mostCommonElement = (array) => {
   let result = {};
-  for(let i = 0; i < array.length; i++){
+  for(let i = 0; i < array.length; i++){// iterate through the array to find the most common elemente within the array.
     let el = array[i];
       if(result[el]){
          result[el] += 1;
@@ -309,7 +309,7 @@ const mostCommonElement = (array) => {
   }
   let mostCommon = -Infinity;
   let mostCommonKey 
-  for(const key in result){
+  for(const key in result){// iterating through most common key at object
     if(result[key] > mostCommon){
      mostCommon = result[key];
      mostCommonKey = key;
@@ -317,7 +317,7 @@ const mostCommonElement = (array) => {
   }
     
   }
-  if(parseInt(mostCommonKey)){
+  if(parseInt(mostCommonKey)){//if the most common element can be coverted into a number it returns a number.  Otherwise returns most common.
     return parseInt(mostCommonKey);
   } else{
     return mostCommonKey;
@@ -347,7 +347,7 @@ const updateList = (pairs, arr) => {
  let newArray = [];
 for(let i = 0; i < arr.length; i++){
   let arrValue = arr[i];
-  if(pairs[arrValue]){
+  if(pairs[arrValue]){// if elements at array are found in the object as key push them into the newArray as value otherwise push array value into new Array.
     newArray.push(pairs[arrValue]);
   }else{
     newArray.push(arrValue);
