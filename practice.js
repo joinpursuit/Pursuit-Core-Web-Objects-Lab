@@ -122,16 +122,48 @@
 
 
 
-let person = {
-    firstName: "Andres",
-    LastName: "Ballares",
-    age: 44,
-    weight: 185,
-};
+// let person = {
+//     firstName: "Andres",
+//     LastName: "Ballares",
+//     age: 44,
+//     weight: 185,
+// };
 
-person["age"] = 34
-person["tall"] = 33
-console.log(person);
+// person["age"] = 34
+// person["tall"] = 33
+// console.log(person);
 
-delete person["tall"]// delet ovj[keyToDelete]
-console.log(person);
+// delete person["tall"]// delet ovj[keyToDelete]
+// console.log(person);
+
+// const replaceEWithQuestionsMark = (str) => {
+//     let output = "";
+//     for(let i = 0; i < str.length; i+= 1){
+//         const currChar = str[i];
+//         if (currChar === "e"){
+//             output += "?"
+//         } else {
+//             output += currChar
+//         }
+//     } 
+    
+//         return output;
+//     }
+
+// console.log(replaceEWithQuestionsMark("every"));
+
+// const print = () => {
+//     let num = i
+// while (i <= 10){
+//     if(i % 2 === 0)
+//    i ++
+// }
+// return num++
+// }
+// console.log(print())
+
+let i = 5;
+
+while (i > 3) {
+    i += 1
+}
