@@ -1,14 +1,19 @@
-/**
+/**DONE
  * Takes in an object with peoples names as the keys and
  * the number of apples they have as values. Return the number
  * of apples that "Eve" has.
  * @param {Object} appleCountByName
  * @returns {number} The number of apples Eve has.
  */
+//let names = {"Obi": 2, "Eve": 5}
 
-const eveAppleCount = () => {};
+const eveAppleCount = (appleCountByName) => {
+  return appleCountByName.Eve
+};
 
-/**
+
+
+/**DONE
  * Takes in an object with peoples names as the keys and
  * the number of apples they have as values. Also takes in the argument of someone's
  * name. Return the number
@@ -22,8 +27,14 @@ const eveAppleCount = () => {};
  * bracket notation? Try them both.
  */
 
-const appleCount = () => {};
-
+const appleCount = (appleCountByName, name) => {
+    if(!appleCountByName[name]){
+      return 0
+    } else {
+      return appleCountByName[name]
+    }
+  };
+  // console.log(appleCount())
 /**
  * Takes in an object with peoples names as the keys and
  * the number of apples they have as values.
@@ -35,8 +46,11 @@ const appleCount = () => {};
  * @param {number} appleCount - new number of apples
  * @returns {Object} The updated object.
  */
-
-const eveAppleSet = () => {};
+//let names = {"Obi": 2, "Eve": 5}
+const eveAppleSet = (appleCountByName, appleCount ) => {
+   appleCountByName.Eve = appleCount
+   return appleCountByName
+}
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -50,7 +64,10 @@ const eveAppleSet = () => {};
  *
  */
 
-const appleSet = () => {};
+const appleSet = (appleCountByName, name, newAppleCount) => {
+  appleCountByName[name] = newAppleCount
+  return appleCountByName
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -60,8 +77,12 @@ const appleSet = () => {};
  * @returns {number} Sum of Adam and Eve's apples.
  *
  */
-
-const adamAndEveApples = () => {};
+// let names = {"Adam": 2, "Eve": 5}
+const adamAndEveApples = (appleCountByName) => {
+  let sum = 0
+    sum = appleCountByName.Adam + appleCountByName.Eve
+  return sum
+};
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -72,7 +93,11 @@ const adamAndEveApples = () => {};
  *
  */
 
-const appleSum = () => {};
+const appleSum = (appleCountByName, number) => {
+  let sum = 0
+  sum = appleCountByName
+  return sum
+};
 
 /**
  * Takes in an object with peoples names as the keys and
