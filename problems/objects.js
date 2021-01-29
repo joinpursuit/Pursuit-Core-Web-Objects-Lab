@@ -266,7 +266,15 @@ const countOccurance = (str) => {
  * the count occurrence of each character.
  * Skips spaces
  * @param {string} str - "A good snake"
- * @returns {Object} Counts all characters except spaces  {a: 2, g: 1, o: 2, d:1, s: 1, n:a, k:1, e: 1}
+ * @returns {Object} Counts all characters except spaces
+ * 
+ *
+ * count = {a: 2, g: 1, o: 2, d:1, s: 1, n:a, k:1, e: 1}
+ * object[key] = value 
+ * key is the name
+ * count[a] => 2 would be returned
+ 
+ * To get the value of an key , call the object and key
  */
 
 const countOccuranceNoSpaces = (str) => {
@@ -289,7 +297,32 @@ const countOccuranceNoSpaces = (str) => {
  * @returns {(number|string)} Most common element
  */
 
-const mostCommonElement = (array) => {};
+const mostCommonElement = (array) => {
+  let nameOfLargest;
+  let largest = -Infinity;
+  let object = {};
+  for (let i = 0; i < array.length; i++) {
+    let el = array[i];
+    if (object[el]) {
+      object[el]++;
+    } else {
+      object[el] = 1;
+    }
+  }
+  for (const key in object) {
+    //looping through the object and looking at each key
+    if (largest < object[key]) {
+      //object[key] is a number being compared to largest
+      largest = object[key]; //if object[key] is larger then we need to update largest
+      nameOfLargest = key;
+    }
+  }
+  if (parseInt(nameOfLargest)) {
+    return parseInt(nameOfLargest);
+  } else {
+    return nameOfLargest;
+  }
+};
 
 /**
  * Takes in an object and an array.
@@ -309,7 +342,21 @@ const mostCommonElement = (array) => {};
  * @returns {string[]} Elements or their pair values.
  */
 
-const updateList = () => {};
+const updateList = (pairs, arr) => {
+  let output = []; //returns new array
+  let arists;
+  for (let i = 0; i < arr.length; i++) {
+    //loop is going through the array to get the elements arr[i]
+    arists = arr[i]; // reassign arr[i] to be arists
+    if (pairs[arists]) {
+      // pairs is the object in which we are looking for the elements arr[i] to see if it is a key in the object
+      output.push(pairs[arists]);
+    } else {
+      output.push(arists);
+    }
+  }
+  return output;
+};
 
 /**
  * Takes in an object and a key.
@@ -320,7 +367,10 @@ const updateList = () => {};
  * @returns {Object} The Object without the key.
  */
 
-const deleteKey = () => {};
+const deleteKey = (object, key) => {
+  delete object[key];
+  return object;
+};
 
 /**
  * Takes in an object and returns the number of
@@ -328,7 +378,9 @@ const deleteKey = () => {};
  * @param {Object} obj
  * @returns {number} Number of properties.
  */
-const propertyCount = () => {};
+const propertyCount = (obj) => {
+  return Object.keys(obj).length;
+};
 
 module.exports = {
   eveAppleCount,
