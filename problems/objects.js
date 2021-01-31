@@ -86,9 +86,13 @@ return appleCountByName['Adam'] + appleCountByName['Eve']
  */
 
 const appleSum = (appleCountByName) => {
+  let sum = 0
 
+  for (let key in appleCountByName){
+      sum += appleCountByName[key]
+  } return sum 
 };
-console.log(appleSum())
+
 
 /**
  * Takes in an object with peoples names as the keys and
@@ -100,10 +104,11 @@ console.log(appleSum())
  */
 
 const appleSetToZero = (appleCountByName) => {
-let newCount = 0
-return appleCountByName
-};
+  for (let key in appleCountByName){
+    appleCountByName[key] = 0
+} return appleCountByName
 
+};
 
 /**
  * Takes in an object of countries and their capitals.
@@ -190,22 +195,27 @@ console.log(authorScores([["Mark Twain", 8.9], ["Nathaniel Hawthorne", 5.1]]))
  */
 
 const bestScore = (submissions) => {
-let bestScorePerson = ""
-let bestScore = 0
-for (i = 0; i < submissions.length; i++){
-  if (submissions[i]['score'] > submission[submissions.length]- 1 ['score']){
-    return (submission[i]['firstName'] + " " + submissions[i] ["lastName"])
-  }
-}
+  let blankScore = {score: 0}
+  for (let submission of submissions){
+      if (submission['score'] > blankScore['score']){
+           blankScore = submission
+      }
+      
+  } return blankScore["firstName"] + ' ' + blankScore["lastName"]
 };
-
 /**
  * Returns an object where the keys are numbers 1 through 20,
  * and their respective values is key cubed (num * num * num).
  * @returns {Object} {1: 1, 2: 8, 3: 27...}
  */
 
-const cubeObj = () => {};
+const cubeObj = () => {
+  let newObject = {};
+  for (let i = 1; i <= 20; i++) {
+    newObject[i] = i * i * i;
+  }
+  return newObject;
+};
 
 /**
  * Takes in a string and returns an object with
@@ -214,19 +224,26 @@ const cubeObj = () => {};
  * @returns {Object} Counts of e and a. {a: 2, e: 1}
  */
 
-const countAandE = () => {
-  let obj = {a: 0, e: 0,}
-  let string = str.toLowerCase()
-  for(let letter of string){
-    if(letter ==='a'){
-      obj.a++
-    }
-    else if (letter === 'e'){
-      obj.e++
-    }
-    return obj
-  }
-};
+const countAandE = (str) => {
+  let aSum = 0
+  let eSum = 0
+  let object = {}
+  
+  for (char of str){
+      if (char === "a" || char === "A"){
+          aSum += 1
+          object.a = aSum
+      } else if (char === "e" || char === "E"){
+          eSum += 1
+          object.e = eSum
+      } else if (char !== "a" || char !== "A" || char !== "e" || char !== "E"){
+          aSum += 0
+          object.a = aSum
+          eSum += 0
+          object.e = eSum
+        }
+    } return object
+  };
 
 /**
  * Takes in a string and returns an object with
@@ -235,8 +252,18 @@ const countAandE = () => {
  * @returns {Object} Counts of all characters: {a: 2, g: 1, o: 2, d:1, " ": 2, s: 1, n:1, k:1, e: 1}
  */
 
-const countOccurance = () => {
-  
+const countOccurance = (str) => {
+  let allChar = {};
+  let index
+  for (let i = 0; i < str.length; i++) {
+    index = str[i].toLowerCase()
+    if (allChar[index] === undefined) {
+      allChar[index] = 1;
+    } else {
+      allChar[index] += 1;
+    }
+  }
+  return allChar;
 };
 
 /**
@@ -247,7 +274,10 @@ const countOccurance = () => {
  * @returns {Object} Counts all characters except spaces  {a: 2, g: 1, o: 2, d:1, s: 1, n:a, k:1, e: 1}
  */
 
-const countOccuranceNoSpaces = () => {};
+const countOccuranceNoSpaces = (str) => {
+  let splitUp = str.split(' ').join("")
+    return countOccurance(splitUp)
+};
 
 /**
  * Takes in an array and returns the most common element.
@@ -255,7 +285,24 @@ const countOccuranceNoSpaces = () => {};
  * @returns {(number|string)} Most common element
  */
 
-const mostCommonElement = () => {};
+const mostCommonElement = (array) => {
+  let object = {}
+
+    for (element of array){
+        object[element] = (object[element] || 0) + 1
+    } 
+    let mostCommon = array[0]
+    let occurances = 0
+
+    for (let element of array){
+        if (object[element] > occurances){
+            occurances = object[element]
+            mostCommon = element 
+        }
+    }
+
+    return mostCommon
+};
 
 /**
  * Takes in an object and an array.
